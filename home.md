@@ -4,7 +4,7 @@
 
 # Use Docker Compose to Create a Continuous Integration Pipeline
 
-#### [The Full Blog is Here](wiki/ci/ci)
+#### [The Full Blog is Here](ci/ci)
 
 Continuous integration pipelines are the heart and soul of a software development project. The pipeline starts with version controlled assets and creates something deployable like a docker image, database evolution files or a Java web archive. Aside from this
 
@@ -26,7 +26,7 @@ Execute these commands inside an unbent and unbroken **Ubuntu 18.04** machine.
 - **`curl "http://localhost:9000/api/webhooks/create" -X POST -d "name=jenkins&url=http://localhost:8080/sonarqube-webhook/"`** | to allow SonarQube to call back Jenkins
 - use CUrl to give Jenkins the Git repository credentials where your microservices are
 
-#### [Continue Reading me Here](wiki/ci/ci)
+#### [Continue Reading me Here](ci/ci)
 
 ---
 

@@ -28,7 +28,7 @@ Execute these commands inside an unbent and unbroken **Ubuntu 18.04** machine.
 - **`sudo usermod -aG docker ${USER}`** # allow user to run docker commands without sudo
 - exit the shell session and login again to allow the usermod command to take effect
 - **`git clone https://github.com/apolloakora/devopswiki.co.uk devopswiki`** # pull down this project
-- **`cd devopswiki/wiki/ci`** # step into the project files here
+- **`cd devopswiki/ci`** # step into the project files here
 - **`sudo cp daemon.json /etc/docker/daemon.json`** # to allow pushing to a http docker registry
 - **`sudo service docker restart`** # to assimilate the daemon.json configuration
 
@@ -104,7 +104,7 @@ We need to install the latest version of **`docker compose`** and then bring up 
 - **`sudo chmod +x /usr/local/bin/docker-compose`**
 - log out of the shell session and then log in again
 - **`docker-compose --version`**
-- **`cd devopswiki/wiki/ci`** # step back into into the project files here
+- **`cd devopswiki/ci`** # step back into into the project files here
 - **`COMPOSE_HTTP_TIMEOUT=300 docker-compose up --detach`** # to bring up all the pipeline docker services
 
 To ascertain the success of the container orchestration we need to visit the Kibana dashboard and check.
