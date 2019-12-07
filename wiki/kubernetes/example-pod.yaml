@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod.wiki
+    labels:
+        pod-type: wiki
+spec:
+    containers:
+    - name: vmwiki
+      image: "devops4me/wiki"
+      env:
+      - name: WIKI_CONTENT_REPO_URL
+        value: "https://github.com/apolloakora/devopswiki.co.uk"
+      ports:
+      - containerPort: 4567

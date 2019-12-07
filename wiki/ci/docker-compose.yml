@@ -1,0 +1,72 @@
+version: "3.7"
+
+services:
+
+    jenkins:
+
+        image: devops4me/jenkins-2.0
+        container_name: vm.jenkins-2.0
+        network_mode: host
+        restart: unless-stopped
+
+        logging:
+            driver: fluentd
+
+        volumes:
+            - ~/runtime/pipeline-jobs:/var/jenkins_home/jobs
+            # enable Jenkins to use the docker daemon from the host
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /usr/bin/docker:/usr/bin/docker
+
+    sonar-database:
+
+        image: postgres:11.2
+        container_name: vm.sonardb
+        network_mode: host
+        restart: unless-stopped
+
+        logging:
+            driver: fluentd
+
+        environment:
+            - POSTGRES_USER=sonar_rw_xyz123abc
+            - POSTGRES_PASSWORD=xyzP23FSsd8ffa8So2bJw4so
+            - POSTGRES_DB=sonar_db_hyqlbi
+
+    sonarqube:
+
+        image: sonarqube:7.7-community
+        container_name: vm.sonarqube
+        network_mode: host
+        restart: unless-stopped
+
+        depends_on:
+            - sonar-database
+
+        environment:
+            - sonar.jdbc.username=sonar_rw_xyz123abc
+            - sonar.jdbc.password=xyzP23FSsd8ffa8So2bJw4so
+            - sonar.jdbc.url=jdbc:postgresql://localhost/sonar_db_hyqlbi
+
+        logging:
+            driver: fluentd
+
+    docker-registry:
+
+        image: registry
+        container_name: vm.registry
+        network_mode: host
+        restart: unless-stopped
+
+        logging:
+            driver: fluentd
+
+    nexus-repository:
+
+        image: sonatype/nexus3
+        container_name: vm.nexus
+        network_mode: host
+        restart: unless-stopped
+
+        logging:
+            driver: fluentd

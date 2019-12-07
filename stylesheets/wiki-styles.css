@@ -1,0 +1,171 @@
+/*
+| + | ## ####################################################################### ## | + |
+| + | ## ----------------------------------------------------------------------  ## | + |
+| + | ##  Style Sheet Name : wiki-styles.css                                     ## | + |
+| + | ##  Sheet Purpose    : Gollum Wiki CSS Custom Stylesheet                   ## | + |
+| + | ##  Documentation    : https://www.eco-platform.co.uk/                     ## | + |
+| + | ## ----------------------------------------------------------------------  ## | + |
+| + | ## ####################################################################### ## | + |
+*/
+
+
+/* General Styles
+-------------------------------------------------------------- */
+html
+{
+	font-size: 100.01%;
+}
+
+body
+{
+	font-family: 'Droid Sans', Arial, Tahoma;
+	font-size: 1.0em;
+	border: 0;
+	color: #111;
+}
+
+
+/* Title Styling
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6
+{
+	font-weight: bold;
+	font-family: 'Francois One', Tahoma, Arial;
+	color: #333;
+	line-height: 1.4em;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	text-transform: none;
+	padding: 0.3em 0;
+}
+
+h1
+{
+    font-family: 'Francois One', Tahoma, Arial;
+    font-size: 2.0em;
+    border-bottom: 3px solid #BBB;
+    color: #444;
+}
+
+h2, h3, h4, h5, h6
+{
+    font-size: 3.0em;
+    border-bottom: 2px solid #CCC;
+    color: #333;
+}
+
+h3
+{
+    border-bottom: 0;
+}
+
+/* 10 Styles to Float Images Left and Right
+-------------------------------------------------------------- */
+#right20
+{
+    display: block;
+    float: right;
+    width: 20%;
+    border-bottom: 3px solid #BBB;
+}
+
+#right30
+{
+    display: block;
+    float: right;
+    width: 30%;
+    border-bottom: 3px solid #BBB;
+}
+
+#right40
+{
+    display: block;
+    float: right;
+    width: 40%;
+}
+
+#right50
+{
+    display: block;
+    float: right;
+    width: 50%;
+    border-bottom: 3px solid #BBB;
+}
+
+#right60
+{
+    display: block;
+    float: right;
+    width: 60%;
+}
+
+#left20
+{
+    display: block;
+    float: left;
+    width: 20%;
+    border-bottom: 3px solid #BBB;
+}
+
+#left30
+{
+    display: block;
+    float: left;
+    width: 30%;
+    border-bottom: 3px solid #BBB;
+}
+
+#left40
+{
+    display: block;
+    float: left;
+    width: 40%;
+}
+
+#left50
+{
+    display: block;
+    float: left;
+    width: 50%;
+    border-bottom: 3px solid #BBB;
+}
+
+#left60
+{
+    display: block;
+    float: left;
+    width: 60%;
+}
+
+/* Emboldening Software Commands and Config
+-------------------------------------------------------------- */
+code
+{
+    font-family: 'Francois One', Tahoma, Arial;
+    font-size: 1.8em;
+    border-bottom: 3px solid #BBB;
+    color: #222;
+}
+
+/* Sidebar Location Look and Feel
+-------------------------------------------------------------- */
+#wiki-sidebar
+{
+    margin-top: 50px;
+    font-family: 'Francois One', Tahoma, Arial;
+    font-size: 0.8em;
+}
+
+
+/* Page Dimensions Styling
+-------------------------------------------------------------- */
+
+@media all and (min-width: 940px)
+{
+    #wiki-wrapper
+    {
+	max-width: 1120px;
+	padding-left:30px;
+	padding-right:30px;
+    }
+}

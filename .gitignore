@@ -1,0 +1,3 @@
+
+# Ignore the ssh tunnel output log
+tunnel-output.log

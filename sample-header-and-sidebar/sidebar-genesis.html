@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html ng-app="hub" class="ng-scope gr__readme_readme_io"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="readme-deploy" content="261c370b1900e30f4b0501c7c7301f4e9982c05a"><meta name="readme-subdomain" content="readme"><meta name="readme-version" content="2.0"><title>Best practices</title><meta name="description" content="Beautiful documentation made easy."><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta property="og:title" content="Setting Custom Domain &amp; SSL"><meta property="og:description" content="#Custom Domain  1) Enter your custom domain into the available space 2) Follow the instructions below to set your CNAME to connect to ReadMe if you would like SSL.  #SSL  We will automatically generate an SSL certificate on your behalf using [Let’s Encrypt](https://letsencrypt.org/)  Let's Encrypt i..."><link href="https://readme.readme.io/favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="canonical" href="https://readme.readme.io/v2.0/docs/setting-up-custom-domain"><!-- Application styles--><link rel="stylesheet" href="setting-up-plain_files/bundle-hub2.css"><!-- Custom CSS--><style>a {
+  color: #1c84cc;
+}
+a:hover {
+  color: #104a72;
+}
+a.text-muted:hover {
+  color: #1c84cc;
+}
+.btn.btn-primary {
+  background-color: #1c84cc;
+}
+.btn.btn-primary:hover {
+  background-color: #104a72;
+}
+.theme-line #hub-landing-top h2 {
+  color: #1c84cc;
+}
+#hub-landing-top .btn:hover {
+  color: #1c84cc;
+}
+.theme-line #hub-landing-top .btn:hover {
+  color: #fff;
+}
+.theme-solid header#hub-header #header-top {
+  background-color: #1c84cc;
+}
+.theme-solid.header-gradient header#hub-header #header-top {
+  background: linear-gradient(to bottom, #1c84cc, #135889);
+}
+.theme-solid.header-custom header#hub-header #header-top {
+  background-image: url("undefined");
+}
+.theme-line header#hub-header #header-top {
+  border-bottom-color: #1c84cc;
+}
+.theme-line header#hub-header #header-top .btn {
+  background-color: #1c84cc;
+}
+header#hub-header #header-top #header-logo {
+  width: 225px;
+  height: 40px;
+  margin-top: 0px;
+  background-image: url("https://files.readme.io/lCvfI7yGQQSqXZRKZE9h_temp.png");
+}
+nav#hub-sidebar ul a.active {
+  background-color: #1c84cc;
+}
+#hub-subheader-parent #hub-subheader .hub-subheader-breadcrumbs .dropdown-menu a:hover {
+  background-color: #1c84cc;
+}
+.discussion .submit-vote.submit-vote-parent.voted a.submit-vote-button {
+  background-color: #1c84cc;
+}
+section#hub-discuss .discussion a .discuss-body h4 {
+  color: #1c84cc;
+}
+section#hub-discuss .discussion a:hover .discuss-body h4 {
+  color: #104a72;
+}
+#hub-subheader-parent #hub-subheader.sticky-header.sticky {
+  border-bottom-color: #1c84cc;
+}
+#hub-subheader-parent #hub-subheader.sticky-header.sticky .search-box {
+  border-bottom-color: #1c84cc;
+}
+#hub-search-results h3 em {
+  color: #1c84cc;
+}
+.main_background,
+.tag-item {
+  background: #1c84cc !important;
+}
+.main_background:hover {
+  background: #104a72 !important;
+}
+.main_color {
+  color: #1c84cc !important;
+}
+.main_color_hover:hover {
+  color: #1c84cc !important;
+}
+section#hub-discuss h1 {
+  color: #1c84cc;
+}
+#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input textarea:focus,
+#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input input[type="text"]:focus,
+#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input input[type="number"]:focus {
+  border: 1px solid #1c84cc;
+}
+#hub-reference .hub-api .api-definition .api-try-it-out.active {
+  border-color: #1c84cc;
+  background-color: #1c84cc;
+}
+#hub-reference .hub-api .api-definition .api-try-it-out.active:hover {
+  background-color: #104a72;
+  border-color: #104a72;
+}
+#hub-reference .hub-api .api-definition .api-try-it-out:hover {
+  border-color: #1c84cc;
+  color: #1c84cc;
+}
+#hub-reference .hub-reference .hub-reference-section .hub-reference-left header .hub-reference-edit:hover {
+  color: #1c84cc;
+}
+.main-color-accent {
+  border-bottom: 3px solid #1c84cc;
+  padding-bottom: 8px;
+}
+</style><!-- TODO: Escape!--><style id="customCSS">#header-logo {
+  width: 150px !important;
+  margin-top: 10px !important;
+}
+
+/* Homepage */
+
+#hub-landing-top {
+  padding: 26px 0 !important;
+  max-width: 600px !important;
+}
+
+.support { 
+    position: relative;
+    height: 288px;
+    padding: 25px 40px 20px 70px;
+}
+
+.page-home #header {
+ 		margin-bottom: 25px;
+}
+
+.support img {
+    width: 1070px;
+    position: absolute;
+    left: 0;
+    top: 0; 
+  	z-index: 1;
+}
+header .support h2 {
+		display: none;
+}
+
+header .support p {
+    color: #fff;
+    margin: 53px 0 25px;
+    line-height: 1.6em;
+  	font-weight: 200 !important;
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+}
+header .support p strong {
+  color: #fff;
+  font-weight: 300 !important;
+}
+
+header .support a.btn {
+    background: #fff;
+    color: #1c84cc;
+    font-weight: bold;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1); 
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.15s ease-out;
+  	padding: 6px 20px 10px;
+}
+header .support a.btn:hover {
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+header .support a.btn:active {
+    box-shadow: 0 0;
+  	position: relative;
+    top: 1px;
+}
+header .support a .fa {
+    display: inline-block;
+    text-align: left;
+    color: #1c84cc;
+    transition: 0.15s ease-out;
+    width: 0px;
+    overflow: hidden;
+    opacity: 0;
+    top: 4px;
+    position: relative;
+    font-size: 18px;
+    transform: scale(0.6);
+}
+header .support a.btn:hover .fa {
+  width: 28px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+header .support > div {
+  position: relative;
+  z-index: 1000;
+}
+
+h1.navbar-brand {
+	margin-left: 16px !important;
+}
+.header .nav.navbar-nav.pull-right {
+    right: -9px;
+}
+.container.body-container {
+	padding-left: 0;
+  padding-right: 0;
+}
+</style><style type="text/css">/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  display: none;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  display: block;
+}
+.nano > .nano-pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+</style><style type="text/css">.ns-popover-list-theme {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2); }
+  .ns-popover-list-theme ul, .ns-popover-list-theme .list {
+    padding: 0;
+    margin: 0.625rem 0;
+    display: block; }
+  .ns-popover-list-theme li, .ns-popover-list-theme .list-item {
+    list-style-type: none; }
+    .ns-popover-list-theme li a, .ns-popover-list-theme .list-item a {
+      padding: 0.1875rem 0.625rem;
+      display: block; }
+      .ns-popover-list-theme li a:hover, .ns-popover-list-theme .list-item a:hover {
+        background-color: #f5f5f5; }
+
+.ns-popover-tooltip-theme {
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: transparent; }
+  .ns-popover-tooltip-theme .ns-popover-tooltip {
+    box-sizing: border-box;
+    border: solid 1px #d2d2d2;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 0.5625rem 0.875rem;
+    max-width: 20rem;
+    font-size: 0.875rem;
+    -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    margin: 10px; }
+    .ns-popover-tooltip-theme .ns-popover-tooltip ul {
+      padding: 0;
+      margin: 0.625rem 0;
+      display: block; }
+    .ns-popover-tooltip-theme .ns-popover-tooltip li {
+      list-style-type: none; }
+      .ns-popover-tooltip-theme .ns-popover-tooltip li a {
+        padding: 0.1875rem 0.625rem;
+        display: block; }
+        .ns-popover-tooltip-theme .ns-popover-tooltip li a:hover {
+          background-color: #f5f5f5; }
+  .ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-bottom-color: #d2d2d2;
+    left: 50%;
+    top: -11px;
+    margin-left: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+      border-bottom-color: #fff;
+      border-top-width: 0;
+      top: 1px;
+      margin-left: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-top-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-top-color: #d2d2d2;
+    left: 50%;
+    bottom: -11px;
+    margin-left: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+      border-top-color: #fff;
+      border-bottom-width: 0;
+      bottom: 1px;
+      margin-left: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-right-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-right-color: #d2d2d2;
+    top: 50%;
+    left: -11px;
+    margin-top: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+      border-right-color: #fff;
+      border-left-width: 0;
+      left: 1px;
+      bottom: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-left-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-left-color: #d2d2d2;
+    top: 50%;
+    right: -11px;
+    margin-top: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+      border-left-color: #fff;
+      border-right-width: 0;
+      right: 1px;
+      bottom: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip {
+    margin-left: 0; }
+  .ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip {
+    margin-right: 0; }
+  .ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip {
+    margin-top: 0; }
+  .ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip {
+    margin-bottom: 0; }
+</style><style type="text/css">.ns-popover-list-theme {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+.ns-popover-list-theme ul,
+.ns-popover-list-theme .list {
+  padding: 0;
+  margin: 0.625rem 0;
+  display: block;
+}
+.ns-popover-list-theme li,
+.ns-popover-list-theme .list-item {
+  list-style-type: none;
+}
+.ns-popover-list-theme li a,
+.ns-popover-list-theme .list-item a {
+  padding: 0.1875rem 0.625rem;
+  display: block;
+}
+.ns-popover-list-theme li a:hover,
+.ns-popover-list-theme .list-item a:hover {
+  background-color: #f5f5f5;
+}
+.ns-popover-tooltip-theme {
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: transparent;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0.5625rem 0.875rem;
+  max-width: 20rem;
+  font-size: 0.875rem;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip ul {
+  padding: 0;
+  margin: 0.625rem 0;
+  display: block;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li {
+  list-style-type: none;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li a {
+  padding: 0.1875rem 0.625rem;
+  display: block;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li a:hover {
+  background-color: #f5f5f5;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-bottom-color: #d2d2d2;
+  left: 50%;
+  top: -11px;
+  margin-left: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+  border-bottom-color: #fff;
+  border-top-width: 0;
+  top: 1px;
+  margin-left: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-top-color: #d2d2d2;
+  left: 50%;
+  bottom: -11px;
+  margin-left: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+  border-top-color: #fff;
+  border-bottom-width: 0;
+  bottom: 1px;
+  margin-left: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-right-color: #d2d2d2;
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+  border-right-color: #fff;
+  border-left-width: 0;
+  left: 1px;
+  bottom: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-left-color: #d2d2d2;
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+  border-left-color: #fff;
+  border-right-width: 0;
+  right: 1px;
+  bottom: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip {
+  margin-left: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip {
+  margin-right: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip {
+  margin-top: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip {
+  margin-bottom: 0;
+}
+</style><style type="text/css">tags-input{display:block}tags-input *,tags-input :after,tags-input :before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}tags-input .host{position:relative;margin-top:5px;margin-bottom:5px;height:100%}tags-input .host:active{outline:0}tags-input .tags{-moz-appearance:textfield;-webkit-appearance:textfield;padding:1px;overflow:hidden;word-wrap:break-word;cursor:text;background-color:#fff;border:1px solid #a9a9a9;box-shadow:1px 1px 1px 0 #d3d3d3 inset;height:100%}tags-input .tags.focused{outline:0;-webkit-box-shadow:0 0 3px 1px rgba(5,139,242,.6);-moz-box-shadow:0 0 3px 1px rgba(5,139,242,.6);box-shadow:0 0 3px 1px rgba(5,139,242,.6)}tags-input .tags .tag-list{margin:0;padding:0;list-style-type:none}tags-input .tags .tag-item{margin:2px;padding:0 5px;display:inline-block;float:left;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;height:26px;line-height:25px;border:1px solid #acacac;border-radius:3px;background:-webkit-linear-gradient(top,#f0f9ff 0,#cbebff 47%,#a1dbff 100%);background:linear-gradient(to bottom,#f0f9ff 0,#cbebff 47%,#a1dbff 100%)}tags-input .tags .tag-item.selected{background:-webkit-linear-gradient(top,#febbbb 0,#fe9090 45%,#ff5c5c 100%);background:linear-gradient(to bottom,#febbbb 0,#fe9090 45%,#ff5c5c 100%)}tags-input .tags .tag-item .remove-button{margin:0 0 0 5px;padding:0;border:none;background:0 0;cursor:pointer;vertical-align:middle;font:700 16px Arial,sans-serif;color:#585858}tags-input .tags .tag-item .remove-button:active{color:red}tags-input .tags .input{border:0;outline:0;margin:2px;padding:0;padding-left:5px;float:left;height:26px;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif}tags-input .tags .input.invalid-tag{color:red}tags-input .tags .input::-ms-clear{display:none}tags-input.ng-invalid .tags{-webkit-box-shadow:0 0 3px 1px rgba(255,0,0,.6);-moz-box-shadow:0 0 3px 1px rgba(255,0,0,.6);box-shadow:0 0 3px 1px rgba(255,0,0,.6)}tags-input .autocomplete{margin-top:5px;position:absolute;padding:5px 0;z-index:999;width:100%;background-color:#fff;border:1px solid rgba(0,0,0,.2);-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2)}tags-input .autocomplete .suggestion-list{margin:0;padding:0;list-style-type:none}tags-input .autocomplete .suggestion-item{padding:5px 10px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}tags-input .autocomplete .suggestion-item.selected,tags-input .autocomplete .suggestion-item.selected em{color:#fff;background-color:#0097cf}tags-input .autocomplete .suggestion-item em{font:normal bold 16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}</style><style type="text/css">/* Magnific Popup CSS */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1043;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden; }
+
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.mfp-align-top .mfp-container:before {
+  display: none; }
+
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1045; }
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto; }
+
+.mfp-ajax-cur {
+  cursor: progress; }
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out; }
+
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in; }
+
+.mfp-auto-cursor .mfp-content {
+  cursor: auto; }
+
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+.mfp-loading.mfp-figure {
+  display: none; }
+
+.mfp-hide {
+  display: none !important; }
+
+.mfp-preloader {
+  color: #CCC;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 1044; }
+  .mfp-preloader a {
+    color: #CCC; }
+    .mfp-preloader a:hover {
+      color: #FFF; }
+
+.mfp-s-ready .mfp-preloader {
+  display: none; }
+
+.mfp-s-error .mfp-content {
+  display: none; }
+
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  padding: 0 0 18px 10px;
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace; }
+  .mfp-close:hover,
+  .mfp-close:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-close:active {
+    top: 1px; }
+
+.mfp-close-btn-in .mfp-close {
+  color: #333; }
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #FFF;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%; }
+
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #CCC;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap; }
+
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent; }
+  .mfp-arrow:active {
+    margin-top: -54px; }
+  .mfp-arrow:hover,
+  .mfp-arrow:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-arrow:before,
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-b,
+  .mfp-arrow .mfp-a {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-left: 35px;
+    border: medium inset transparent; }
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-a {
+    border-top-width: 13px;
+    border-bottom-width: 13px;
+    top: 8px; }
+  .mfp-arrow:before,
+  .mfp-arrow .mfp-b {
+    border-top-width: 21px;
+    border-bottom-width: 21px;
+    opacity: 0.7; }
+
+.mfp-arrow-left {
+  left: 0; }
+  .mfp-arrow-left:after,
+  .mfp-arrow-left .mfp-a {
+    border-right: 17px solid #FFF;
+    margin-left: 31px; }
+  .mfp-arrow-left:before,
+  .mfp-arrow-left .mfp-b {
+    margin-left: 25px;
+    border-right: 27px solid #3F3F3F; }
+
+.mfp-arrow-right {
+  right: 0; }
+  .mfp-arrow-right:after,
+  .mfp-arrow-right .mfp-a {
+    border-left: 17px solid #FFF;
+    margin-left: 39px; }
+  .mfp-arrow-right:before,
+  .mfp-arrow-right .mfp-b {
+    border-left: 27px solid #3F3F3F; }
+
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .mfp-iframe-holder .mfp-content {
+    line-height: 0;
+    width: 100%;
+    max-width: 900px; }
+  .mfp-iframe-holder .mfp-close {
+    top: -40px; }
+
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%; }
+  .mfp-iframe-scaler iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #000; }
+
+/* Main image in popup */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto; }
+
+/* The shadow behind the image */
+.mfp-figure {
+  line-height: 0; }
+  .mfp-figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 40px;
+    display: block;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #444; }
+  .mfp-figure small {
+    color: #BDBDBD;
+    display: block;
+    font-size: 12px;
+    line-height: 14px; }
+  .mfp-figure figure {
+    margin: 0; }
+
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto; }
+
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #F3F3F3;
+  word-wrap: break-word;
+  padding-right: 36px; }
+
+.mfp-image-holder .mfp-content {
+  max-width: 100%; }
+
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer; }
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+       * Remove all paddings around the image on small screen
+       */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0; }
+  .mfp-img-mobile img.mfp-img {
+    padding: 0; }
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0; }
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px; }
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .mfp-img-mobile .mfp-bottom-bar:empty {
+      padding: 0; }
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px; }
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0; } }
+
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); }
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0; }
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px; } }
+
+.mfp-ie7 .mfp-img {
+  padding: 0; }
+
+.mfp-ie7 .mfp-bottom-bar {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 5px;
+  padding-bottom: 5px; }
+
+.mfp-ie7 .mfp-container {
+  padding: 0; }
+
+.mfp-ie7 .mfp-content {
+  padding-top: 44px; }
+
+.mfp-ie7 .mfp-close {
+  top: 0;
+  right: 0;
+  padding-top: 0; }
+</style><style type="text/css">/*
+ * Toastr
+ * Version 2.0.2
+ * Copyright 2012-2014 John Papa and Hans Fjällemark.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
+ * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
+ *
+ * Author: John Papa and Hans Fjällemark
+ * Project: https://github.com/CodeSeven/toastr
+ */
+.toast-title {
+  font-weight: bold;
+}
+.toast-message {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.toast-message a,
+.toast-message label {
+  color: #ffffff;
+}
+.toast-message a:hover {
+  color: #cccccc;
+  text-decoration: none;
+}
+.toast-close-button {
+  position: relative;
+  right: -0.3em;
+  top: -0.3em;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  -webkit-text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+.toast-close-button:hover,
+.toast-close-button:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter: alpha(opacity=40);
+}
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+#toast-container {
+  position: fixed;
+  z-index: 999999;
+  /*overrides*/
+
+}
+#toast-container * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#toast-container > div {
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0 0 12px #999999;
+  -webkit-box-shadow: 0 0 12px #999999;
+  box-shadow: 0 0 12px #999999;
+  color: #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+#toast-container > :hover {
+  -moz-box-shadow: 0 0 12px #000000;
+  -webkit-box-shadow: 0 0 12px #000000;
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+#toast-container > .toast-info {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-error {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-success {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-warning {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=") !important;
+}
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+  width: 96%;
+  margin: auto;
+}
+.toast {
+  background-color: #030303;
+}
+.toast-success {
+  background-color: #51a351;
+}
+.toast-error {
+  background-color: #bd362f;
+}
+.toast-info {
+  background-color: #2f96b4;
+}
+.toast-warning {
+  background-color: #f89406;
+}
+/*Responsive Design*/
+@media all and (max-width: 240px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 11em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 241px) and (max-width: 480px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 18em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+  #toast-container > div {
+    padding: 15px 15px 15px 50px;
+    width: 25em;
+  }
+}
+</style><style type="text/css">.atwho-view {
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    margin-top: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+.atwho-view .cur {
+    background: #3366FF;
+    color: white;
+}
+.atwho-view .cur small {
+    color: white;
+}
+.atwho-view strong {
+    color: #3366FF;
+}
+.atwho-view .cur strong {
+    color: white;
+    font:bold;
+}
+.atwho-view ul {
+    /* width: 100px; */
+    list-style:none;
+    padding:0;
+    margin:auto;
+}
+.atwho-view ul li {
+    display: block;
+    padding: 5px 10px;
+    border-bottom: 1px solid #DDD;
+    cursor: pointer;
+    /* border-top: 1px solid #C8C8C8; */
+}
+.atwho-view small {
+    font-size: smaller;
+    color: #777;
+    font-weight: normal;
+}
+</style></head><body ng-class="{'hub-full': state.current().opts.full, 'no-sidebar': !state.current().opts.sidebar, 'hub-is-home': state.current().name == 'home' &amp;&amp; 'landing' == 'landing', 'hub-suggested-edits': suggestedEdits.isEnabled}" class="body-overlap theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-normal " data-gr-c-s-loaded="true"><div id="hub-me" style="display: none;">{"oauth_url":"","loggedIn":false,"search":{"token":"YTliMzM0YWE2NGQxYzZjZTE1MTk3ZjMyNjRmYTg2N2I5MDE1ZjJmOWYxMjNkYjcxNjc1Y2QzMGNhZWE5MWVkY3RhZ0ZpbHRlcnM9cHJvamVjdDo1NDIzMzQ5NjE5NzJlMjFkN2RhZTRlMDAsKGhpZGRlbjpub25lLGhpZGRlbjpmYWxzZSksKHZlcnNpb246bm9uZSx2ZXJzaW9uOjU3MzBlMmU5MDUzYTA2MmIwMGNmNDc1MCk=","filters":"tagFilters=project:542334961972e21d7dae4e00,(hidden:none,hidden:false),(version:none,version:5730e2e9053a062b00cf4750)","app":"T28YKFATPY","modules":{"landing":true,"docs":true,"examples":true,"reference":false,"blog":true,"discuss":true,"suggested_edits":true}}}</div><header id="hub-header"><div id="header-top"><div class="hub-container"><div class="clearfix"><a href="https://readme.readme.io/" class="header-link"><h1 id="header-logo">ReadMe.io</h1></a><nav><ul id="header-nav-left"><li><a href="https://readme.readme.io/v2.0/docs" ui-sref="docs" title="Documentation" class="active">Knowledge Base</a></li><li><a href="https://readme.readme.io/v2.0/discuss" ui-sref="discuss" title="Support">Community Discussions</a></li><li><a href="https://readme.readme.io/v2.0/blog" ui-sref="blog" title="Blog">Announcements</a></li></ul><ul id="header-nav-right"><li><a href="https://readme.readme.io/docs/introduction" target="_self">Getting Started</a></li><li><a href="https://docs.google.com/forms/d/1whHBgm6Js6p35SnwGNHbFKc-cnOOSlbeo1Jl5QP-9QM/viewform" target="_self">Feature Request</a></li><li><span login="" class=""><span ng-show="user.loggedIn" class="login hub-subheader-breadcrumbs ng-hide"><span class="dropdown right-dropdown"><script async="" src="setting-up-plain_files/analytics.js"></script><script type="text/ng-template" id="loginPopover"><div id="hub-user-dropdown" class="ns-popover-tooltip"><div class="ns-triangle"></div><div class="triangle"></div><ul><li ng-show="user.isAdmin"><a href="https://dash.readme.io/project/readme/v2.0/dashboard"> <i class="fa fa-lock"></i>Admin Panel</a></li><li><a ng-href="/logout?redirect_uri={{redirect()}}" target="_self"> <i class="fa fa-power-off"></i>Log out</a></li></ul></div></script><a ns-popover="" ns-popover-trigger="click" ns-popover-theme="ns-popover-dropdown-theme" ns-popover-placement="bottom|right" ns-popover-template="loginPopover" ns-popover-timeout="-1" class="hub-breadcrumb-item dropdown-toggle ng-scope ng-binding"><i class="fa fa-chevron-down"></i></a></span></span><span ng-show="!user.loggedIn" class="login"><a ng-href="/login?redirect=v2.0/docs/best-practices" target="_self" href="https://readme.readme.io/login?redirect=v2.0/docs/best-practices">Log In</a></span></span></li></ul></nav></div><div id="hub-landing-top" class="hub-landing-html"><div class="support"><img src="setting-up-plain_files/c.png"><div class="col-sm-9"><h2>ReadMe Documentation</h2><p>Welcome to the <strong>ReadMe Documentation</strong>, where you'll find comprehensive guides and community support to help you start working with ReadMe as quickly as possible!</p><a href="https://readme.readme.io/docs" class="btn btn-lg btn-primary"><i class="fa fa-rocket"></i>Get Started</a></div></div></div></div></div><div id="hub-subheader-parent"><div id="hub-subheader"><div class="hub-container"><nav id="header-bottom-nav"><div id="header-icon-nav"><div class="icons"><div class="hub-subheader-breadcrumbs"><!-- Version picker--><span dropdown="" class="left-dropdown dropdown ng-isolate-scope"><a dropdown-toggle="" href="" class="hub-breadcrumb-item dropdown-toggle"><span>v2.0</span><i class="fa fa-chevron-down"></i></a></span><span dropdown="" class="left-dropdown dropdown ng-isolate-scope"><a href="" ng-class="{'hub-breadcrumb-last': !showTitle() &amp;&amp; !state.current().params.category}" dropdown-toggle="" class="hub-breadcrumb-item hub-breadcrumb-item-type dropdown-toggle"><span ng-show="state.current().root == 'home'" class="ng-hide">Home</span><span ng-show="state.current().root == 'docs'">Knowledge Base</span><span ng-show="state.current().root == 'reference'" class="ng-hide">Reference</span><span ng-show="state.current().root == 'preview'" class="ng-hide">Reference</span><span ng-show="state.current().root == 'blog'" class="ng-hide">Announcements</span><span ng-show="state.current().root == 'discuss'" class="ng-hide">Community Discussions</span><span ng-show="state.current().root == 'error'" class="ng-hide">Page Not Found</span><span ng-show="state.current().root == 'search'" class="ng-hide">Search</span><span ng-show="state.current().root == 'custompages'" style="text-transform: capitalize;" class="ng-binding ng-hide"></span><i class="fa fa-chevron-down"></i></a></span><span ng-show="showTitle()" class="hub-breadcrumb-item hub-breadcrumb-item-title"><span class="ng-binding">Best practices</span></span></div><div><div id="hub-search"><div searchbox="" ng-class="{full:search.full}" class="searchbox ng-scope"><input ng-model="search.query" placeholder="Search" class="search-box ng-pristine ng-untouched ng-valid" type="text"><div class="fa fa-search"></div></div></div></div></div></div></nav><div id="header-bottom-suggested-edits"><div class="pull-right"><a href="" ng-click="suggestedEdits.disable()" class="hub-suggested-edits-cancel"><i class="icon icon-cross-circle"></i>discard</a><!-- ngIf: user.isAdmin --><button ng-click="suggestedEdits.prepare()" class="btn btn-default"><i class="icon icon-right icon-register"></i><strong>Submit</strong> Suggested Edits</button></div></div></div><div><div id="hub-search-results" searchresults="" ng-class="{'hub-search-results-active':search.full}" class="ng-scope"><div class="hub-container"><h3>Search results for "<em class="ng-binding"></em>"</h3><div ng-show="!search.results.length" class="hub-search-noresults"><em class="ng-binding">No results found for "".&nbsp;</em><a href="https://readme.readme.io/v2.0/discuss-new" ui-sref="discuss.new">Ask about it in support</a>.</div></div><ul ng-show="search.results.length" class="ng-hide"><!-- ngRepeat: result in search.results --></ul><a ng-show="search.results.length" ng-href="/v2.0/search?q=" class="viewAll ng-hide" href="https://readme.readme.io/v2.0/search?q=">View All Results</a></div></div><!-- ngIf: isMobile --></div></div></header><div ng-class="{active:contentLoadingSection || contentLoading}" class="hub-loading-indicator"></div><div id="hub-container" ng-class="{loading:contentLoadingSection}"><div class="hub-container"><div id="hub-sidebar-parent" sidebar="" class="hub-sidebar-sticky static" style="height: 798px;"><nav id="hub-sidebar"><div class="scrollable-parent"><div class="nano ng-isolate-scope has-scrollbar" scroll-to-top="state.current().root"><div class="nano-content" ng-transclude="" tabindex="0" style="right: -17px;"><div id="hub-sidebar-content" class="ng-scope"><div ng-show="state.current().root == 'docs'"><h3>Getting Started</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4778')}">             <a ui-sref="docs.show({'doc': 'introduction'})" href="https://readme.readme.io/v2.0/docs/introduction" ui-sref-alt="docs" class="text-overflow">Introduction</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5995dc36ddbd55000f4ffaa6')}" class="subnav-expanded">             <a ui-sref="docs.show({'doc': 'best-practices'})" href="https://readme.readme.io/v2.0/docs/best-practices" ui-sref-alt="" class="text-overflow active">Best practices</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf477a')}">             <a ui-sref="docs.show({'doc': 'features'})" href="https://readme.readme.io/v2.0/docs/features" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Features</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'open-source'})" href="https://readme.readme.io/v2.0/docs/open-source" class="text-overflow subpage">Open Source</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('57ec5e754a04260e009cf43e')}">             <a ui-sref="docs.show({'doc': 'hub-2-upgrades'})" href="https://readme.readme.io/v2.0/docs/hub-2-upgrades" ui-sref-alt="" class="text-overflow">Hub 2 Upgrade FAQ</a><ul class="subpages"></ul></li></ul><h3>General</h3><ul><li ng-class="{'subnav-expanded' : isActive('573f4f9bf730962000b60ca8')}">             <a ui-sref="docs.show({'doc': 'dashboard'})" href="https://readme.readme.io/v2.0/docs/dashboard" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Dashboard</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'profile'})" href="https://readme.readme.io/v2.0/docs/profile" class="text-overflow subpage">Profile</a></li><li><a ui-sref="docs.show({'doc': 'invoices'})" href="https://readme.readme.io/v2.0/docs/invoices" class="text-overflow subpage">Payment Info</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4762')}">             <a ui-sref="docs.show({'doc': 'search'})" href="https://readme.readme.io/v2.0/docs/search" ui-sref-alt="" class="text-overflow">Search</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5731066719c1e00e006d21f7')}">             <a ui-sref="docs.show({'doc': 'enablingdisabling-features'})" href="https://readme.readme.io/v2.0/docs/enablingdisabling-features" ui-sref-alt="" class="text-overflow">Enabling/Disabling Features</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('57321d58a825f30e00b51b6b')}">             <a ui-sref="docs.show({'doc': 'previewing-your-project'})" href="https://readme.readme.io/v2.0/docs/previewing-your-project" ui-sref-alt="" class="text-overflow">Previewing your project</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('57475318906f08200030caca')}">             <a ui-sref="docs.show({'doc': 'launching-your-project'})" href="https://readme.readme.io/v2.0/docs/launching-your-project" ui-sref-alt="" class="text-overflow">Launching your project</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4765')}">             <a ui-sref="docs.show({'doc': 'language-support'})" href="https://readme.readme.io/v2.0/docs/language-support" ui-sref-alt="" class="text-overflow">Language Support/Localization</a><ul class="subpages"></ul></li></ul><h3>Project Settings</h3><ul><li ng-class="{'subnav-expanded' : isActive('573bb31674d9f20e00c14f27')}">             <a ui-sref="docs.show({'doc': 'project-settings'})" href="https://readme.readme.io/v2.0/docs/project-settings" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Project Settings</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'copying-a-project'})" href="https://readme.readme.io/v2.0/docs/copying-a-project" class="text-overflow subpage">Cloning a Project</a></li><li><a ui-sref="docs.show({'doc': 'deleting-projects'})" href="https://readme.readme.io/v2.0/docs/deleting-projects" class="text-overflow subpage">Deleting or Canceling Projects</a></li><li><a ui-sref="docs.show({'doc': 'importing-documentation'})" href="https://readme.readme.io/v2.0/docs/importing-documentation" class="text-overflow subpage">Importing Documentation</a></li><li><a ui-sref="docs.show({'doc': 'exporting-docs'})" href="https://readme.readme.io/v2.0/docs/exporting-docs" class="text-overflow subpage">Exporting Docs</a></li><li><a ui-sref="docs.show({'doc': 'changing-subdomain'})" href="https://readme.readme.io/v2.0/docs/changing-subdomain" class="text-overflow subpage">Changing Subdomain</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf478d')}" class="">             <a ui-sref="docs.show({'doc': 'setting-up-custom-domain'})" href="https://readme.readme.io/v2.0/docs/setting-up-custom-domain" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Setting Custom Domain &amp; SSL</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'allowing-iframes'})" href="https://readme.readme.io/v2.0/docs/allowing-iframes" class="text-overflow subpage">Allowing iFrames</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf478a')}">             <a ui-sref="docs.show({'doc': 'third-party-integrations'})" href="https://readme.readme.io/v2.0/docs/third-party-integrations" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Third-Party Integrations</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'google-analytics'})" href="https://readme.readme.io/v2.0/docs/google-analytics" class="text-overflow subpage">Google Analytics</a></li><li><a ui-sref="docs.show({'doc': 'intercom'})" href="https://readme.readme.io/v2.0/docs/intercom" class="text-overflow subpage">Intercom</a></li><li><a ui-sref="docs.show({'doc': 'zendesk'})" href="https://readme.readme.io/v2.0/docs/zendesk" class="text-overflow subpage">Zendesk</a></li><li><a ui-sref="docs.show({'doc': 'localize'})" href="https://readme.readme.io/v2.0/docs/localize" class="text-overflow subpage">Localize</a></li><li><a ui-sref="docs.show({'doc': 'typekit-key'})" href="https://readme.readme.io/v2.0/docs/typekit-key" class="text-overflow subpage">Typekit</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('573bb417ee2b3b2200422958')}">             <a ui-sref="docs.show({'doc': 'upgrade-plan'})" href="https://readme.readme.io/v2.0/docs/upgrade-plan" ui-sref-alt="" class="text-overflow">Upgrade Plan</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf478f')}">             <a ui-sref="docs.show({'doc': 'manage-team'})" href="https://readme.readme.io/v2.0/docs/manage-team" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Manage Team</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'transfer-ownership'})" href="https://readme.readme.io/v2.0/docs/transfer-ownership" class="text-overflow subpage">Transfer Ownership</a></li><li><a ui-sref="docs.show({'doc': 'add-or-remove-an-admin'})" href="https://readme.readme.io/v2.0/docs/add-or-remove-an-admin" class="text-overflow subpage">Add or Remove an Admin</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4791')}">             <a ui-sref="docs.show({'doc': 'error-pages'})" href="https://readme.readme.io/v2.0/docs/error-pages" ui-sref-alt="" class="text-overflow">Error Pages</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4790')}">             <a ui-sref="docs.show({'doc': 'internal-documentation'})" href="https://readme.readme.io/v2.0/docs/internal-documentation" ui-sref-alt="" class="text-overflow">Protected Documentation</a><ul class="subpages"></ul></li></ul><h3>Appearance</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4773')}">             <a ui-sref="docs.show({'doc': 'landing-page'})" href="https://readme.readme.io/v2.0/docs/landing-page" ui-sref-alt="" class="text-overflow">Landing Page</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf476f')}">             <a ui-sref="docs.show({'doc': 'theme-editor'})" href="https://readme.readme.io/v2.0/docs/theme-editor" ui-sref-alt="" class="text-overflow">Theme Editor</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4770')}">             <a ui-sref="docs.show({'doc': 'logo'})" href="https://readme.readme.io/v2.0/docs/logo" ui-sref-alt="" class="text-overflow">Logo Settings</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4771')}">             <a ui-sref="docs.show({'doc': 'navigation'})" href="https://readme.readme.io/v2.0/docs/navigation" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Site Navigation</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'disabling-sections-in-dropdown-menu'})" href="https://readme.readme.io/v2.0/docs/disabling-sections-in-dropdown-menu" class="text-overflow subpage">Disabling Sections in Dropdown Menu</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4772')}">             <a ui-sref="docs.show({'doc': 'footer'})" href="https://readme.readme.io/v2.0/docs/footer" ui-sref-alt="" class="text-overflow">Site Footer</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf476e')}">             <a ui-sref="docs.show({'doc': 'adding-custom-javascriptcss'})" href="https://readme.readme.io/v2.0/docs/adding-custom-javascriptcss" ui-sref-alt="" class="text-overflow">Custom JavaScript and CSS</a><ul class="subpages"></ul></li></ul><h3>Documentation</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4781')}">             <a ui-sref="docs.show({'doc': 'markdown-options'})" href="https://readme.readme.io/v2.0/docs/markdown-options" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>ReadMe's Markdown</a><ul class="subpages"><li><a href="https://help.github.com/articles/markdown-basics/" data-sidebar="markdown-basics" target="_self" class="subpage sidebar-link"><span>Markdown Basics</span><div class="fa fa-external-link-square external"></div></a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('573ec155fc17e00e0096f448')}">             <a ui-sref="docs.show({'doc': 'widgets'})" href="https://readme.readme.io/v2.0/docs/widgets" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Widgets</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'code-samples'})" href="https://readme.readme.io/v2.0/docs/code-samples" class="text-overflow subpage">Code Samples</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('573ec241b23a42170080f358')}">             <a ui-sref="docs.show({'doc': 'managing-pages'})" href="https://readme.readme.io/v2.0/docs/managing-pages" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Managing Pages</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'linking-to-pages'})" href="https://readme.readme.io/v2.0/docs/linking-to-pages" class="text-overflow subpage">Linking to Pages</a></li><li><a ui-sref="docs.show({'doc': 'raw-editor'})" href="https://readme.readme.io/v2.0/docs/raw-editor" class="text-overflow subpage">Raw editor</a></li><li><a ui-sref="docs.show({'doc': 'three-column-format'})" href="https://readme.readme.io/v2.0/docs/three-column-format" class="text-overflow subpage">Adding Content to Third Column</a></li><li><a ui-sref="docs.show({'doc': 'copying-widget-content'})" href="https://readme.readme.io/v2.0/docs/copying-widget-content" class="text-overflow subpage">Copying Widget Content</a></li><li><a ui-sref="docs.show({'doc': 'page-history'})" href="https://readme.readme.io/v2.0/docs/page-history" class="text-overflow subpage">Page History</a></li><li><a ui-sref="docs.show({'doc': 'reordering-pages'})" href="https://readme.readme.io/v2.0/docs/reordering-pages" class="text-overflow subpage">Reordering Pages</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('58b9e38b58ca760f0078c205')}">             <a ui-sref="docs.show({'doc': 'swagger-1'})" href="https://readme.readme.io/v2.0/docs/swagger-1" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>Swagger/OpenAPI Import</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'swagger-specification'})" href="https://readme.readme.io/v2.0/docs/swagger-specification" class="text-overflow subpage">Swagger Specification</a></li><li><a ui-sref="docs.show({'doc': 'swagger-categories-pages-subpages'})" href="https://readme.readme.io/v2.0/docs/swagger-categories-pages-subpages" class="text-overflow subpage">Categories, Pages and Subpages</a></li><li><a ui-sref="docs.show({'doc': 'swagger-resyncing'})" href="https://readme.readme.io/v2.0/docs/swagger-resyncing" class="text-overflow subpage">Resyncing Your Swagger File</a></li><li><a ui-sref="docs.show({'doc': 'swagger-extensions'})" href="https://readme.readme.io/v2.0/docs/swagger-extensions" class="text-overflow subpage">Swagger Extensions</a></li><li><a ui-sref="docs.show({'doc': 'supported-features-faqs'})" href="https://readme.readme.io/v2.0/docs/supported-features-faqs" class="text-overflow subpage">Supported Features/FAQs</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('58ba06bcb7ce580f0032dd0c')}">             <a ui-sref="docs.show({'doc': 'manual-api-settings'})" href="https://readme.readme.io/v2.0/docs/manual-api-settings" ui-sref-alt="" class="text-overflow"><span class="fa fa-chevron-right"></span>API Settings</a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'additional-api-settings'})" href="https://readme.readme.io/v2.0/docs/additional-api-settings" class="text-overflow subpage">API Setup</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4761')}">             <a ui-sref="docs.show({'doc': 'versions'})" href="https://readme.readme.io/v2.0/docs/versions" ui-sref-alt="" class="text-overflow">Versions</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4769')}">             <a ui-sref="docs.show({'doc': 'suggested-edits'})" href="https://readme.readme.io/v2.0/docs/suggested-edits" ui-sref-alt="" class="text-overflow">Suggested Edits</a><ul class="subpages"></ul></li></ul><h3>Custom Pages</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4760')}">             <a ui-sref="docs.show({'doc': 'whats-a-custom-page'})" href="https://readme.readme.io/v2.0/docs/whats-a-custom-page" ui-sref-alt="" class="text-overflow">What's a Custom Page?</a><ul class="subpages"></ul></li></ul><h3>Blog Posts</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf477f')}">             <a ui-sref="docs.show({'doc': 'how-to-post-a-blog-post'})" href="https://readme.readme.io/v2.0/docs/how-to-post-a-blog-post" ui-sref-alt="" class="text-overflow">How to Post a Blog Post</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4780')}">             <a ui-sref="docs.show({'doc': 'blog-post-faq'})" href="https://readme.readme.io/v2.0/docs/blog-post-faq" ui-sref-alt="" class="text-overflow">Editing Blog Metadata</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('58cadc24f3f8090f0042aa54')}">             <a ui-sref="docs.show({'doc': 'rss'})" href="https://readme.readme.io/v2.0/docs/rss" ui-sref-alt="" class="text-overflow">RSS</a><ul class="subpages"></ul></li></ul><h3>Support Forum</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf477d')}">             <a ui-sref="docs.show({'doc': 'submit-a-question'})" href="https://readme.readme.io/v2.0/docs/submit-a-question" ui-sref-alt="" class="text-overflow">Submit a Question</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf477e')}">             <a ui-sref="docs.show({'doc': 'support-forum-for-admins'})" href="https://readme.readme.io/v2.0/docs/support-forum-for-admins" ui-sref-alt="" class="text-overflow">Support Forum for Admins</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('586d8155a15e310f00cc5acd')}">             <a ui-sref="docs.show({'doc': 'faq-1'})" href="https://readme.readme.io/v2.0/docs/faq-1" ui-sref-alt="" class="text-overflow">FAQ</a><ul class="subpages"></ul></li></ul><h3>Other</h3><ul><li ng-class="{'subnav-expanded' : isActive('5730e2e9053a062b00cf4764')}">             <a ui-sref="docs.show({'doc': 'faq'})" href="https://readme.readme.io/v2.0/docs/faq" ui-sref-alt="" class="text-overflow">Miscellaneous Questions</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5849f26eae30db1b00d660f4')}">             <a ui-sref="docs.show({'doc': 'top-feature-requests'})" href="https://readme.readme.io/v2.0/docs/top-feature-requests" ui-sref-alt="" class="text-overflow">Top Feature Requests</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('59371164d5e183000f565371')}">             <a ui-sref="docs.show({'doc': 'reference-faqs'})" href="https://readme.readme.io/v2.0/docs/reference-faqs" ui-sref-alt="" class="text-overflow">Reference FAQs</a><ul class="subpages"></ul></li></ul></div><div ng-show="state.current().root == 'discuss'" class="ng-hide"><!--a.btn.btn-primary.btn-full.btn-lg(href="" ui-sref="discuss.create") Ask A Question--><h3>Support</h3></div><div ng-show="state.current().root == 'reference' || state.current().root == 'preview'" class="ng-hide"><div class="disabled-warning"><i class="icon icon-notification"></i> Only admins can see this<a href="http://dash.readme.io/project/readme/v2.0/dashboard" target="_blank">Enable it for everyone <i class="fa fa-chevron-right"></i></a></div><div ng-show="true || state.current().params.category === &quot;test&quot;" class="hub-sidebar-category active"><h3>test</h3><ul><li ng-class="{'subnav-expanded' : isActive('58056abd542ed60f00bb408a')}" class="hub-sidebar-page"><a du-smooth-scroll="" duration="0" du-scrollspy="asdasd" href="#asdasd" target="_self" class="text-overflow"><span class="pg-type type-put">put</span>aSDasd</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('5807d7abf9ae302300cfd745')}" class="hub-sidebar-page"><a du-smooth-scroll="" duration="0" du-scrollspy="something-else" href="#something-else" target="_self" class="text-overflow"><span class="pg-type type-post">post</span>something else</a><ul class="subpages"></ul></li><li ng-class="{'subnav-expanded' : isActive('599c6c0d60a3670010d02206')}" class="hub-sidebar-page"><a du-smooth-scroll="" duration="0" du-scrollspy="sdfsdf" href="#sdfsdf" target="_self" class="text-overflow"><span class="pg-type type-get">get</span>sdfsdf</a><ul class="subpages"></ul></li></ul></div><div ng-show="true || state.current().params.category === &quot;api-endpoints-1&quot;" class="hub-sidebar-category"><h3>Swagger Petstore</h3><ul><li ng-class="{'subnav-expanded' : isActive('58bdec10455ca125001d9506')}" class="hub-sidebar-page"><a du-smooth-scroll="" duration="0" du-scrollspy="pet" href="#pet" target="_self" class="text-overflow"><span class="fa fa-chevron-right"></span>pet</a><ul class="subpages"><li><a du-smooth-scroll="" duration="0" du-scrollspy="addpet" href="#addpet" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>Add a new pet to the store</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="updatepet" href="#updatepet" class="text-overflow subpage"><span title="put" class="pg-type type-put">put</span>Update an existing pet</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="findpetsbystatus" href="#findpetsbystatus" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Finds Pets by status</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="findpetsbytags" href="#findpetsbytags" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Finds Pets by tags</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="getpetbyid" href="#getpetbyid" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Find pet by ID</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="updatepetwithform" href="#updatepetwithform" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>Updates a pet in the store with form data</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="deletepet" href="#deletepet" class="text-overflow subpage"><span title="delete" class="pg-type type-delete">delete</span>Deletes a pet</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="uploadfile" href="#uploadfile" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>uploads an image</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('58bdec10455ca125001d9507')}" class="hub-sidebar-page"><a du-smooth-scroll="" duration="0" du-scrollspy="store" href="#store" target="_self" class="text-overflow"><span class="fa fa-chevron-right"></span>store</a><ul class="subpages"><li><a du-smooth-scroll="" duration="0" du-scrollspy="getinventory" href="#getinventory" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Returns pet inventories by status</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="placeorder" href="#placeorder" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>Place an order for a pet</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="getorderbyid" href="#getorderbyid" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Find purchase order by ID</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="deleteorder" href="#deleteorder" class="text-overflow subpage"><span title="delete" class="pg-type type-delete">delete</span>Delete purchase order by ID</a></li></ul></li><li ng-class="{'subnav-expanded' : isActive('58bdec10455ca125001d9508')}" class="hub-sidebar-page"><a du-smooth-scroll="" duration="0" du-scrollspy="user" href="#user" target="_self" class="text-overflow"><span class="fa fa-chevron-right"></span>user</a><ul class="subpages"><li><a du-smooth-scroll="" duration="0" du-scrollspy="createuser" href="#createuser" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>Create user</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="createuserswitharrayinput" href="#createuserswitharrayinput" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>Creates list of users with given input array</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="createuserswithlistinput" href="#createuserswithlistinput" class="text-overflow subpage"><span title="post" class="pg-type type-post">post</span>Creates list of users with given input array</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="loginuser" href="#loginuser" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Logs user into the system</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="logoutuser" href="#logoutuser" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Logs out current logged in user session</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="getuserbyname" href="#getuserbyname" class="text-overflow subpage"><span title="get" class="pg-type type-get">get</span>Get user by user name</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="updateuser" href="#updateuser" class="text-overflow subpage"><span title="put" class="pg-type type-put">put</span>Updated user</a></li><li><a du-smooth-scroll="" duration="0" du-scrollspy="deleteuser" href="#deleteuser" class="text-overflow subpage"><span title="delete" class="pg-type type-delete">delete</span>Delete user</a></li></ul></li></ul></div></div><div ng-show="state.current().root == 'reference-edit'" class="ng-hide"></div><div ng-show="state.current().root == 'blog'" class="ng-hide"><h3>Recent Posts</h3><ul><li><a ui-sref="blog.show({'blog': 'release-notes-mar-17'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/release-notes-mar-17">Release Notes, Mar 17</a></li><li><a ui-sref="blog.show({'blog': 'release-notes-feb-24'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/release-notes-feb-24">Release Notes, Feb 24</a></li><li><a ui-sref="blog.show({'blog': 'release-notes-feb-17'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/release-notes-feb-17">Release Notes, Feb 17</a></li><li><a ui-sref="blog.show({'blog': 'release-notes-feb-10'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/release-notes-feb-10">Release Notes, Feb 10</a></li><li><a ui-sref="blog.show({'blog': 'release-notes-jan-27'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/release-notes-jan-27">Release Notes, Jan 27</a></li></ul><h3>Archive</h3><ul><li><a ui-sref="blog.archive({'year': '2017', 'month': 'March'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/2017/March">March 2017 (1)</a></li><li><a ui-sref="blog.archive({'year': '2017', 'month': 'February'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/2017/February">February 2017 (3)</a></li><li><a ui-sref="blog.archive({'year': '2017', 'month': 'January'})" class="text-overflow" href="https://readme.readme.io/v2.0/blog/2017/January">January 2017 (3)</a></li></ul></div></div></div><div class="nano-pane"><div class="nano-slider" style="height: 392px; transform: translate(0px, 0px);"></div></div></div></div></nav></div><section id="hub-content"><div state-container="" ng-class="{loading: contentLoading}" class="hub-content-container" data-state-container="true"><div class="compiled ng-scope"><meta name="meta:slug" content="best-practices"><meta name="meta:type" content="docs"><meta name="meta:parent"><meta name="meta:title" content="Best practices"><meta name="meta:description" content="This article will go over some of the best practices for building and maintaining your documentation. In the end, it will be up to you how you want to tailor your documentation specifically to your API/Product!  #Landing Page   A well designed landing page will be a good starting place for your user..."><meta name="meta:_id" content="5995dc36ddbd55000f4ffaa6"><meta name="meta:hidden"><!-- ngIf: !suggestedEdits.isEnabled --><div ng-if="!suggestedEdits.isEnabled" class="ng-scope"><header id="content-head"><div class="row clearfix"><div class="col-xs-9"><h1>Best practices</h1><div class="excerpt"></div></div><div class="col-xs-3"><a ng-click="suggestedEdits.enable()" href="" class="suggestEdits"><i class="icon icon-register"></i>Suggest Edits</a></div></div></header><div id="content-container" scroll-spy="" class="grid-container-fluid ng-scope"><section ng-class="{&quot;grid-75&quot;: false != true &amp;&amp; ss.toc.length , &quot;grid-100&quot;: false != false || !ss.toc.length}" class="content-body grid-75">
+<!-- Gah, you have to manually restart the app if you change this!-->
+<div class="magic-block-textarea"><p>This article will go over some of 
+the best practices for building and maintaining your documentation. In 
+the end, it will be up to you how you want to tailor your documentation 
+specifically to your API/Product!</p>
+<h1 class="header-scroll"><div class="anchor waypoint" id="section-landing-page"></div>Landing Page<a class="fa fa-anchor" href="#section-landing-page"></a></h1>
+<p>A well designed landing page will be a good starting place for your 
+users to navigate to where they need in a full developer hub. This is 
+probably the page you can customize the most.</p>
+<p>If all you use is the documentation feature though, you can just direct your users to that on the first page in your <a href="https://readme.readme.io/docs/navigation#section-advanced" target="_self">site navigation</a>. </p>
+<h1 class="header-scroll"><div class="anchor waypoint" id="section-documentation"></div>Documentation<a class="fa fa-anchor" href="#section-documentation"></a></h1>
+<p>Generally you want to have a guides section to accompany your 
+reference section. Keeping this separate will allow your user to easily 
+interpret your API or product in the documentation section. The 
+reference section should be kept minimal to just the low level 
+parameters and examples so that your readers can quickly refer to it.</p>
+<h2 class="header-scroll"><div class="anchor waypoint" id="section-guides"></div>Guides<a class="fa fa-anchor" href="#section-guides"></a></h2>
+<p>Use this section to get your user primed to consume your product or 
+API. A getting started section would be a good place to start. Make sure
+ your user knows how to access your API and can learn about what your 
+API/product does. This would be a great place to provide instructions 
+for authentication. </p>
+<p>Table of contents are included in your documentation as well, but you
+ might want to turn it on only if you have long documentation pages.</p>
+<h2 class="header-scroll"><div class="anchor waypoint" id="section-reference"></div>Reference<a class="fa fa-anchor" href="#section-reference"></a></h2>
+<p>This section is where you will list all your endpoints, the 
+parameters, and any examples you want to provide. This section is 
+designed with a single page architecture, so keep it limited to API 
+reference material. You should not be adding many images or complex 
+widgets to this, otherwise it will increase load times significantly. </p>
+<p>Generally you want your API reference to be as simple as possible, so
+ that your users can quickly access the information they need. Leave any
+ long instructions or tutorials to the guide section. Example code will 
+be auto-generated for you if you do not have any, but feel free to add 
+your own. It's good to have examples that your reader can just copy and 
+paste! Lastly, make sure you have your API setup in reference settings 
+and turn on the API explorer to allow your users to try your API right 
+in the docs.</p>
+<h2 class="header-scroll"><div class="anchor waypoint" id="section-openapi-swagger"></div>OpenAPI/Swagger<a class="fa fa-anchor" href="#section-openapi-swagger"></a></h2>
+<p>If you are using OpenAPI, just simply import your file and you're 
+good to go! Try to limit the amount of circular references and separate 
+out APIs if your file is extremely large. Each swagger file will import 
+as it's own category. You can read more extensively about our 
+integration here: <a href="https://readme.readme.io/v2.0/docs/swagger-1" ui-sref="docs.show({'doc': 'swagger-1'})" class="doc-link" data-sidebar="swagger-1">Swagger/OpenAPI Import</a>.</p>
+<h1 class="header-scroll"><div class="anchor waypoint" id="section-workflow"></div>Workflow<a class="fa fa-anchor" href="#section-workflow"></a></h1>
+<p>Anytime you make an edit, it becomes live right away. There is a general workflow that is recommended editing with ReadMe.</p>
+<p>First when creating a new document, you should create it as a hidden 
+page until you are ready to publish it. Once it is live any admin user 
+can go in and edit the documentation to have the change propagated right
+ away. If an edit is made by mistake, no worries! Click on the settings 
+icon to revert the page back to a recent version.</p>
+<p>Some other features you can use to switch up your workflow include 
+versioning for a staging environment or creating a separate project 
+specifically as a sandbox.</p>
+<h1 class="header-scroll"><div class="anchor waypoint" id="section-appearance"></div>Appearance<a class="fa fa-anchor" href="#section-appearance"></a></h1>
+<p>ReadMe has been built to make creating beautiful documentation easy, 
+so we have a few themes to choose from. You'll notice that the color 
+scheme will automatically change based off your logo so you can focus on
+ generating great content right away.</p>
+<h2 class="header-scroll"><div class="anchor waypoint" id="section-custom-css"></div>Custom CSS<a class="fa fa-anchor" href="#section-custom-css"></a></h2>
+<p>If you have more specific requirements for how your docs look, you 
+can add your own custom CSS edits here. However we generally recommend 
+not making any heavy styling changes, since it could affect our core 
+CSS, which can be updated at anytime. You should try to stick to font 
+changes and other small styling changes.</p>
+<h1 class="header-scroll"><div class="anchor waypoint" id="section-support-forums"></div>Support forums<a class="fa fa-anchor" href="#section-support-forums"></a></h1>
+<p>This feature is generally used in two ways. The most common way to 
+use it, is as a community discussion forums so that your users have a 
+central place to ask each other questions. Think of it as stack overflow
+ for your API! You can also use it as a simple support system, where 
+your users can ask you questions. If you are looking for a more robust 
+support system though, you should use something else like Zendesk or 
+Intercom. We have <a href="https://readme.readme.io/v2.0/docs/third-party-integrations" ui-sref="docs.show({'doc': 'third-party-integrations'})" class="doc-link" data-sidebar="third-party-integrations">third-party integrations</a> for these products.</p>
+
+</div></section><section ng-show="ss.toc.length" class="content-toc grid-25"><!-- ngIf: stickyTOC --><div id="sticky1-sticky-wrapper" class="sticky-wrapper"><div sticky="66" ng-if="stickyTOC" class="sticky-toc ng-scope" id="sticky1" style="width: 192px;"><nav><div class=""><ul><li ng-show="ss.toc.length"><a href="" ng-click="scrollTo()" class="tocHeader"><i class="icon icon-text-align-left"></i>Table of Contents</a></li><!-- ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Landing Page</a><!-- ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Documentation</a><!-- ngIf: node.children.length --><ul ng-if="node.children.length" class="ng-scope"><!-- ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Guides</a></li><!-- end ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Reference</a></li><!-- end ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">OpenAPI/Swagger</a></li><!-- end ngRepeat: node in node.children --></ul><!-- end ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Workflow</a><!-- ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Appearance</a><!-- ngIf: node.children.length --><ul ng-if="node.children.length" class="ng-scope"><!-- ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Custom CSS</a></li><!-- end ngRepeat: node in node.children --></ul><!-- end ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"> <a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Support forums</a><!-- ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --></ul></div></nav></div></div><!-- end ngIf: stickyTOC --><!-- ngIf: !stickyTOC --></section></div></div><!-- end ngIf: !suggestedEdits.isEnabled --><!-- ngIf: suggestedEdits.isEnabled --></div></div></section></div></div><!-- Logo--><footer><div class="hub-container"><div id="readmeLogo"><a href="https://readme.io/?ref_src=hub&amp;project=readme" class="icon icon-readme"></a></div></div></footer><script>var is_hub = true;
+var is_hub2 = true;
+var is_hub_edit = true;
+</script><script src="setting-up-plain_files/bundle-hub2.js"></script><!-- Google Analytics--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-52479696-1', 'auto');
+ga('send', 'pageview');
+
+$(window).on('pageLoad', function(e, state){
+  ga('send', 'pageview', window.location.pathname);
+});
+</script><script>ga('create', 'UA-67363401-1', 'auto', {'name': 'custom'});
+ga('custom.send', 'pageview');
+$(window).on('pageLoad', function(e, state){
+  ga('custom.send', 'pageview', window.location.pathname);
+});
+
+</script><div id="nspopover-1" class="ns-popover-dropdown-theme ns-popover-bottom-placement ns-popover-right-align ng-scope" style="position: absolute; display: none;"><div id="hub-user-dropdown" class="ns-popover-tooltip"><div class="ns-triangle"></div><div class="triangle"></div><ul><li ng-show="user.isAdmin" class="ng-hide"><a href="https://dash.readme.io/project/readme/v2.0/dashboard"> <i class="fa fa-lock"></i>Admin Panel</a></li><li><a ng-href="/logout?redirect_uri=v2.0/docs/best-practices" target="_self" href="https://readme.readme.io/logout?redirect_uri=v2.0/docs/best-practices"> <i class="fa fa-power-off"></i>Log out</a></li></ul></div></div></body></html>
