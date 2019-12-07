@@ -106,5 +106,5 @@ spec:
       image: "devops4me/wiki"
       env:
       - name: WIKI_CONTENT_REPO_URL
-        value: "https://github.com/apolloakora/devopswiki.co.uk"
+        value: "https://github.com/apolloakora/devops-wiki"
 ```
