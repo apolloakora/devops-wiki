@@ -1,7 +1,7 @@
 
 # The Devops Wiki | [devopswiki.co.uk](https://www.devopswiki.co.uk)
 
-This repository holds the content of the devops wiki which is served via the **[gollum devops4me/wiki docker container](https://hub.docker.com/repository/docker/devops4me/wiki/general)** in *dockerhub**.
+This repository holds the content of the devops wiki which is served via the **[gollum devops4me/wiki docker container](https://hub.docker.com/r/devops4me/wiki)** in *dockerhub**.
 
 ## Peripheral Wiki Files
 
