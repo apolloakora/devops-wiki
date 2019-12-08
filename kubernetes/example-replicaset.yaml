@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: rs.wiki
+    labels:
+        rs-type: wiki
+        tier: web
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            pod-type: wiki
+    template:
+        metadata:
+            labels:
+                pod-type: wiki
+                tier: frontend
+        spec:
+            containers:
+            -   name: vmwiki
+                image: "devops4me/wiki"
+                env:
+                -   name: WIKI_CONTENT_REPO_URL
+                    value: "https://github.com/apolloakora/devops-wiki"
+                ports:
+                -   containerPort: 4567

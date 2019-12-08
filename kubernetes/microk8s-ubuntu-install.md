@@ -70,6 +70,24 @@ kubectl -n kube-system describe secret $TOKEN_NAME
 ```
 
 
+## Adding a Node to the Microk8s Cluster
+
+**Kubernetes is no fun with just one node!** Ask the first node for the token (and command) that other nodes should use to join.
+
+```
+microk8s.add-node
+kubectl get nodes
+```
+
+The reply should be something like this.
+
+```
+Join node with: microk8s.join 192.168.0.57:25000/cTrQpOfEhNhfbhbnRmiRVZoimVDEveXZ
+```
+
+On the second node simply issue the aforementioned command and the next time you do **`kubectl get nodes`** verifies that your new node has joined.
+
+
 ## Run nginx from kubectl command line
 
 ```
