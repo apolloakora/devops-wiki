@@ -17,6 +17,34 @@ Security is considerably enhanced when you employ the reverse proxy pattern. Sep
 - nginx access control lists can block requests from blacklisted clients
 - mail that is intrinsically toxic can be safely ringfenced
 
+
+---
+
+
+## how to run nginx inside a docker container
+
+```
+docker run -it --name vm.nginx -p 80:80 nginx
+```
+
+Now visit http://localhost and the nginx welcome page should show.
+
+
+---
+
+
+## how to add HTML, PDFs, Images to nginx
+
+The default content directory is **`/usr/share/nginx/html`** in the nginx docker image.
+
+To add custom content to an nginx docker container you can
+
+- **either** use Dockerfile COPY (or ADD) to move it into the image
+- **or** use **`docker cp`** to move it in whilst the container is running
+
+The primary nginx configuration file is **`/etc/nginx/nginx.conf`**.
+
+
 <!-- facts
 authority = web server, reverse proxy, nginx, 443, port 80
 -->

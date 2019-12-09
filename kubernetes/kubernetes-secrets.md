@@ -1,7 +1,19 @@
 
 # Kubernetes Secrets | kubectl
 
-[[Kubernetes Secrets Official Documentation|https://kubernetes.io/docs/concepts/configuration/secret/]]
+
+## kubernetes secrets | describe the secrets
+
+```
+kubectl -n kube-system get secret | grep default-token | cut -d " " -f1
+TOKEN_NAME=$(kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+echo $TOKEN_NAME
+kubectl -n kube-system describe secret $TOKEN_NAME
+```
+
+
+---
+
 
 ## Kubernetes Secrets | List all secrets
 
@@ -44,3 +56,8 @@ This is how to set or update a Kubernetes secret.
 echo -n 'secret123' | base64      # Convert the secret to a base64 format
 ```
 
+## Did You Know?
+
+Did you know that
+
+- [[Kubernetes Secrets Official Documentation|https://kubernetes.io/docs/concepts/configuration/secret/]]

@@ -1,20 +1,25 @@
 
-# Install Full Kubernetes on Ubuntu | microk8s
+# microk8s | How to Install Kubernetes on Ubuntu
 
 Installing the Full Kubernetes system on Ubuntu using snap is fast and simple. You can tie up a number of laptops or PCs by installing microk8s and then adding (and subsequently) removing them to form a powerful n-node cluster.
 
+## Step 1 | Install Kubernetes using Snap
+
 ```
+sudo apt-get update && sudo apt-get --assume-yes upgrade
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s $USER
 # Now logout and login again
 microk8s.status
 ```
 
-### [microk8s userguide](https://microk8s.io/docs/)
+You **avoid using sudo** by adding your user to the microk8s group. For this to take effect you must **completely logout** (not just grab a new shell) and login again.
 
-After putting the user in the microk8s group you need to completely logout (not just grab a new shell) and login again. It is worth it to avoid continually having to use the sudo prefix.
 
-## Alias the microk8s kubectl command
+---
+
+
+## Step 2 | Alias the microk8s kubectl command
 
 If kubectl is already installed on the system then you'll need to prefix commands for microk8s as below.
 
@@ -37,7 +42,11 @@ You can subsequently remove the alias if need be.
 sudo snap unalias kubectl
 ```
 
-## Enable Dns and Kibana Dashboard Add-ons
+
+---
+
+
+## Step 3 | Enable Dns and Kibana Dashboard Add-ons
 
 Dns and dashboard are core services and must always be enabled. Despite the alias you must use sudo to do this.
 
@@ -48,7 +57,11 @@ microk8s.status
 
 The status command assures as that microk8s is running and the dns and dashboard add-ons have been enabled.
 
-## Access the Grafana Dashboard
+
+---
+
+
+## Step 4 | Access the Grafana Dashboard
 
 The first command finds the URL of the Grafana dashboard. The microk8s.config command tells us the username password to use to access the dashboard.
 
@@ -60,19 +73,18 @@ microk8s.config | grep -E "(username|password):"
 Now go to the grafana dashboard url and use the username password provided by the **`microk8s.config`** command.
 
 
-## Finding out tokens
-
-```
-kubectl -n kube-system get secret | grep default-token | cut -d " " -f1
-TOKEN_NAME=$(kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
-echo $TOKEN_NAME
-kubectl -n kube-system describe secret $TOKEN_NAME
-```
+---
 
 
-## Adding a Node to the Microk8s Cluster
+## Step 5 | Add a Node to the (microk8s) Kubernetes Cluster
 
-**Kubernetes is no fun with just one node!** Ask the first node for the token (and command) that other nodes should use to join.
+**Kubernetes is no fun with just one node!**. Also **microk8s is the full kubernetes software** unlike _miniqube_ which rewrites and removes many core Kubernetes elements.
+
+<blockquote>
+To save money (paying for cloud machines) we use Kubernetes to run our Continuous Integration pipeline. Every laptop participates in the cluster and no laptop is important. Switch any off and the cluster elects new leaders for the control plane and is happy for worker nodes to leave or join the cluster.
+</blockquote>
+
+The simple way to add a node is to ask the first node for the token (and command) for joining.
 
 ```
 microk8s.add-node
@@ -85,44 +97,26 @@ The reply should be something like this.
 Join node with: microk8s.join 192.168.0.57:25000/cTrQpOfEhNhfbhbnRmiRVZoimVDEveXZ
 ```
 
-On the second node simply issue the aforementioned command and the next time you do **`kubectl get nodes`** verifies that your new node has joined.
-
-
-## Run nginx from kubectl command line
+To join, simply install Kubernetes and issue the aforementioned command taking care to slot in the correct **ip address**, **port** and **cluster token**.
 
 ```
-kubectl run nginx --image nginx
-kubectl expose deployment.apps/nginx --port 80
-kubectl get service
-kubectl describe svc/nginx
-kubectl proxy
+sudo apt-get update && sudo apt-get --assume-yes upgrade
+sudo snap install microk8s --classic
+microk8s.join <<master-ip-address>:25000/<<cluster-token>>
 ```
 
-The describe command has an **`Endpoints`** field. Pump this into your browser and the nginx welcome page should show up.
+Now verify your new node has joined by issuing **`kubectl get nodes`** from any master.
 
 
-## Run Wiki from a Deployment Descriptor
 
-You can run simple images like nginx from the command line but most of the time you use a deployment descriptor in the default yaml format.
-
-
-```
-kubectl apply -f example-deployment.yaml
-```
+---
 
 
-``` yaml
-apiVersion: v1
-kind: Pod
-metadata:
-    name: devops-wiki
-    labels:
-        purpose: host-devops-wiki
-spec:
-    containers:
-    - name: vmwiki
-      image: "devops4me/wiki"
-      env:
-      - name: WIKI_CONTENT_REPO_URL
-        value: "https://github.com/apolloakora/devops-wiki"
-```
+## Did You Know?
+
+Did you know that
+
+- the **[kubernetes secrets knowledge base is here](kubernetes/kubernetes-secrets)**
+- the full **[microk8s userguide is here](https://microk8s.io/docs/)**
+
+
