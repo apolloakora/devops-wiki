@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pipeline
+spec:
+  selector:
+    matchLabels:
+      habitat: pipeline
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        habitat: pipeline
+    spec:
+      containers:
+      - name: vm.jenkins
+        image: devops4me/jenkins-2.0
+        ports:
+        - containerPort: 8080
