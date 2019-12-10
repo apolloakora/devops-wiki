@@ -2,7 +2,21 @@
 ![eco-platform logo](media/eco-platform.co.uk-logo.png "Kubernetes Clusters, Terraform, Gollum Wiki for DevOps Engineers")
 
 
-# Use Docker Compose to Create a Continuous Integration Pipeline
+# [Use Kubernetes to run Jenkins Jobs](/pipeline/kubernetes/)
+
+The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
+
+- the Jenkins master and UI **never gets overburdened** hence rarely fails
+- you can run a complex Jenkins workload locally against branches
+- a different team can manage the Kubernetes stack implementing **platform as a service**
+- you can use multi-tenancy to run pipelines and app environments in the same cluster
+- you can **scale Jenkins horizontally** as well as vertically
+
+#### [Full Article | How to Run Jenkins Builds in Kubernetes](pipeline/kubernetes/)
+
+Begin your Platform as a Service (PaaS) adventure here.
+
+## Use Docker Compose to Create a Continuous Integration Pipeline
 
 #### [The Full Blog is Here](ci/ci)
 
