@@ -13,7 +13,7 @@ spec:
         habitat: pipeline
     spec:
       containers:
-      - name: vm.jenkins
+      - name: vm-jenkins
         image: devops4me/jenkins-2.0
         ports:
         - containerPort: 8080
