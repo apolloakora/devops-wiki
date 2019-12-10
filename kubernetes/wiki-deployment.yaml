@@ -1,20 +1,3 @@
-
-#### [devopswiki.co.uk home page](/)
-
-# Kubernetes
-
-Kubernetes is a container orchestration tool engineered by Google and donated to the Cloud Native Foundation.
-
-#### [microk8s | how to install a kubernetes cluster on Ubuntu](/kubernetes/kubernetes-microk8s)
-
-
-## Example Deployment Descriptor
-
-Use this with this command.
-
-#### **`kubectl create -f wiki-deployment.yaml --record`**
-
-```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -38,5 +21,3 @@ spec:
                     value: "https://github.com/apolloakora/devops-wiki"
                 ports:
                 -   containerPort: 4567
-```
-
