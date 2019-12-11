@@ -40,3 +40,11 @@ spec:
                 -   containerPort: 4567
 ```
 
+
+
+
+## Did You Know
+
+
+- **[Deployments - Kubernetes Official Documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)**
+- **[Run a Stateless App using Deployments](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)**
