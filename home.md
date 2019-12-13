@@ -2,7 +2,15 @@
 ![eco-platform logo](media/eco-platform.co.uk-logo.png "Kubernetes Clusters, Terraform, Gollum Wiki for DevOps Engineers")
 
 
-# [Use Kubernetes to run Jenkins Jobs](/pipeline/kubernetes/)
+# devopswiki.co.uk homepage
+
+
+
+---
+
+
+
+# [Use Kubernetes to run Jenkins Jobs](/jenkins/kubernetes-slaves)
 
 The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 
@@ -12,21 +20,17 @@ The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 - you can use multi-tenancy to run pipelines and app environments in the same cluster
 - you can **scale Jenkins horizontally** as well as vertically
 
-#### [Full Article | How to Run Jenkins Builds in Kubernetes](pipeline/kubernetes/)
+#### [Full Article | How to Run Jenkins Builds in Kubernetes](/jenkins/kubernetes-slaves)
 
-Begin your Platform as a Service (PaaS) adventure here.
 
-## Use Docker Compose to Create a Continuous Integration Pipeline
+
+---
+
+
+
+## [Install a Jenkins/Sonar/Nexus Pipeline with Docker Compose]()
 
 #### [The Full Blog is Here](ci/ci)
-
-Continuous integration pipelines are the heart and soul of a software development project. The pipeline starts with version controlled assets and creates something deployable like a docker image, database evolution files or a Java web archive. Aside from this
-
-- for **developers** they provide **fast early feedback**
-- for **testers** they ensure bugs already found do not reappear
-- for the **customer** they ensure a **quality baseline**
-
-## How to Build a Continuous Integration Pipeline for JAVA and .NET Microservices
 
 These steps will create a continuous integration pipeline with a dockerized **`Jenkins`**, **`SonarQube`**, **`Nexus Repository Manager`**, **`Docker Registry`** and an **`ELK stack`** for collating and visualizing container logs.
 
