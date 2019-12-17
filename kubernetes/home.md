@@ -1,11 +1,13 @@
 
 #### [devopswiki.co.uk home page](/)
 
-# Kubernetes
+# Kubernetes Wiki
 
 Kubernetes is a container orchestration tool engineered by Google and donated to the Cloud Native Foundation.
 
-#### [microk8s | how to install a kubernetes cluster on Ubuntu](/kubernetes/kubernetes-microk8s)
+- **[microk8s | install a kubernetes cluster](/kubernetes/kubernetes-microk8s)**
+- **[microk8s | import a docker image into kubernetes microk8s](/kubernetes/microk8s-image-import)**
+
 
 
 ## Example Deployment Descriptor
@@ -41,10 +43,7 @@ spec:
 ```
 
 
-
-
 ## Did You Know
-
 
 - **[Deployments - Kubernetes Official Documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)**
 - **[Run a Stateless App using Deployments](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)**

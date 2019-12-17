@@ -8,7 +8,7 @@ Installing the Full Kubernetes system on Ubuntu using snap is fast and simple. Y
 ```
 sudo apt-get update && sudo apt-get --assume-yes upgrade
 sudo snap install microk8s --classic
-sudo usermod -a -G microk8s $USER
+sudo usermod -aG microk8s $USER
 # Now logout and login again
 microk8s.status
 ```
@@ -102,6 +102,7 @@ To join, simply install Kubernetes and issue the aforementioned command taking c
 ```
 sudo apt-get update && sudo apt-get --assume-yes upgrade
 sudo snap install microk8s --classic
+sudo usermod -aG microk8s $USER
 microk8s.join <<master-ip-address>:25000/<<cluster-token>>
 ```
 
@@ -113,6 +114,19 @@ Now verify your new node has joined by issuing **`kubectl get nodes`** from any 
 
 
 ## Did You Know?
+
+Did you know these useful microk8s commands.
+
+```
+sudo snap logs microk8s
+sudo microk8s.inspect
+sudo microk8s.status
+sudo microk8s.stop
+sudo microk8s.start
+sudo microk8s.reset
+sudo systemctl restart snap.microk8s.daemon-containerd
+```
+
 
 Did you know that
 
