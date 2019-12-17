@@ -11,7 +11,7 @@ The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 
 ## What you need
 
-Follow the **[How to Setup Microk8s on Ubuntu](kubernetes/kubernetes-microk8s)** to setup a Kubernetes cluster with 2 or 3 commands. If you have another laptop then repeat the setup and then join the node to have a true distributed Kubernetes cluster in your room or on any cloud.
+Follow the **[How to Setup Microk8s on Ubuntu](kubernetes/microk8s-install)** to setup a Kubernetes cluster with 2 or 3 commands. If you have another laptop then repeat the setup and then join the node to have a true distributed Kubernetes cluster in your room or on any cloud.
 
 
 ---

@@ -5,8 +5,13 @@
 
 Kubernetes is a container orchestration tool engineered by Google and donated to the Cloud Native Foundation.
 
-- **[microk8s | install a kubernetes cluster](/kubernetes/kubernetes-microk8s)**
+- **[microk8s | install a kubernetes cluster](/kubernetes/microk8s-install)**
 - **[microk8s | import a docker image into kubernetes microk8s](/kubernetes/microk8s-image-import)**
+- Jenkins Pipeline **[Use Kubernetes to run Jenkins Jobs](/jenkins/kubernetes-slaves)**
+- **[kubernetes secrets user guide](/kubernetes/kubernetes-secrets)**
+- **[kubectl independent install](/kubernetes/kubectl-install)**
+- **[kubectl user guide](/kubernetes/kubectl)**
+- **[Kubernetes Troubleshooting Guide](/kubernetes/troubleshooting)**
 
 
 
