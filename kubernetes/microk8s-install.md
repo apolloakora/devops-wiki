@@ -21,6 +21,8 @@ You **avoid using sudo** by adding your user to the microk8s group. For this to 
 
 ## Step 2 | Alias the microk8s kubectl command
 
+Use either **`microk8s.config`** or **`microk8s.kubectl config view --raw`** to view the yaml-ized kubectl config. What the below kubectl alias commands do is point that config to the **`$HOME/.kube/config`** file.
+
 If kubectl is already installed on the system then you'll need to prefix commands for microk8s as below.
 
 ```
