@@ -19,3 +19,4 @@ Kubernetes is a container orchestration tool engineered by Google and donated to
 - **[Services | Service Discovery | Node Ports | Load Balancers](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services)**
 - **[Deployments - Kubernetes Official Documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)**
 - **[Run a Stateless App using Deployments](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)**
+- **[microk8s docker registry user guide](https://itnext.io/working-with-image-registries-and-containerd-in-kubernetes-63c311b86368)**

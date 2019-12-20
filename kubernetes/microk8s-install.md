@@ -111,6 +111,18 @@ microk8s.join <<master-ip-address>:25000/<<cluster-token>>
 Now verify your new node has joined by issuing **`kubectl get nodes`** from any master.
 
 
+### How to Remove a Microk8s Node
+
+To remove a microk8s node you need to run a **remove-node** command on the cluster leader (control plane) and then a **leave** command on the node.
+
+```
+kubectl get nodes -o wide         # look at node list on control plane
+microk8s.remove-node <node-name>  # run on cluster leader to remove node
+microk8s.leave                    # run on worker node to get it to go
+```
+
+Now the worker node switches to being a master and stops behaving like a worker (slave).
+
 
 ---
 
