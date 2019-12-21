@@ -1,6 +1,5 @@
 
-![eco-platform logo](media/eco-platform.co.uk-logo.png "Kubernetes Clusters, Terraform, Gollum Wiki for DevOps Engineers")
-
+![eco-platform logo](media/devopswiki-logo.png "Kubernetes, Terraform, Docker, Jenkins and Clouds for DevOps Engineers")
 
 # devopswiki.co.uk homepage
 
