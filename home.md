@@ -1,10 +1,5 @@
 
-![eco-platform logo](media/devopswiki-logo.png "Kubernetes, Terraform, Docker, Jenkins and Clouds for DevOps Engineers")
-
-# devopswiki.co.uk homepage
-
-
-## Pipeline Documentation | Jenkins | SonarQube | Nexus
+## Pipelines | Jenkins | SonarQube | Nexus
 
 How do you create an entire **Continous Integration Pipeline** in one step using **[docker compose](/pipeline/using-docker-compose/)**? How do you use **[Kubernetes PaaS to run your Jenkins Build Jobs](/jenkins/kubernetes-slaves)**? How do you setup a **[declarative Jenkinsfile for a JAVA microservice](/pipeline/for-java-microservice/)**? What about a **[.NET microservice](/pipeline/for-dotnet-microservice/)**?
 
