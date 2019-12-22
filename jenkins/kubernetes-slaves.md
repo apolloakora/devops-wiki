@@ -1,7 +1,7 @@
 
 # How to Run Jenkins Build Jobs in Kubernetes
 
-The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
+The benefits of running your **JNLP Jenkins slaves** in Kubernetes are
 
 - the Jenkins master and UI **never gets overburdened** hence rarely fails
 - you can run a complex Jenkins workload locally against branches
@@ -19,7 +19,7 @@ Follow the **[How to Setup Microk8s on Ubuntu](kubernetes/microk8s-install)** to
 
 ## Step 1 | Configure the Jenkins Kubernetes Plugin
 
-The **[Jenkins/Kubernetes plugin](https://plugins.jenkins.io/kubernetes)** is already configured into **[this DockerHub Jenkins docker image](https://hub.docker.com/r/devops4me/jenkins-2.0)**. You can extend it or copy and change the Dockerfile.
+The **[Jenkins/Kubernetes plugin](https://plugins.jenkins.io/kubernetes)** is already configured into **[this DockerHub Jenkins docker image](https://hub.docker.com/r/devops4me/docker-jenkins-cluster)**. You can extend it or copy and change the Dockerfile.
 
 This **[Jenkins Worker Docker Image](https://hub.docker.com/r/jenkinsci/jnlp-slave)** is used as the vanilla template to run jobs. It is _open for extension_ as object orienteers would say.
 
@@ -30,18 +30,16 @@ It pays to perform a manual configuration first and then automate the steps usua
 The manual configuration steps of the Jenkins plugin are to
 
 - enter the Name **`kubernetes`**
-- use **`kubectl cluster-info | grep master`** to uncover the kubernetes url
-- if you get a 27.0.0.1 url you can use the machine's IP address
-- if the jenkins master is itself running within kubernetes you can use an svc cluster local address
+- if Jenkins master is running in the Kubernetes cluster set the **Kubernetes URL** to **`https://kubernetes.default.svc`**
+- if running outside the cluster use **`kubectl cluster-info | grep master`** to uncover the kubernetes url. No need for authentication if using microk8s out of the box. To discover the username/password use **`kubectl config view`**
 - tick the **`Disable https certificate check`** if you haven't setup custom certificates
-- **important** - use the **Test Connection** button to do just that
-- if Jenkins master is in Kubernetes use **`kubectl get pods -o wide`** for the IP and maybe add **`:8080`**
-- also if Jenkins master is a Kubernetes service use **`kubectl get services`** for the (no port) IP address
+- **important** - use the **Test Connection** button to - uhmm - _test the connection_
+- For the **Jenkins URL** use http://jenkins if Jenkins is in the cluster. If not, use an address the slave pods can resolve.
 - setup the pod label with key **`jenkins`** and value **`slave`**
 - setup a **Pod Template** with **Name** and **Labels** set to **`jenkins-slave`** and **Namespace** as **`jenkins`**
 - for **Usage** select **`Use this node as much as possible`**
 - Create a container with **Name** **`jnlp`** and **Docker Image** as **`jenkinsci/jnlp-slave`**
-- Create a volume with both **Host path** and **Mount path** as **`/var/run/docker.sock`**
+- Create a **Host Path Volume** with both **Host path** and **Mount path** as **`/var/run/docker.sock`**
 
 
 
