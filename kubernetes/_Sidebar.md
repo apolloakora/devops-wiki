@@ -7,7 +7,6 @@
 - **[Jenkins and Kubernetes](/jenkins/kubernetes-slaves)**
 - **[kubectl commands](/kubernetes/kubectl-commands)**
 - **[kubernetes secrets](/kubernetes/kubernetes-secrets)**
-- **[kubectl user guide](/kubernetes/kubectl)**
 
 
 #### [devopswiki.co.uk](/)

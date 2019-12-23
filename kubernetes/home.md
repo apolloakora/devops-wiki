@@ -12,7 +12,6 @@ Kubernetes is a container orchestration tool engineered by Google and donated to
 - **[kubectl commands | copy | log | rollout | set-image](/kubernetes/kubectl-commands)**
 - **[kubernetes secrets user guide](/kubernetes/kubernetes-secrets)**
 - **[kubectl independent install](/kubernetes/kubectl-install)**
-- **[kubectl user guide](/kubernetes/kubectl)**
 - **[Kubernetes Troubleshooting Guide](/kubernetes/troubleshooting)**
 
 
