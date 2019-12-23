@@ -5,9 +5,9 @@
 
 - **[microk8s install](/kubernetes/microk8s-install)**
 - **[Jenkins and Kubernetes](/jenkins/kubernetes-slaves)**
-- **[tail all logs](/kubernetes/kubectl-logs)**
+- **[kubectl commands](/kubernetes/kubectl-commands)**
 - **[kubernetes secrets](/kubernetes/kubernetes-secrets)**
 - **[kubectl user guide](/kubernetes/kubectl)**
 
 
-### [devopswiki.co.uk home](/)
+#### [devopswiki.co.uk](/)
