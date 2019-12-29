@@ -8,5 +8,9 @@
 - **[kubectl commands](/kubernetes/kubectl-commands)**
 - **[kubernetes secrets](/kubernetes/kubernetes-secrets)**
 
+### In 5 Minutes
+
+- **[CI/CD on Kubernetes](https://github.com/devops4me/kubernetes-pipeline)**
+- **[Jenkins on Kubernetes](https://github.com/devops4me/docker-jenkins-cluster)**
 
 #### [devopswiki.co.uk](/)

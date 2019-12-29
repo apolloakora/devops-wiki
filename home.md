@@ -17,7 +17,7 @@ How do you create an entire **Continous Integration Pipeline** in one step using
 
 
 
-# [Use Kubernetes to run Jenkins Jobs](/jenkins/kubernetes-slaves)
+## [Use Kubernetes to run Jenkins Jobs](/jenkins/kubernetes-slaves)
 
 The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 
@@ -33,4 +33,9 @@ The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 
 ---
 
+
+## Architecture and System Design Wiki
+
+- **[Azure Architecture Guides](https://docs.microsoft.com/en-us/azure/architecture/)**
+- **[Enterprise Integration Patterns (Messaging)](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)**
 
