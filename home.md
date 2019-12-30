@@ -7,6 +7,7 @@ How do you create an entire **Continous Integration Pipeline** in one step using
 - **[use docker compose to setup Jenkins SonarQube Nexus and a Docker Registry](/pipeline/using-docker-compose/)**
 - **[use simple docker run statements to setup Jenkins SonarQube Nexus and a Docker Registry](/pipeline/using-docker-run/)**
 - **[kubectl commands | copy | log | rollout | set-image](/kubernetes/kubectl-commands)**
+- **[Google Kaniko for Building Docker Images in Kubernetes](kubernetes/kaniko)**
 - **[declarative Jenkinsfile to setup a JAVA microservice pipeline](/pipeline/for-java-microservice/)**
 - **[declarative Jenkinsfile to setup a .NET microservice pipeline](/pipeline/for-dotnet-microservice/)**
 

@@ -4,11 +4,12 @@
 ### kubernetes pages
 
 - **[microk8s install](/kubernetes/microk8s-install)**
-- **[Jenkins and Kubernetes](/jenkins/kubernetes-slaves)**
+- **[jenkins and kubernetes](/jenkins/kubernetes-slaves)**
 - **[kubectl commands](/kubernetes/kubectl-commands)**
+- **[kaniko for kubernetes](/kubernetes/kaniko)**
 - **[kubernetes secrets](/kubernetes/kubernetes-secrets)**
 
-### In 5 Minutes
+### in 5 minutes
 
 - **[CI/CD on Kubernetes](https://github.com/devops4me/kubernetes-pipeline)**
 - **[Jenkins on Kubernetes](https://github.com/devops4me/docker-jenkins-cluster)**
