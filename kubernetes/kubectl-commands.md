@@ -13,6 +13,14 @@ Copying one file or **recursively copying** a file tree to and from a container 
 **kubectl copies** everything in and below the Jenkins home directory to the host kubectl is running on.
 
 
+## force pod deletion
+
+Sometimes pod get stuck in the **`terminating`** state and never actually terminate. You can force their deletion with this command.
+
+```
+kubectl delete pod <pod-name> --grace-period=0 --force --namespace default
+```
+
 
 ## kubectl logs
 
