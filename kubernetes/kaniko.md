@@ -3,8 +3,6 @@
 
 When running Jenkins on a Kubernetes cluster how do we securely build docker images. Building docker images is a common use case during the execution of dockerized pipelines driven by a Jenkinsfile, a JNLP slave sidecar container and a pod template in YAML format.
 
-A big disadvantage of the docker out of docker (using the pod's node) is that random nodes begin to fill up with random docker images. **Repeatability suffers** when say a job running on this node with layer caching behaves differently to it being run on that node.
-
 ![kaniko logo](/media/kaniko-logo-rectangle.png "Google Kaniko for Kubernetes Logo")
 
 ## Kaniko Docker Login Credentials Problem | Kubernetes Secrets
