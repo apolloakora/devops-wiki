@@ -1,0 +1,18 @@
+metadata:
+    labels:
+        pod-type: jenkins-worker
+spec:
+    containers:
+    -   name: jnlp
+        env:
+        -   name: CONTAINER_ENV_VAR
+            value: jnlp
+    -   name: safedeploy
+        image: devops4me/safetty:latest
+        imagePullPolicy: Always
+        command:
+        -   cat
+        tty: true
+        env:
+        -   name: CONTAINER_ENV_VAR
+            value: safettytests

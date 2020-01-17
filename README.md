@@ -3,6 +3,24 @@
 
 This repository holds the content of the devops wiki which is served via the **[gollum devops4me/wiki docker container](https://hub.docker.com/r/devops4me/wiki)** in *dockerhub**.
 
+## Run Wiki Locally
+
+To run this wiki locally you use a simple docker build and run.
+
+```
+git clone https://github.com/apolloakora/devops-wiki
+cd devops-wiki
+docker build --no-cache --rm --tag img.wiki .
+docker run \
+    --detach \
+    --name vm.wiki \
+    --publish 4567:4567 \
+    img.wiki
+docker logs vm.wiki
+```
+
+Now visit **`http://localhost:4567/`** to browse the WiKI locally. Amend things to your liking and then push the docker image to the repository of your choice.
+
 ## Peripheral Wiki Files
 
 All the markdown files are part of the wiki's content and are served up by Gollum. Aside from these the other resources are

@@ -3,20 +3,20 @@ pipeline
     agent none
     stages
     {
-        stage('Build Safe Docker Image')
+        stage('Build Wiki Docker Image')
         {
             agent
             {
                 kubernetes
                 {
                     defaultContainer 'kaniko'
-                    yamlFile 'pod-image-builder.yaml'
+                    yamlFile 'pod-image-kaniko.yaml'
                 }
             }
             steps
             {
                 checkout scm
-                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/safetty:latest --cleanup'
+                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/devopswiki.co.uk:latest --cleanup'
             }
         }
 /*
@@ -37,7 +37,6 @@ pipeline
                 }
             }
         }
-*/
         stage('Cucumber Aruba Tests')
         {
             agent
@@ -54,17 +53,12 @@ pipeline
                     checkout scm
                     sh 'ls -lah'
                     sh 'ls -lah lib'
-
-/*
-                    sh 'chown -R safeci:safeci /home/safeci'
-*/
-
                     sh 'rake install'
                     sh 'export SAFE_TTY_TOKEN=$(safe token) ; cucumber lib'
                 }
             }
         }
-        stage('Release to RubyGems.org')
+        stage('Deploy to devopswiki.co.uk')
         {
             agent
             {
@@ -87,5 +81,7 @@ pipeline
                 }
             }
         }
+*/
+
     }
 }

@@ -1,0 +1,27 @@
+# This kubernetes pod template instantiates a slave (JNLP) sidecar container
+# for Jenkins master slave communications and the Google Kaniko container for
+# building docker images without demanding privileged docker in/out access.
+---
+kind: Pod
+metadata:
+    name: kaniko
+spec:
+    containers:
+    -   name: jnlp
+        image: jenkins/jnlp-slave:latest
+    -   name: kaniko
+        image: gcr.io/kaniko-project/executor:debug
+        imagePullPolicy: Always
+        volumeMounts:
+        -   name: regcredsvolume
+            mountPath: /kaniko/.docker
+        command:
+        -   /busybox/sh
+        -   "-c"
+        args:
+        -   /busybox/cat
+        tty: true
+    volumes:
+        -   name: regcredsvolume
+            secret:
+                secretName: registrycreds
