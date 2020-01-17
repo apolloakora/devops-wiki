@@ -7,12 +7,26 @@ spec:
         env:
         -   name: CONTAINER_ENV_VAR
             value: jnlp
-    -   name: safettytests
-        image: devops4me/safetty:latest
+    -   name: devopswiki
+        image: devops4me/devopswiki.co.uk:latest
         imagePullPolicy: Always
         command:
         -   cat
         tty: true
         env:
         -   name: CONTAINER_ENV_VAR
-            value: safettytests
+            value: devopswiki
+        ports:
+        -   name: gollum-port
+            containerPort: 4567
+    -   name: linkchecker
+        image: devops4me/linkchecker:latest
+        imagePullPolicy: Always
+        command:
+        -   cat
+        tty: true
+        env:
+        -   name: CONTAINER_ENV_VAR
+            value: linkcheck
+        -   name: LINK_CHECKER_URL
+            value: "http://localhost:4567/"

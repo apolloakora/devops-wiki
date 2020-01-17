@@ -19,16 +19,17 @@ pipeline
                 sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/devopswiki.co.uk:latest --cleanup'
             }
         }
-/*
-        stage('Reek Static Code Analysis')
+        stage('Wiki Url Link Checking')
         {
             agent
             {
                 kubernetes
                 {
-                    yamlFile 'pod-image-safetty.yaml'
+                    defaultContainer 'linkchecker'
+                    yamlFile 'pod-image-verify.yaml'
                 }
             }
+/*
             steps
             {
                 container('safettytests')
@@ -36,7 +37,9 @@ pipeline
                     sh 'reek lib || true'
                 }
             }
+*/
         }
+/*
         stage('Cucumber Aruba Tests')
         {
             agent
