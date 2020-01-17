@@ -29,15 +29,11 @@ pipeline
                     yamlFile 'pod-image-verify.yaml'
                 }
             }
-/*
             steps
             {
-                container('safettytests')
-                {
-                    sh 'reek lib || true'
-                }
+                sh 'ls -lah'
+                sh 'pwd'
             }
-*/
         }
 /*
         stage('Cucumber Aruba Tests')
