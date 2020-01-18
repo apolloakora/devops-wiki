@@ -27,6 +27,6 @@ spec:
         tty: true
         env:
         -   name: CONTAINER_ENV_VAR
-            value: linkcheck
+            value: linkchecker
         -   name: LINK_CHECKER_URL
             value: "http://localhost:4567/"

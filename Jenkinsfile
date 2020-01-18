@@ -31,8 +31,7 @@ pipeline
             }
             steps
             {
-                sh 'ls -lah'
-                sh 'pwd'
+                sh 'linkchecker http://localhost:4567/'
             }
         }
 /*
