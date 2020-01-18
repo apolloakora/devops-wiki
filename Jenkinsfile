@@ -33,6 +33,10 @@ pipeline
             {
                 sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
                 sh 'sleep 30'
+/*
+put wget here after installing it in linkchecker container
+call wget twice with and without trailing forward slash
+*/
                 sh 'linkchecker http://localhost:4567/'
             }
         }

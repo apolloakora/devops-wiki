@@ -10,8 +10,8 @@ spec:
     -   name: devopswiki
         image: devops4me/devopswiki.co.uk:latest
         imagePullPolicy: Always
-        command:
-        -   cat
+        command: ["gollum"]
+        args: ["--config=/var/opt/gollum/config.rb"]
         tty: true
         env:
         -   name: CONTAINER_ENV_VAR
