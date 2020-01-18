@@ -31,6 +31,8 @@ pipeline
             }
             steps
             {
+                sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
+                sh 'sleep 30'
                 sh 'linkchecker http://localhost:4567/'
             }
         }
