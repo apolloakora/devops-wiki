@@ -34,7 +34,7 @@ pipeline
                 sh 'wget https://www.devopswiki.co.uk'
                 sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
                 sh 'sleep 30'
-                sh 'wget http://localhost:4567/home'
+                sh 'wget http://127.0.0.1:4567/home'
 /*
                 sh 'wget http://localhost:4567/'
 Maybe there is no CONTAINER PORT 4567 any more but localhost works so
