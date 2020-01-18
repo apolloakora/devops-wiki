@@ -16,9 +16,6 @@ spec:
         env:
         -   name: CONTAINER_ENV_VAR
             value: devopswiki
-        ports:
-        -   name: gollum-port
-            containerPort: 4567
     -   name: linkchecker
         image: devops4me/linkchecker:latest
         imagePullPolicy: Always
@@ -28,5 +25,3 @@ spec:
         env:
         -   name: CONTAINER_ENV_VAR
             value: linkchecker
-        -   name: LINK_CHECKER_URL
-            value: "http://localhost:4567/"
