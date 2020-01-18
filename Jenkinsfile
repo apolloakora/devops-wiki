@@ -31,11 +31,15 @@ pipeline
             }
             steps
             {
+                sh 'wget https://www.devopswiki.co.uk'
                 sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
                 sh 'sleep 30'
+                sh 'wget http://localhost:4567/'
+                sh 'wget http://localhost:4567'
 /*
-put wget here after installing it in linkchecker container
-call wget twice with and without trailing forward slash
+Maybe there is no CONTAINER PORT 4567 any more but localhost works so
+we are just downloading an error - when we learn the filename of this
+download do a cat index.html3 (or whatever) to see what is being pulled down.
 */
                 sh 'linkchecker http://localhost:4567/'
             }
