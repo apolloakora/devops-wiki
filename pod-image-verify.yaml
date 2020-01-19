@@ -12,8 +12,6 @@ spec:
         ports:
         -   containerPort: 4567
         imagePullPolicy: Always
-        command: ["gollum"]
-        args: ["--config=/var/opt/gollum/config.rb"]
         tty: true
         env:
         -   name: CONTAINER_ENV_VAR
