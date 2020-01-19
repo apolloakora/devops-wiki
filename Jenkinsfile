@@ -16,7 +16,7 @@ pipeline
             steps
             {
                 checkout scm
-                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/devopswiki.co.uk:latest --cleanup'
+                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/devopswiki.co.uk:latest --cleanup --build-arg WIKI_CONTENT_URL=https://github.com/apolloakora/devops-wiki.git'
             }
         }
         stage('Wiki Url Link Checking')
@@ -32,15 +32,6 @@ pipeline
             steps
             {
                 sh 'wget http://localhost:4567/'
-                sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
-                sh 'sleep 15'
-/*
-                sh 'wget http://127.0.0.1:4567/home'
-                sh 'wget http://localhost:4567/'
-Maybe there is no CONTAINER PORT 4567 any more but localhost works so
-we are just downloading an error - when we learn the filename of this
-download do a cat index.html3 (or whatever) to see what is being pulled down.
-*/
                 sh 'linkchecker --verbose http://localhost:4567/kubernetes/'
                 sh 'linkchecker --verbose http://localhost:4567/home'
             }

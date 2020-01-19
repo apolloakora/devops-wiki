@@ -1,16 +1,44 @@
 
 # The Devops Wiki | [devopswiki.co.uk](https://www.devopswiki.co.uk)
 
-This repository holds the content of the devops wiki which is served via the **[gollum devops4me/wiki docker container](https://hub.docker.com/r/devops4me/wiki)** in *dockerhub**.
+This repository holds the content of the devops wiki which is served via the **[gollum devops4me/devopswiki.co.uk docker container](https://hub.docker.com/r/devops4me/devopswiki.co.uk)** in *dockerhub**.
 
-## Run Wiki Locally
+## how to run the wiki
 
-To run this wiki locally you use a simple docker build and run.
+This wiki's image lives in Dockerhub so you can simply run it and start browsing.
 
 ```
-git clone https://github.com/apolloakora/devops-wiki
-cd devops-wiki
-docker build --no-cache --rm --tag img.wiki .
+docker run \
+    --detach \
+    --name vm.wiki \
+    --publish 4567:4567 \
+    devops4me/devopswiki.co.uk
+docker logs vm.wiki
+```
+
+Now visit **`http://localhost:4567/`** to browse the WiKI locally.
+
+
+## docker build the wiki | how to
+
+To build **[the Dockerfile](https://github.com/apolloakora/devops-wiki/blob/master/Dockerfile)** you execute the docker build command with a **`--build-arg`** called **`WIKI_CONTENT_URL`** that specifies the git location url of the wiki's content.
+
+```
+docker build       \
+    --no-cache     \
+    --rm           \
+    --build-arg WIKI_CONTENT_URL=https://github.com/apolloakora/devops-wiki.git \
+    --tag img.wiki \
+    .
+```
+
+**Beware there is a period (dot) on the final line of the build command.**
+
+## docker run the locally built wiki
+
+To run the docker image `img.wiki` that we built we use the same docker run command except we change to use the local image.
+
+```
 docker run \
     --detach \
     --name vm.wiki \
