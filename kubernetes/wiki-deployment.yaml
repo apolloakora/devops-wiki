@@ -15,10 +15,7 @@ spec:
         spec:
             containers:
             -   name: vm-wiki
-                image: devops4me/wiki:latest
-                env:
-                -   name: WIKI_CONTENT_REPO_URL
-                    value: "https://github.com/apolloakora/devops-wiki"
+                image: devops4me/devopswiki.co.uk:latest
                 ports:
                 -   containerPort: 4567
 ---

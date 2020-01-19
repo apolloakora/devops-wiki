@@ -9,6 +9,8 @@ spec:
             value: jnlp
     -   name: devopswiki
         image: devops4me/devopswiki.co.uk:latest
+        ports:
+        -   containerPort: 4567
         imagePullPolicy: Always
         command: ["gollum"]
         args: ["--config=/var/opt/gollum/config.rb"]
