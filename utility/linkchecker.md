@@ -60,6 +60,13 @@ maxrequestspersecond=30   ; max number of requests per second
 allowedschemes=http,https ; allowed URL schemes
 ```
 
+**Note that command line settings will always override those provided inside the linkcheckerrc configuration file.**
+
+### Watch Successful Checks
+
+Add **`--verbose`** to the command line to see the successful checks.
+
+---
 
 ## local development | linkchecker
 

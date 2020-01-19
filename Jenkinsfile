@@ -33,7 +33,7 @@ pipeline
             {
                 sh 'wget http://localhost:4567/'
                 sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
-                sh 'sleep 30'
+                sh 'sleep 15'
 /*
                 sh 'wget http://127.0.0.1:4567/home'
                 sh 'wget http://localhost:4567/'
@@ -41,8 +41,8 @@ Maybe there is no CONTAINER PORT 4567 any more but localhost works so
 we are just downloading an error - when we learn the filename of this
 download do a cat index.html3 (or whatever) to see what is being pulled down.
 */
-                sh 'linkchecker http://localhost:4567/kubernetes/'
-                sh 'linkchecker http://localhost:4567/home'
+                sh 'linkchecker --verbose http://localhost:4567/kubernetes/'
+                sh 'linkchecker --verbose http://localhost:4567/home'
             }
         }
 /*
