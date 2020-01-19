@@ -31,7 +31,7 @@ pipeline
             }
             steps
             {
-                sh 'wget https://www.devopswiki.co.uk'
+                sh 'wget http://localhost:4567/'
                 sh 'echo "sleeping for 30 seconds whilst our wiki wakes"'
                 sh 'sleep 30'
 /*
