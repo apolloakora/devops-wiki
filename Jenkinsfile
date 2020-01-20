@@ -32,7 +32,7 @@ pipeline
             steps
             {
                 sh 'wget http://localhost:4567/'
-                sh 'linkchecker --ignore-url=^http://medium.com http://localhost:4567/kubernetes/'
+                sh 'linkchecker --ignore-url=^https://medium.com http://localhost:4567/kubernetes/'
                 sh 'linkchecker http://localhost:4567/home'
             }
         }
