@@ -32,8 +32,8 @@ pipeline
             steps
             {
                 sh 'wget http://localhost:4567/'
-                sh 'linkchecker --verbose http://localhost:4567/kubernetes/'
-                sh 'linkchecker --verbose http://localhost:4567/home'
+                sh 'linkchecker http://localhost:4567/kubernetes/'
+                sh 'linkchecker http://localhost:4567/home'
             }
         }
 /*

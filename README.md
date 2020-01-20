@@ -1,7 +1,7 @@
 
 # The Devops Wiki | [devopswiki.co.uk](https://www.devopswiki.co.uk)
 
-This repository holds the content of the devops wiki which is served via the **[gollum devops4me/devopswiki.co.uk docker container](https://hub.docker.com/r/devops4me/devopswiki.co.uk)** in *dockerhub**.
+This repository holds the content of the devops wiki which is served via the **[gollum devops4me/devopswiki.co.uk docker container](https://hub.docker.com/r/devops4me/devopswiki.co.uk)** in **dockerhub**.
 
 ## how to run the wiki
 
@@ -67,7 +67,7 @@ The pipeline steps defined in the Jenkinsfile are to
 - use [Google Kaniko] to build this Dockerfile from this wiki base image
 - push the Dockerfile with the latest tag to this Dockerhub repository
 - create another pod to run the just-built devopswiki.co.uk image
-- configure the container with a readiness probe so it does no receive traffic too early
+- configure the container with a readiness probe so it does not receive traffic too early
 - run a linkcheck activity using this Dockerhub linkcheck image (from this Github repo)
 - if the linkchecking produces errors the pipeline fails and stops
 - on success the devopswiki image is tagged with build number, Git commit ref and timestamp
