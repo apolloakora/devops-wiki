@@ -39,6 +39,7 @@ docker build       \
 To run the docker image `img.wiki` that we built we use the same docker run command except we change to use the local image.
 
 ```
+docker rm -vf vm.wiki && \
 docker run \
     --detach \
     --name vm.wiki \
