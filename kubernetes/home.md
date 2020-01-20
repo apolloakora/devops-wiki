@@ -19,8 +19,8 @@ Kubernetes is a container orchestration tool engineered by Google and donated to
 
 ## Did You Know
 
-- **[How to Add TLS Certs to Kubernetes Pod CA Store](https://medium.com/@paraspatidar/add-ssl-tls-certificate-or-pem-file-to-kubernetes-pod-s-trusted-root-ca-store-7bed5cd683d)**
-- **[Similarly How to Add TLS Certs to Kubernetes Pod CA Store](https://medium.com/@paraspatidar/add-self-signed-or-ca-root-certificate-in-kubernetes-pod-ca-root-certificate-store-cb7863cb3f87)**
+- **[How to Add TLS Certs to Kubernetes Pod CA Store](https://medium.com/%40paraspatidar/add-ssl-tls-certificate-or-pem-file-to-kubernetes-pod-s-trusted-root-ca-store-7bed5cd683d)**
+- **[Similarly How to Add TLS Certs to Kubernetes Pod CA Store](https://medium.com/%40paraspatidar/add-self-signed-or-ca-root-certificate-in-kubernetes-pod-ca-root-certificate-store-cb7863cb3f87)**
 - **[Services | Service Discovery | Node Ports | Load Balancers](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services)**
 - **[Deployments - Kubernetes Official Documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)**
 - **[Run a Stateless App using Deployments](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)**
