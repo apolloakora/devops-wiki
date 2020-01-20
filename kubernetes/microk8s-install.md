@@ -143,7 +143,7 @@ sudo systemctl restart snap.microk8s.daemon-containerd
 
 Did you know that
 
-- the **[kubernetes secrets knowledge base is here](kubernetes/kubernetes-secrets)**
+- the **[kubernetes secrets knowledge base is here](/kubernetes/kubernetes-secrets)**
 - the full **[microk8s userguide is here](https://microk8s.io/docs/)**
 
 
