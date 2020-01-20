@@ -32,6 +32,7 @@ pipeline
             steps
             {
                 sh 'wget http://localhost:4567/'
+                sh 'linkchecker http://localhost:4567/pages/'
                 sh 'linkchecker --ignore-url=^https://medium.com http://localhost:4567/home'
             }
         }
