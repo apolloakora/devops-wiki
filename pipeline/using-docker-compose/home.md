@@ -216,8 +216,6 @@ If things do not go to plan then use
 
 **Skip this if your Git repo has public read access but ensure that the job config.xml files do not reference the git.credentials.id**
 
-View the sample jobs at **[jobs/bank-account/config.xml](jobs/bank-account/config.xml)** (for JAVA) and **[jobs/weather-forecast/config.xml](jobs/weather-forecast/config.xml)** (for .NET) and you'll see they contain a reference to the **`git.credentials.id`** defined below.
-
 **Change the username and password fields**.
 
 ```
