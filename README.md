@@ -73,3 +73,8 @@ The pipeline steps defined in the Jenkinsfile are to
 - on success the devopswiki image is tagged with build number, Git commit ref and timestamp
 - a kubectl rollout is issued based on the newly tagged devopswiki image
 - change the standing start Kubernetes deployment configs to reflect the new tag
+
+
+## Useful Links
+
+- **[Online URL Encoder/Decoder](https://www.urlencoder.org/)**
