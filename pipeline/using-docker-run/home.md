@@ -85,8 +85,7 @@ docker run              \
 docker logs vm.sonarqube
 ```
 
-**[Navigate to the SonarQube UI at port 9000.](http://localhost:9000)**
-Affirm that **`docker logs vm.sonarqube`** says ***`app[][o.s.a.SchedulerImpl] SonarQube is up`***.
+**Now navigate to the SonarQube UI on port 9000.** Affirm with the **`docker logs vm.sonarqube`** command that a line saying ***`SonarQube is up`*** is printed out.
 
 
 ---
