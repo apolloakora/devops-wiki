@@ -4,7 +4,7 @@
 ### kubernetes pages
 
 - **[microk8s install](/kubernetes/microk8s-install)**
-- **[jenkins and kubernetes](/jenkins/kubernetes-slaves)**
+- **[jenkins and kubernetes](/kubernetes/kubernetes-slaves)**
 - **[kubectl commands](/kubernetes/kubectl-commands)**
 - **[kaniko for kubernetes](/kubernetes/kaniko)**
 - **[kubernetes secrets](/kubernetes/kubernetes-secrets)**

@@ -7,7 +7,7 @@ Kubernetes is a container orchestration tool engineered by Google and donated to
 
 - **[microk8s | install a kubernetes cluster](/kubernetes/microk8s-install)**
 - **[microk8s | import a docker image into kubernetes microk8s](/kubernetes/microk8s-image-import)**
-- Jenkins Pipeline **[Use Kubernetes to run Jenkins Jobs](/jenkins/kubernetes-slaves)**
+- Jenkins Pipeline **[Use Kubernetes to run Jenkins Jobs](/kubernetes/kubernetes-slaves)**
 - **[In 5 minutes - CI/CD Pipeline on Kubernetes](https://github.com/devops4me/kubernetes-pipeline)**
 - **[In 5 minutes - Jenkins on Kubernetes](https://github.com/devops4me/docker-jenkins-cluster)** | **[Dockerhub Jenkins Image](https://hub.docker.com/r/devops4me/jenkins)**
 - **[kubectl commands | copy | log | rollout | set-image](/kubernetes/kubectl-commands)**

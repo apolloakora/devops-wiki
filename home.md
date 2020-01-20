@@ -1,9 +1,9 @@
 
 ## Pipelines | Jenkins | SonarQube | Nexus
 
-How do you create an entire **Continous Integration Pipeline** in one step using **[docker compose](/pipeline/using-docker-compose/)**? How do you use **[Kubernetes PaaS to run your Jenkins Build Jobs](/jenkins/kubernetes-slaves)**? How do you setup a **[declarative Jenkinsfile for a JAVA microservice](/pipeline/for-java-microservice/)**? What about a **[.NET microservice](/pipeline/for-dotnet-microservice/)**?
+How do you create an entire **Continous Integration Pipeline** in one step using **[docker compose](/pipeline/using-docker-compose/)**? How do you use **[Kubernetes PaaS to run your Jenkins Build Jobs](/kubernetes/kubernetes-slaves)**? How do you setup a **[declarative Jenkinsfile for a JAVA microservice](/pipeline/for-java-microservice/)**? What about a **[.NET microservice](/pipeline/for-dotnet-microservice/)**?
 
-- **[use scaleable Kubernetes cluster to run Jenkins Jobs (Slaves)](/jenkins/kubernetes-slaves)**
+- **[use scaleable Kubernetes cluster to run Jenkins Jobs (Slaves)](/kubernetes/kubernetes-slaves)**
 - **[use docker compose to setup Jenkins SonarQube Nexus and a Docker Registry](/pipeline/using-docker-compose/)**
 - **[use simple docker run statements to setup Jenkins SonarQube Nexus and a Docker Registry](/pipeline/using-docker-run/)**
 - **[kubectl commands | copy | log | rollout | set-image](/kubernetes/kubectl-commands)**
@@ -18,7 +18,7 @@ How do you create an entire **Continous Integration Pipeline** in one step using
 
 
 
-## [Use Kubernetes to run Jenkins Jobs](/jenkins/kubernetes-slaves)
+## [Use Kubernetes to run Jenkins Jobs](/kubernetes/kubernetes-slaves)
 
 The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 
@@ -28,7 +28,7 @@ The benefits of running your Jenkins slaves (workers/builds) in Kubernetes are
 - you can use multi-tenancy to run pipelines and app environments in the same cluster
 - you can **scale Jenkins horizontally** as well as vertically
 
-#### [Full Article | How to Run Jenkins Builds in Kubernetes](/jenkins/kubernetes-slaves)
+#### [Full Article | How to Run Jenkins Builds in Kubernetes](/kubernetes/kubernetes-slaves)
 
 
 
