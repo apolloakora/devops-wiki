@@ -35,7 +35,7 @@ pipeline
 /*
                 sh 'linkchecker --ignore-url=.yaml$ --ignore-url=.gitignore$ --ignore-url=Dockerfile$ --ignore-url=Jenkinsfile$ http://localhost:4567/pages/'
 */
-                sh 'linkchecker --ignore-url=.yaml$ --ignore-url=.gitignore$ --ignore-url=Dockerfile$ --ignore-url=Jenkinsfile$ --ignore-url=^https://medium.com http://localhost:4567/home'
+                sh 'linkchecker --ignore-url=.yaml$ --ignore-url=.gitignore$ --ignore-url=Dockerfile$ --ignore-url=Jenkinsfile$ --ignore-url=^https://medium.com --ignore-url=^/history/* http://localhost:4567/home'
             }
         }
 /*

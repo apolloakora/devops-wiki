@@ -1,7 +1,7 @@
 
 # CI Pipeline with ELK Logging | ElasticSearch | Logstash | Kibana | Fluentd
 
-This article focuses on adding logging drivers to the docker run of CI pipeline services. Please refer to the **[CI pipeline install blog](install-jenkins-ci-pipeline.md)** for the nitty gritty of actually installing a CI pipeline.
+This article focuses on adding logging drivers to the docker run of CI pipeline services. Please refer to the **[CI pipeline install blog](pipeline-using-docker-compose)** for the nitty gritty of actually installing a CI pipeline.
 
 ## Install the Jenkins 2.0 docker service
 
