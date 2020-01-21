@@ -4,7 +4,7 @@
 
 AWS provides a current list of ec2 instance types (below) but they do not release benchmarks of workloads and different types of middleware services.
 
-[[Current List of EC2 Instance Types]](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
+[Current List of EC2 Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
 
 We are currently executing benchmark tests from which we will release the results - however some general truths have begun to emerge.
 

@@ -30,7 +30,7 @@ terraform destroy -auto-approve      # destroy without prompt
 
 These are the links to leading terraform resource toolkits.
 
-[[RubyMine (or PyCharm or IntelliJ) Terraform Module from HashiCorp]](https://www.terraform.io/docs/modules/usage.html)
+[RubyMine (or PyCharm or IntelliJ) Terraform Module from HashiCorp](https://www.terraform.io/docs/modules/usage.html)
 
 - [High Quality AWS Terraform Tooling](https://github.com/skyscrapers)
 
@@ -38,4 +38,4 @@ These are the links to leading terraform resource toolkits.
 
 - [TERRAFORM WITH EVERY AVAILABLE OPTION IN GO CODE](https://github.com/terraform-providers/terraform-provider-aws/tree/master/aws)
 
-- [[Terraform Module Documentation]](https://www.terraform.io/docs/modules/usage.html)
+- [Terraform Module Documentation](https://www.terraform.io/docs/modules/usage.html)

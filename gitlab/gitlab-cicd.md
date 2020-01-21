@@ -22,5 +22,5 @@ Kubernetes is the number one load executor for all CI/CD platforms and if you ha
 You should always farm out the actual load running thus separating it from the CI/CD brain. The brain's user interface needs to remain responsive and not get bogged down with workloads that can freeze and destabilize the environment.
 
 
-**[[Video - GitLab CI/CD for Ruby with the Kubernetes Executor]](https://www.youtube.com/watch?v=1iXFbchozdY)**
+**[Video - GitLab CI/CD for Ruby with the Kubernetes Executor](https://www.youtube.com/watch?v=1iXFbchozdY)**
 

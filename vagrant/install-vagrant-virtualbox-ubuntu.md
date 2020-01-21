@@ -21,7 +21,7 @@ sudo dpkg-reconfigure virtualbox-dkms virtualbox
 
 Do not install the Ubuntu vagrant because it is bug-ridden and simply will not work.
 
-**[[Download and Install Vagrant]](https://www.vagrantup.com/downloads.html)**
+**[Download and Install Vagrant](https://www.vagrantup.com/downloads.html)**
 
 Click on the **Debian** (64-bit) option and you should be given the choice to open the deb file with the installer. From there you click install and you are done.
 

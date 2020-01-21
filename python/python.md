@@ -30,4 +30,4 @@ python3 -V     # => Python 3.6.5
 sudo apt-get install --assume-yes python3-pip
 ```
 
-Once installed you should investigate creating a [[python cli]] (command line interface).
+Once installed you should investigate creating a [python cli] (command line interface).

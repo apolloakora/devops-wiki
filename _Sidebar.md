@@ -1,20 +1,15 @@
 
 ![logo](/media/devopswiki-logo.png "Kubernetes, Terraform, Docker, Jenkins and Clouds for DevOps Engineers")
 
-### devops wiki
+### **Strange Behaviour!**
 
-### **Quip of the Year**
+Why message someone nearby?
+We do it to
 
-You **message someone close by to**
-
-- **exclude** those **present** or
-- **include** those **absent**
+- **exclude** the **present** and/or
+- **include** the **absent**
 
 ![openvpn](/media/openvpn-logo-square.png "hands free openvpn connections")
 
 
-##### devopswiki.co.uk 
-
-- [[install terraform]]
-- [[terraform elb s3 access logs]]
-- [[terraform graphs]]
+##### [devopswiki.co.uk](/)

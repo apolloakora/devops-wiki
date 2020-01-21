@@ -1,7 +1,7 @@
 
 # How to Add RabbitMQ Users
 
-**[[Full documentation for the rabbitmqctl command on ubuntu can be found here.]](http://manpages.ubuntu.com/manpages/trusty/man1/rabbitmqctl.1.html#examples)**
+**[Full documentation for the rabbitmqctl command on ubuntu can be found here.](http://manpages.ubuntu.com/manpages/trusty/man1/rabbitmqctl.1.html#examples)**
 
 ## Adding a User through Curl
 
@@ -31,7 +31,7 @@ Once RabbitMQ is installed there is a download link on the screen which **wget**
 
 Assuming it is installed locally then this link **http://localhost:15672** should go to a screen which says at the bottom **HTTP API | Command Line** - use this link to download the admin application.
 
-Give it exec permissions and then  use it to create a user. **[[Documentation can be found here.]](https://www.rabbitmq.com/management-cli.html)**
+Give it exec permissions and then  use it to create a user. **[Documentation can be found here.](https://www.rabbitmq.com/management-cli.html)**
 
 Helpful rabbitmqadmin commands are as follows.
 

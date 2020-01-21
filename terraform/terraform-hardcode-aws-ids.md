@@ -81,11 +81,11 @@ You can substitute three parameters into the above CUrl command. These are the
 
 - **AWS region ID**
 - **"green-ness"** of the image (**stable**, **beta** or **alpha**)
-- [[virtual machine type]](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html) either **PV (paravirtual)** or **HVM (hardware virtual machine)**
+- [virtual machine type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html) either **PV (paravirtual)** or **HVM (hardware virtual machine)**
 
 To investigate further view the
-- [[Official CoreOS AWS AMI listings]](https://coreos.com/os/docs/latest/booting-on-ec2.html)
-- [[JSON report for CoreOS AMIs based on AWS region]](http://stable.release.core-os.net/amd64-usr/current/coreos_production_ami_all.json)
+- [Official CoreOS AWS AMI listings](https://coreos.com/os/docs/latest/booting-on-ec2.html)
+- [JSON report for CoreOS AMIs based on AWS region](http://stable.release.core-os.net/amd64-usr/current/coreos_production_ami_all.json)
 
 
 ### Sample JSON of CoreOS AMI IDs by AWS Regions

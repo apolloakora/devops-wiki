@@ -5,7 +5,7 @@
 
 ## Why Tag a Repository
 
-The [[Git tagging documentation]](https://git-scm.com/book/en/v2/Git-Basics-Tagging) states that **you tag in order to mark a specific point in history as being important** and a versioned release is just that - an important point in the lifecycle of a product.
+The [Git tagging documentation](https://git-scm.com/book/en/v2/Git-Basics-Tagging) states that **you tag in order to mark a specific point in history as being important** and a versioned release is just that - an important point in the lifecycle of a product.
 
 By convention tags begin with a lowercase v and semantic versioning offers up 3 numbers for the major, minor and patch versions.
 

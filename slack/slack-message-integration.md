@@ -78,7 +78,7 @@ Look here for more detailed discussions on Slack's markdown capabilities
 
 Curl is great but it has its limits. There are plenty of SDK's for JavaScript (the slack UI is written in JQuery and Bootstrap), Java, Ruby, Python, Go plus a few in R and Scala.
 
-- **[[Great Ruby Slack SDK]](https://github.com/slack-ruby/slack-ruby-client)**
-- **[[Excellent Ruby Slack Onboarding Tutorial]](https://github.com/slackapi/Slack-Ruby-Onboarding-Tutorial)**
+- **[Great Ruby Slack SDK](https://github.com/slack-ruby/slack-ruby-client)**
+- **[Excellent Ruby Slack Onboarding Tutorial](https://github.com/slackapi/Slack-Ruby-Onboarding-Tutorial)**
 
 You can also integrate with slack through **Terraform**, **Ansible**, **Chef**, **Puppet**, **Kibana**, **Prometheus**, **DataDog**, **CloudWatch**, **Nagios**, **Jenkins**, **CodeShip**, **TravisCI**, **CircleCI** and more besides.
