@@ -32,10 +32,7 @@ pipeline
             steps
             {
                 sh 'wget http://localhost:4567/'
-/*
-                sh 'linkchecker --ignore-url=.yaml$ --ignore-url=.gitignore$ --ignore-url=Dockerfile$ --ignore-url=Jenkinsfile$ http://localhost:4567/pages/'
-*/
-                sh 'linkchecker --ignore-url=.yaml$ --ignore-url=.gitignore$ --ignore-url=Dockerfile$ --ignore-url=Jenkinsfile$ --ignore-url=^https://medium.com --ignore-url=^/history/* http://localhost:4567/home'
+                sh 'linkchecker --ignore-url=.yaml$ --ignore-url=.gitignore$ --ignore-url=Dockerfile$ --ignore-url=Jenkinsfile$ --ignore-url=^https://medium.com --ignore-url=^/history/* --ignore-url=/[0-9a-f]{40}$ http://localhost:4567/home'
             }
         }
 /*
