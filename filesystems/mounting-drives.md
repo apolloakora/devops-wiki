@@ -33,7 +33,7 @@ https://www.techrepublic.com/article/how-to-mount-your-google-drive-on-linux-wit
 https://cloudkul.com/blog/mounting-s3-bucket-linux-ec2-instance/
 
 ## Mount S3 Buckets on Linux with S3FS from FUSE
-https://cloud.netapp.com/blog/amazon-s3-as-a-file-system
+**`https://cloud.netapp.com/blog/amazon-s3-as-a-file-system`**
 
 ## MongoDB's GridFS specification for larger BSON elements
 https://docs.mongodb.com/manual/core/gridfs/
