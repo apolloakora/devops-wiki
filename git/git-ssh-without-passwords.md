@@ -40,16 +40,17 @@ ssh -i /home/joebloggs/.ssh/bitbucket-repo-private-key.pem -vT "joebloggs276@$GI
 git clone git@bitbucket.org:joeltd/bigdata.git mirror.bigdata  # this clone against bigdata account and repo is bigdata
 ```
 
+```
 BITBUCKET_USER=joebloggs276;
 # curl --user ${BITBUCKET_USER} https://api.bitbucket.org/2.0/repositories/joeltd
 curl --user ${BITBUCKET_USER} git@api.bitbucket.org/2.0/repositories/joeltd
-
+```
 
 Note that the clone command uses the bitbucket account called joeltd and the repository is called big_data_scripts.
 
 The response to the SSH test against a bitbucket repository for user
 
-`ssh -i /home/joebloggs/.ssh/bitbucket-repo-private-key.pem -vT "joebloggs276@$GIT_HOST_IP"`
+**`ssh -i /home/joebloggs/.ssh/bitbucket-repo-private-key.pem -vT "joebloggs276@$GIT_HOST_IP"`**
 
 ## Setup Git in Existing Directory
 

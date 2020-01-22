@@ -602,22 +602,6 @@ Ensure now that installing gems is done **without sudo**. If sudo is added to a 
 
 ## rake install | command output
 
-<code>
-opensecret 0.0.1 built to pkg/opensecret-0.0.1.gem.
-opensecret (0.0.1) installed.
-</code>
-
-Now "gem list" should show up.
-and in the pkg directory there should be an opensecret-0.0.2.gem file.
-
-git remote add origin https://www.eco-platform.co.uk/software/opensecret.git
-git add .
-git commit -am "OpenSecret initial checkin."
-
-Do above after setting up git repo in github, gitlab, bitbucket.
-
-
-
 Finally we do
 
 rake release

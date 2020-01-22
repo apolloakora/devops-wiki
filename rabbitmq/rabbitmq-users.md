@@ -1,8 +1,6 @@
 
 # How to Add RabbitMQ Users
 
-**[Full documentation for the rabbitmqctl command on ubuntu can be found here.](http://manpages.ubuntu.com/manpages/trusty/man1/rabbitmqctl.1.html#examples)**
-
 ## Adding a User through Curl
 
 This curl command will add an administrator user with the given username and password assuming that the default guest:guest account is present.

@@ -41,12 +41,12 @@ To run Gollum Wiki in development, test or production requires a small eco-syste
 To create a Gollum Wiki production instance on an Amazon EC2 platform, you can use
 
 - Terraform to provision the EC2 server, block store and security groups
-- Terraform to provision Route53 hosted zone record sets eg (for www.devops-hub.com)
+- Terraform to provision Route53 hosted zone record sets
 - nginx to reverse proxy the http/https web requests to the Gollum WebBrick server
 - Certbot to provision SSL certificates that will last 3 months
 - Disqus to provide comment functionality for your wiki blog pages
 - S3 buckets to serve static/large media like pdf docs and images
-- devops-hub gollum gem for wiki internal links, breadcrumbs and elastic search integration
+- gollum gem for wiki internal links, breadcrumbs and elastic search integration
 - PanDoc for offering a PDF version of the markdown/html page
 - Fluentd for docker container logging and Kibana dashboard integration
 - DataDog or other services for monitoring the Gollum Wiki service

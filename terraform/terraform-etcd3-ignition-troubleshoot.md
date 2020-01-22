@@ -45,7 +45,7 @@ Ensure that the security group module has an **in_ingress rule** named **ssh**.
 
 ### Use Public Subnets to House the Nodes | Temporarily
 
-Check that you are **(temporarily) using public subnets** (easy to SSH to without needing a bastion host) to house the etcd3 nodes. Note that the **[vpc-subnets module](https://github.com/devops4me/terraform-aws-vpc-subnets)** will automatically create an internet gateway and routes from the subnet out when it notices that you want public subnets.
+Check that you are **(temporarily) using public subnets** (easy to SSH to without needing a bastion host) to house the etcd3 nodes. Note that the **[vpc-subnets module](https://github.com/devops4me/terraform-aws-vpc-network)** will automatically create an internet gateway and routes from the subnet out when it notices that you want public subnets.
 
     module vpc-subnets
     {
@@ -115,13 +115,8 @@ If everything appears to be working you can set key-value pairs on any cluster n
 
 
 
-### [Validate CoreOS Configs Here](https://coreos.com/validate/)
-
 ### [systemd unit files know-how](https://www.freedesktop.org/software/systemd/man/systemd.unit.html)
 
 ### [etcd versions in quay.io coreos/etcd repository](https://quay.io/repository/coreos/etcd?tab=tags)
 
 ### CoreOS Wrappers for etcd flannel kubelet and locksmith (https://github.com/coreos/coreos-overlay/tree/master/app-admin)
-
-## [CoreOS | How to Customize the SSH Daemon](https://coreos.com/os/docs/latest/customizing-sshd.html#changing-the-sshd-port)
-

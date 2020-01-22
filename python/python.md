@@ -5,7 +5,7 @@ Python's eco-system will soon surpass Java to be the largest ever seen for a pro
 
 - [[PyCharm Desktop App]] - to auto install and configure it on your workstation
 - [[PyCharm Python IDE]] - for Python software development, machine learning and scripting aspects
-- [[PyCharm Keyboard Shortcuts]] - to up your productivity around the PyCharm IDE and eco-system
+- PyCharm Keyboard Shortcuts - to up your productivity around the PyCharm IDE and eco-system
 
 
 ## Install Python 2 and its famous pip installer (package manager).
@@ -29,5 +29,3 @@ sudo apt-get install --assume-yes build-essential libssl-dev libffi-dev python-d
 python3 -V     # => Python 3.6.5
 sudo apt-get install --assume-yes python3-pip
 ```
-
-Once installed you should investigate creating a [python cli] (command line interface).

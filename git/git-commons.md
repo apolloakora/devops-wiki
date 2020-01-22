@@ -67,13 +67,15 @@ This is the simple case – you can interact with a git repo via archive files, 
 
 Assume we have installed GitLab and we have a username and password to the repositories that we have setup within it. Cloning is easy.
 
-  git clone http://www.assets4u.co.uk/commons/laundry4j.com.git/ mirror.laundry4j
-  git checkout -b first/branch
-  ... (make changes)
-  git add .
-  git commit -m "The first repository checkin"
-  git push -u origin first/branch
-  ... (enter username/password)
+```
+git clone http://www.assets4u.co.uk/commons/laundry4j.com.git/ mirror.laundry4j
+git checkout -b first/branch
+... (make changes)
+git add .
+git commit -m "The first repository checkin"
+git push -u origin first/branch
+... (enter username/password)
+```
 
 Either in emacs or Git Bash or DOS prompt (do not use Tortoise Git) – Git will pop up a box asking for the username and password. Enter these and you are done.
 First Git Workspace – Important Notes
@@ -92,8 +94,10 @@ The below are important and need careful attention.
 
 The most common use case is connecting to a ready-made remote repository which is readable by everyone.
 
-  git clone http://www.assets4u.co.uk/docs/ mirror.documentation.git
-  cd mirror.app.assets
+```
+git clone http://www.assets4u.co.uk/docs/ mirror.documentation.git
+cd mirror.app.assets
+```
 
 Git Clone | Key Considerations
 
@@ -136,7 +140,7 @@ GitHub, BitBucket (and the hosted GitLab) are free as long as everyone can read 
 
 The 4th Git Backend – Your Filesystem. – Every git working directory is a repository all in itself carrying the full repository version history.
 
-git clone http://www.assets4u.co.uk/ mirror.app.artifacts.git
+**`git clone http://www.assets4u.co.uk/ mirror.app.artifacts.git`**
 
 The git clone command gives you a mirrored functional repository containing the full version history.
 

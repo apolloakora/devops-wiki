@@ -59,7 +59,9 @@ Application interfaces like the below can also be appended to make the branch na
 
 Frequently operational and provisioning ( iaas – infrastructure as a service) software will download and use repository assets. If you want that software to read from your branch and not the master line use the below command.
 
-  git clone -b ui-layer/bug-4214 http://www.assets4u.co.uk/vcs/know.how mirror.app.assets
+```
+git clone -b ui-layer/bug-4214 http://www.assets4u.co.uk/vcs/know.how mirror.app.assets
+```
 
 
 ## Pull Frequently From the Master Branch

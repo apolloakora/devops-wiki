@@ -98,7 +98,7 @@ WORKDIR /home/tester
 
 ## Jenkins Dockerfile | Plugins
 
-The full **[Jenkins Dockerfile is here](https://github.com/devops4me/jenkins2-docker/blob/master/Dockerfile_jenkins2)** but this important extract details the plugins employed.
+The full **[Jenkins Dockerfile is here](https://github.com/devops4me/jenkins-cluster/blob/master/Dockerfile)** but this important extract details the plugins employed.
 
 ```
 RUN /usr/local/bin/install-plugins.sh \
@@ -139,10 +139,10 @@ Jenkins should now be running on http://localhost:8080 if step 1 was successful.
 
 ## Step 3 | Clone and Copy Jenkins Job Configuration
 
-Use **git** to pull down the **[Jenkins2 configuration files](https://github.com/devops4me/jenkins2-config)** and then **docker copy** to place them into the Jenkins docker volume.
+Use **git** to pull down the **[Jenkins2 configuration files](https://github.com/devops4me/docker-jenkins-cluster)** and then **docker copy** to place them into the Jenkins docker volume.
 
-    $ git clone https://github.com/devops4me/jenkins2-config
-    $ cd jenkins2-config
+    $ git clone https://github.com/devops4me/docker-jenkins-cluster
+    $ cd docker-jenkins-cluster
     $ tree
     $ docker cp jobs j2volume:/var/jenkins_home
     $ docker exec -i jenkins2 bash -c "ls -lah /var/jenkins_home/jobs"

@@ -7,7 +7,7 @@
 |:------------------- |:------------------------ |:-------------- |
 Bare Metal | /var/lib/coreos-install/user_data | For manual CoreOS installs using the coreos-install tool.
 Vagrant VirtualBox | /var/lib/coreos-vagrant/vagrantfile-user-data | Vagrant will automatically put cloud-config here
-AWS EC2 and Digital Ocean | http://169.254.169.254/metadata/v1/user-data and/or http://169.254.169.254/2009-04-04/user-data | These URLs will link to the cloud-config scripts placeable by Terraform or Ansible
+AWS EC2 and Digital Ocean | **`http://169.254.169.254/metadata/v1/user-data`** and/or **`http://169.254.169.254/2009-04-04/user-data`** | These URLs will link to the cloud-config scripts placeable by Terraform or Ansible
 Manual Command (or Script) via SSH  | declared by **--from-file** parameter | Use this command $ sudo coreos-cloudinit --from-file=/path/to/cloud-config.yaml
 
 ## Login to CoreOS | AWS EC2

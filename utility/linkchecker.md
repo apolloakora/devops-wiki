@@ -29,7 +29,7 @@ https://www.devopswiki.co.uk/wiki/openvpn/openvpn
 
 ## Link Checker Configuration
 
-The [linkcheckerrc configuration file](linkcheckerrc) is placed in the .linkchecker folder off the home directory and drives the primary checking behaviour. The key linkchecker directives are stated here.
+The [linkcheckerrc configuration file](https://github.com/devops4me/docker-linkchecker/blob/master/linkcheckerrc) is placed in the .linkchecker folder off the home directory and drives the primary checking behaviour. The key linkchecker directives are stated here.
 
 ```
 ## ################################ ##

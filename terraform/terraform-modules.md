@@ -33,7 +33,7 @@ You are assured compatibility with your Terraform version because modules track 
 
 | Module | Purpose | Stable Version |
 |:-------- |:---- |:-------:|
-**[vpc.subnets](vpc.subnets)** | Creates a VPC, creates subnets across availability zones in a round robin manner. | v0.11.0001
+**[vpc subnet network](https://registry.terraform.io/modules/devops4me/vpc-network/aws/)** | Creates a VPC, creates subnets across availability zones in a round robin manner. | v0.11.0001
 
 ## Create VPC and Subnets in Availability Zones
 
