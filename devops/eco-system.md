@@ -24,7 +24,4 @@ To create ***any*** **eco-system** ***anywhere*** requires these 7 key component
 
 ## Now it's the Tail
 
-![la lune](http://localhost:42006/media/eco-platform.co.uk-logo.png "eco-platform.co.uk for DevOps Engineers")
-
-
 ### [Visit DocToc for Table Of Contents Management](https://github.com/thlorenz/doctoc)
