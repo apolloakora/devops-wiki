@@ -162,13 +162,13 @@ You can use ***double square brackets*** to link to ***internal*** gollum or git
 
 Or you can use ***single square brackets*** then ***soft rounded brackets*** to link to ***external*** web pages.
 
-Go to [eco-platform.co.uk](https://www.eco-platform.co.uk/)
+Go to [eco-platform.co.uk](https://www.devopswiki.co.uk/)
 
 ### External Link with Title Text
 
 The soft rounded brackets can contain a link and then any ***double quoted text becomes the title***.
 
-[build business websites link](https://www.build-business-websites.co.uk/ "Hey, Visit Build Business Websites!")
+[the devops wiki link](https://www.devopswiki.co.uk/ "Hey, Visit Build Business Websites!")
 
 
 ## Images

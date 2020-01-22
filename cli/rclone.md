@@ -161,7 +161,7 @@ Use auto config?
 y) Yes
 n) No
 y/n> y
-If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth
+If your browser doesn't open automatically go to the localhost link at port 53682 and url /auth
 Log in and authorize rclone for access
 Waiting for code...
 Got code

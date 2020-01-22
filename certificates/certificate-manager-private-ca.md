@@ -11,7 +11,7 @@ With Certificate Manager you bypass the **painful periodic process of renewing c
 
 You don't want to (and shouldn't) create a Root CA on your laptop. The dependencies on OpenSSL versions, Linux versions and the likelihood that you'll want to run multiple CAs all point towards a classic Docker use case.
 
-In **[Step 4](4-dockerized-root-ca-csr-signing.md)** we encounter the Dockerfile and the docker run command which
+In **[Step 4](4-dockerized-root-ca-use-cases)** we encounter the Dockerfile and the docker run command which
 
 - reads your openssl.cnf file
 - creates a root certificate authority and self-signed cert
