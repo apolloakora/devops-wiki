@@ -61,7 +61,7 @@ pipeline
 
 <img id="right40" src="/media/jenkins-logo-square-butler.png" title="Jenkins2 with Declarative Pipelines" />
 
-Do you notice **how generic this Jenkinsfile** is. It is from a **[Terraform module that builds VPCs and subnets](https://github.com/devops4me/terraform-aws-vpc-subnets)** but can apply to literally any Terraform codebase.
+Do you notice **how generic this Jenkinsfile** is. It is from a **[Terraform module that builds VPCs and subnets](https://github.com/devops4me/terraform-aws-vpc-network)** but can apply to literally any Terraform codebase.
 
 A lot goes on here assuming you've setup your AWS credentials within Jenkins (explained later). Jenkins expects a Dockerfile at the source of your project which it builds and then runs passing in the present environment variables.
 
@@ -114,7 +114,7 @@ RUN /usr/local/bin/install-plugins.sh \
 
 The plugins of note here are the build-pipeline-plugin, docker-workflow and workflow-scm-step.
 
-As shown below, all you need do is reference the image **[devops4me/jenkins2 in DockerHub](https://hub.docker.com/r/devops4me/jenkins2/)**.
+As shown below, all you need do is reference the image **[devops4me/jenkins2 in DockerHub](https://hub.docker.com/r/devops4me/jenkins/)**.
 
 
 ## How to Build a Terraform Jenkins2 Docker Pipeline

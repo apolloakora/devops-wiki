@@ -2,7 +2,7 @@
 
 To login via SSH and view the error logs is priceless so a SSH configuration is important to troubleshoot effectively. To do this you
 
-- **[create a ssh public/private keypair](ssh)**
+- **[create a ssh public/private keypair](/ssh/ssh)**
 - use Terraform to add the public key for server access
 - ensure that the AWS security group allows SSH
 - temporarily put the ec2 machines in a public subnet

@@ -19,7 +19,7 @@ Make sure you have
 - the username for the ssh account on the remote machine
 - either the password for the remote user account or a private key
 - if private key the remote machine needs to have been plied with a public key
-- the passphrase of the private key if this has been set - **[you can remove the passphrase](/ssh)**
+- the passphrase of the private key if this has been set - **[you can remove the passphrase](/ssh/ssh)**
 - the private key must be locked down with chmod 600 permissiones
 
 ## The Steps
