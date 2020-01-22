@@ -5,5 +5,4 @@ There are many angles to PyCharm - so visit
 
 - [[PyCharm Desktop App]] - to auto install and configure it on your workstation
 - [[PyCharm Python IDE]] - for Python software development, machine learning and scripting aspects
-- [[PyCharm Keyboard Shortcuts]] - to up your productivity around the PyCharm IDE and eco-system
 

@@ -1,4 +1,4 @@
-<img id="left30" src="/media/ubuntu-client-logo-square.png" title="Ubuntu Client Logo" />
+<img id="left30" src="/media/ubuntu-logo-square-1.png" title="Ubuntu Client Logo" />
 #### An important lean principle states that if it hurts, do it often until finally, it is automated.
 
 # Machine Setup for Devops (SRE) Engineers
