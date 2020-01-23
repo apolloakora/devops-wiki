@@ -7,12 +7,12 @@ spec:
         env:
         -   name: CONTAINER_ENV_VAR
             value: jnlp
-    -   name: safedeploy
-        image: devops4me/safetty:latest
+    -   name: abcdefghijklmnopabcdefghijklmnopabcdefghijklmnop
+        image: devops4me/abcdefghijklmnopabcdefghijklmnopabcdefghijklmnop:latest
         imagePullPolicy: Always
         command:
         -   cat
         tty: true
         env:
         -   name: CONTAINER_ENV_VAR
-            value: safettytests
+            value: abcdefghijklmnopabcdefghijklmnopabcdefghijklmnop

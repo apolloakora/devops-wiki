@@ -139,10 +139,10 @@ Jenkins should now be running on http://localhost:8080 if step 1 was successful.
 
 ## Step 3 | Clone and Copy Jenkins Job Configuration
 
-Use **git** to pull down the **[Jenkins2 configuration files](https://github.com/devops4me/docker-jenkins-cluster)** and then **docker copy** to place them into the Jenkins docker volume.
+Use **git** to pull down the **[Jenkins2 configuration files](https://github.com/devops4me/docker-jenkins)** and then **docker copy** to place them into the Jenkins docker volume.
 
-    $ git clone https://github.com/devops4me/docker-jenkins-cluster
-    $ cd docker-jenkins-cluster
+    $ git clone https://github.com/devops4me/docker-jenkins
+    $ cd docker-jenkins
     $ tree
     $ docker cp jobs j2volume:/var/jenkins_home
     $ docker exec -i jenkins2 bash -c "ls -lah /var/jenkins_home/jobs"

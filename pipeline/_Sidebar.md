@@ -21,6 +21,6 @@
 ### in 5 minutes
 
 - **[CI/CD on Kubernetes](https://github.com/devops4me/kubernetes-pipeline)**
-- **[Jenkins on Kubernetes](https://github.com/devops4me/docker-jenkins-cluster)**
+- **[Jenkins on Kubernetes](https://github.com/devops4me/docker-jenkins)**
 
 #### [devopswiki.co.uk](/)

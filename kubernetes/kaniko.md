@@ -117,7 +117,7 @@ pipeline
                 * to build and test the software.
                 */
                 checkout scm
-                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/safetty:latest --cleanup'
+                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --destination devops4me/haven:latest --cleanup'
             }
         }
         stage('Run the Cucumber Tests')
@@ -126,12 +126,12 @@ pipeline
             {
                 kubernetes
                 {
-                    yamlFile 'pod-image-safetty.yaml'
+                    yamlFile 'pod-image-haven.yaml'
                 }
             }
             steps
             {
-                container('safettytests')
+                container('haventests')
                 {
                     sh '/home/safeci/code/cucumber-test.sh'
                 }
@@ -155,15 +155,15 @@ spec:
         env:
         -   name: CONTAINER_ENV_VAR
             value: jnlp
-    -   name: safettytests
-        image: devops4me/safetty:latest
+    -   name: haventests
+        image: devops4me/haven:latest
         imagePullPolicy: Always
         command:
         -   cat
         tty: true
         env:
         -   name: CONTAINER_ENV_VAR
-            value: safettytests
+            value: haventests
 ```
 
 

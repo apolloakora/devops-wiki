@@ -19,7 +19,7 @@ Follow the **[How to Setup Microk8s on Ubuntu](/kubernetes/microk8s-install)** t
 
 ## Step 1 | Configure the Jenkins Kubernetes Plugin
 
-The **[Jenkins/Kubernetes plugin](https://plugins.jenkins.io/kubernetes)** is already configured into **[this DockerHub Jenkins docker image](https://hub.docker.com/r/devops4me/docker-jenkins-cluster)**. You can extend it or copy and change the Dockerfile.
+The **[Jenkins/Kubernetes plugin](https://plugins.jenkins.io/kubernetes)** is already configured into **[this DockerHub Jenkins docker image](https://hub.docker.com/r/devops4me/docker-jenkins)**. You can extend it or copy and change the Dockerfile.
 
 This **[Jenkins Worker Docker Image](https://hub.docker.com/r/jenkinsci/jnlp-slave)** is used as the vanilla template to run jobs. It is _open for extension_ as object orienteers would say.
 
