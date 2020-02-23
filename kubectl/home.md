@@ -12,4 +12,5 @@ When running a Kubernetes deployment, you use kubectl (on your client's command 
 
 ## Did You Know
 
-- **[How to Add TLS Certs to Kubernetes Pod CA Store](https://medium.com/%40paraspatidar/add-ssl-tls-certificate-or-pem-file-to-kubernetes-pod-s-trusted-root-ca-store-7bed5cd683d)**
+- **[Kubectl Official CheatSheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)**
+- **[Kubectl CheatSheet](https://github.com/dennyzhang/cheatsheet-kubernetes-A4)**
