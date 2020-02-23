@@ -1,7 +1,7 @@
 
 ![logo](/media/kubernetes-cloud-square.jpeg "kubernetes clusters, kubectl, pods and container orchestration.")
 
-### kubernetes pages
+### kubectl pages
 
 - **[microk8s install](/kubernetes/microk8s-install)**
 - **[jenkins and kubernetes](/kubernetes/kubernetes-slaves)**
