@@ -2,9 +2,7 @@
 # network cat | ncat | nc | openssl
 
 ``` bash
-sudo apt-get install --assume-yes netcat
-sudo apt-get install --assume-yes nmap
-sudo apt-get install --assume-yes telnet-ssl
+sudo apt-get install --assume-yes netcat nmap telnet-ssl
 ```
 
 ## netcat | debug incoming client connection

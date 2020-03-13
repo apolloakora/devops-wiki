@@ -47,5 +47,14 @@ du -cah * | sort -hr              # human readable (size) sorted list of every f
 du -shc * | sort -hr              # summarize but exclude all the hidden (dot files and folders)
 ```
 
+## Common Disk Utilities
+
+- run from terminal **`sudo cfdisk /dev/xxxx`**
+- **`sudo parted -l`**
+- **`sudo apt install pydf --assume-yes`**
+- **`pydf`**
+- **`sudo apt install hwinfo --assume-yes`**
+
+
 ## df | Disk Free
 

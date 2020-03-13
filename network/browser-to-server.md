@@ -44,6 +44,15 @@ Address: 3.248.162.35
 ```
 
 
+## traceroute | tracing the route from client to server
+
+After DNS gives us the IP address to send the packets to - the actual request packets travel on a journey with several hops. These hops can be traced with traceroute.
+
+On Ubuntu install traceroute with **`sudo apt install traceroute --assume-yes`**
+
+
+
+
 ## Break up Url
 
 The url has 3 parts to it.
