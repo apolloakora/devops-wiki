@@ -1,4 +1,60 @@
 
+# Devops Wiki | for Devops Engineers
+
+It is vital to carry expert know-how to the key Devops technologies namely Docker, Kubernetes, Git, AWS, Jenkins, Python, Ruby, Ansible and Bash.
+
+## The Primary Devops Technologies
+
+- Docker - the Docker CLI and Dockerhub
+- Kubernetes Objects, Kops and the kubectl CLI
+- Terraform
+- Git - version management and GitHub, Hub and Gitlab
+- AWS Console and the AWS Cli
+- Jenkins
+- Ansible | Chef and Puppet for configuration management
+
+## The Key Devops Software Technologies
+
+- Python
+- Ruby
+- Bash
+- Go
+
+## Editors for the Devops Engineer
+
+Nothing boosts productivity like a deep knowledge of editors and interfaces and the ability to navigate them in order to create, understand and command.
+
+- the PyCharm (IntelliJ) Python Editor
+- the Emacs Operating Environment
+- the RubyMine Ruby IDE
+- the Firefox web browsing interface
+
+## Core Binding Technologies
+
+- networks
+- http | https | dns
+- VPNs - OpenVPN
+
+## Operating Environments
+
+- Ubuntu
+- Mac
+- CoreOS
+
+## Key Application Services
+
+- Queues like RabbitMQ and Kafka
+- Relational Databases like Postgres | Mysql | Oracle
+- NoSQL Databases like ElasticSearch | MongoDB
+- Security Infrastructure like Vault
+
+## Pipelines Orchestration and Services
+
+- Jenkins | Bamboo | CodeShip | TravisCI and Circle CI
+- 
+
+
+
 ## Pipelines | Jenkins | SonarQube | Nexus
 
 How do you create an entire **Continous Integration Pipeline** in one step using **[docker compose](/pipeline/pipeline-using-docker-compose)**? How do you use **[Kubernetes PaaS to run your Jenkins Build Jobs](/kubernetes/kubernetes-slaves)**? How do you setup a **[declarative Jenkinsfile for a JAVA microservice](/pipeline/for-java-microservice/)**? What about a **[.NET microservice](/pipeline/for-dotnet-microservice/)**?
