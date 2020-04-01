@@ -24,6 +24,11 @@ Some things are best done in the .emacs file. Here we
 
 Emacs configuration on the mac with the z shell is different in some ways to something like Ubuntu running bash.
 
+## Making emacs fullscreen
+
+Use alt-x toggle-frame-fullscreen to move emacs in and out of full screen mode on the mac.
+
+
 ## Where is the History
 
 Instead of .bash_history the z shell uses the .zsh_history file.
