@@ -58,6 +58,27 @@ What changes makeup any **"pushed or unpushed"** commit? You first find the comm
 The above assumes a **commit reference of f6715b924** is available.
 
 
+## Comparing Git Repository Changes between 2 Commits
+
+This is a same branch comparison so you must first find the start and end commit references.
+
+```
+git config --local core.pager cat     # switch off the pesky terminal prompts
+In the file do Ctrl-x v l             # lists a file commit change log
+xxxxxxxxxxxxxxx                       # lists the commits line by line
+```
+
+Now that you have the two commit references you do this.
+
+```
+git diff abcdefg7d4 hijklmno                      # there could be way too many changes
+git diff abcdefy2a6 hijklmno -- *.yml **/*.yml    # so why not break it down by file type
+```
+
+So an Ansible project that is primarily YAML can be productively diff'd.
+
+Also note that the output gives you individual diff commands so you can examine changes more studiously.
+
 ## Git Repo | The Last N Commits | Who When and Why
 
 Who was involved in the last N commits, when did they do it and why?
