@@ -1,18 +1,32 @@
 
-# Install Ansible | Ubuntu | Mac | AWS | Azure
+# Install Ansible on Ubuntu and Mac
 
+
+## Installing Ansible for Azure | Ubuntu
+
+On an Ubuntu machine with both python3 and pip3 present you run these commands to bring Ansible and Azure to the table.
 
 ``` bash
 sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
+sudo apt update
+sudo apt install ansible
+ansible --version
+pip3 -V
+python3 --version
+sudo pip3 install 'ansible[azure]'
+pip3 install pywinrm
 ```
+
+Now we have to install the Azure CLI. This is how.
+
+```
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+```
+
 
 ## Installing Ansible for Azure | MacBook
 
-Ansible makes you productive when automating infrastructure provisioning and configuration management in Azure.
-
-On the Mac (with Homebrew) simply install ansible with
+Ansible makes you productive when automating infrastructure provisioning and configuration management in Azure. On the Mac (with Homebrew) simply install ansible with
 
 ```
 brew install ansible
@@ -21,44 +35,59 @@ brew install python3
 pip3 -V
 python3 --version
 sudo pip3 install 'ansible[azure]'
+pip3 install pywinrm
+brew update && brew install azure-cli
 ```
 
-## Azure Register App and Export Credentials
+#### Error | objc[15130]: +[__NSCFConstantString initialize] may have been in progress in another thread when fork() was called.
 
-Go to the **[Azure Portal](https://portal.azure.com)** and on the left click on Active Directory, App registrations then select the app.
-
-| Environment Variable | Azure Portal Name | Description of Text |
-|:-------------------- |:----------------- |:--------------------------------------- |
-| AZURE_SUBSCRIPTION_ID | Display Name | The name you selected for your application. |
-| AZURE_CLIENT_ID |  | Application (Client) Id | Long hyphenated hexadecimal string |
-| AZURE_TENANT | Directory (Tenant) ID | Long hyphenated hexadecimal string |
-| AZURE_SECRET | (see below) | String containing lower, upper and punctuation chars. |
-
-### How to Acquire an Azure Secret
-
-To acquire a secret against your application registration you
-
-- click on **`Certificates and Secrets`**
-- click on **`New Client Secret`**
-- enter a description and add the secret
-- copy the secrets value and paste
-
-At the terminal export these Azure credentials.
+This error occurs due to a change within some python libraries. To fix it export this environment variable.
 
 ```
-export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-export AZURE_CLIENT_ID=<security-principal-appid>
-export AZURE_SECRET=<security-principal-password>
-export AZURE_TENANT=<security-principal-tenant>
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
 
-If you use a safe to store credentials you can export them like this.
+
+
+To install the Azure CLI on a mac
 
 ```
-safe open microsoft account
-export AZURE_SUBSCRIPTION_ID=`safe print azure.subscription.id`
-export AZURE_CLIENT_ID=`safe print azure.client.id`
-export AZURE_SECRET=`safe print @azure.secret`
-export AZURE_TENANT=`safe print azure.tenant`
-printenv
+brew update && brew install azure-cli
 ```
+
+## Prepare for az login without browser popup
+
+The az login with browser popup is more than trying - if you ssh into another machine you won't have the ability to click on the popped up browser window. This is how to get round this.
+
+- **`az login`** at the command line
+- the result tells you the user name, the subscription ID and the tenant ID.
+
+
+1.Login to Azure.
+
+2.Use az ad sp create-for-rbac to create the service principal.
+
+az ad sp create-for-rbac --name leapapp --password "le4pStr0ngP455W@rd"
+
+Example
+
+az ad sp create-for-rbac --name shuiexample --password "Password012!!" 
+
+You could get result like below:
+
+{
+  "appId": "bca24913-026d-4020-b9f1-add600bf9045",
+  "displayName": "shuiexample1234",
+  "name": "http://shuiexample1234",
+  "password": "*******",
+  "tenant": "*******"
+}
+
+3.Sign in using the service principal using the following:
+
+$appID="bca24913-026d-4020-b9f1-add600bf9045"
+$password="******"
+$tenant="*******"
+az login --service-principal -u $appID --password $password --tenant $tenant
+
+

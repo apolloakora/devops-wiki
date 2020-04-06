@@ -63,17 +63,24 @@ The above assumes a **commit reference of f6715b924** is available.
 This is a same branch comparison so you must first find the start and end commit references.
 
 ```
-git config --local core.pager cat     # switch off the pesky terminal prompts
-In the file do Ctrl-x v l             # lists a file commit change log
-xxxxxxxxxxxxxxx                       # lists the commits line by line
+git config --local core.pager cat          # switch off the pesky terminal prompts
+git log -10                                # list the last 10 commits
+git log -10 --format="%ai %h %ae %cn %s"   # pretty print the last 10 commits
 ```
 
-Now that you have the two commit references you do this.
+Now that you have the two commit references you can do this.
+
+**`git diff 221636a 39ce3f7 -- ":(exclude)*/*.map" ":(exclude)*/*.jar" ":(exclude)*/*.js" ":(exclude)*/*.css" ":(exclude)*/*.html" ":(exclude)*/*.svg"`**
+
+This lists the changes whilst excluding files not meant for human consumption.
 
 ```
 git diff abcdefg7d4 hijklmno                      # there could be way too many changes
-git diff abcdefy2a6 hijklmno -- *.yml **/*.yml    # so why not break it down by file type
+git diff abcdefg7d4 hijklmno -- ":(exclude)this"  # so you could exclude certain file types and paths
+git diff abcdefy2a6 hijklmno -- *.yml **/*.yml    # or you could include certain file types and paths
 ```
+
+git diff 221636a 39ce3f7 -- ":(exclude)*/*.js.map"
 
 So an Ansible project that is primarily YAML can be productively diff'd.
 

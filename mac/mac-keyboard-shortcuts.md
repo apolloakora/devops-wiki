@@ -9,6 +9,26 @@ The two solutions are
 - **`killall Dock`** # perform this on the command line (terminal or emacs)
 - use the mouse to un-minimize the app first
 
+## Home | End | Moving Around with Home and End
+
+Where is the Home key on the Mac - and where is our beloved Delete key that can remove text backwards?
+
+- Home key is **`Fn Left Arrow`**
+- End key is **`Fn Right Arrow`**
+
+Not on **emacs** but on other text areas like Outlook and TextEdit you can move around using
+
+- **`Home`** scroll window to the top (without changing the keyboard focus)
+- **`End`** scroll window to the bottom (without changing the keyboard focus)
+- **`Command Up Arrow`** moves the insertion point to the beginning of the document
+- **`Command Down Arrow`** moves the insertion point to the end of the document
+- **`Command Left/Right Arrow`** moves to the beginning or end of the line
+- **`Option Left/Right Arrow`** moves forward or backword by words
+- **`Option Up/Down Arrow`** jumps upwards and downwards by paragraph
+
+To select text whilst moving you hold the shift key.
+
+
 ## Firefox Keyboard Shortcuts on Mac
 
 - back and forward with **Delete** and **Shift-Delete**
