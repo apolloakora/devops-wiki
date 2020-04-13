@@ -29,6 +29,16 @@ Not on **emacs** but on other text areas like Outlook and TextEdit you can move 
 To select text whilst moving you hold the shift key.
 
 
+## How to Quit the Finder
+
+You can quit the Finder and add the quit option to the Finder menu with this terminal command.
+
+``` zsh
+defaults write com.apple.finder QuitMenuItem -bool true
+killall Finder
+```
+
+
 ## Firefox Keyboard Shortcuts on Mac
 
 - back and forward with **Delete** and **Shift-Delete**
