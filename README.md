@@ -3,6 +3,8 @@
 
 This repository holds the content of the devops wiki which is served via the **[gollum devops4me/devopswiki.co.uk docker container](https://hub.docker.com/r/devops4me/devopswiki.co.uk)** in **dockerhub**.
 
+Small change to test commit
+
 ## how to run the wiki
 
 This wiki's image lives in Dockerhub so you can simply run it and start browsing.
