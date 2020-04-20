@@ -24,6 +24,21 @@ Some things are best done in the .emacs file. Here we
 
 Emacs configuration on the mac with the z shell is different in some ways to something like Ubuntu running bash.
 
+## Emacs Disk Permissions
+
+Rumour has it that emacs is actually instantiated by a Ruby script and so adopts the base permissions given to Ruby. To resolve the many issues of emacs not being able to access parts of the disk simply do
+
+- System Preferences
+- search for **`Privacy Settings`**
+- on the left scroll to **`Full Disk Access`**
+- click to Unlock and enter the sudo password
+- click the + (plus) to Add
+- go to **`/usr/bin/ruby`** and click Open
+- make sure the Terminal and sh have full disk access too
+
+Now your emacs permission issues are resolved.
+
+
 ## Making emacs fullscreen
 
 Use alt-x toggle-frame-fullscreen to move emacs in and out of full screen mode on the mac.
