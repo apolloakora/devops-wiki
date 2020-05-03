@@ -17,7 +17,8 @@ Use the menu and type **`disk`** for the analyzer. The key features are
 
 Due to a finickity bug **du -shc | sort -hr** can be **extremely misleading** because it **ignores directories beginning with a dot**. The summary figure can be a hundredth of the real size if you have large dot directories under your nose.
 
-    du -shc .[!.]* * | sort -hr
+    du -ac | sort -hr | head -20  # On MAC with Z shell
+    du -shc .[!.]* * | sort -hr   # On ubuntu and bash shells
 
 Adding the <strong>.[!.]*</strong> clears up the problem giving you an accurate view.
 
