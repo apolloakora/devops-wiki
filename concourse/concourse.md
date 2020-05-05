@@ -1,6 +1,9 @@
 
 # Concourse Install
 
+- **[]()
+- **[Concourse YouTube Presentation](https://www.youtube.com/watch?v=m_KpkupKITc)**
+
 You can install and run concourse using **`docker-compose`**.
 
 ```
@@ -26,6 +29,5 @@ cd ~/assets
 git clone https://github.com/starkandwayne/concourse-tutorial.git
 cd concourse-tutorial/tutorials/basic/task-hello-world
 fly -t tutorial execute -c task_hello_world.yml
-
 ```
 
