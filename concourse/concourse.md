@@ -1,10 +1,7 @@
 
 # Concourse Install
 
-- **[]()
-- **[Concourse YouTube Presentation](https://www.youtube.com/watch?v=m_KpkupKITc)**
-
-You can install and run concourse using **`docker-compose`**.
+You can install and run concourse using **`docker-compose`**. See the [docker-compose file](compose/docker-compose.yml) for the username and password. The one we use here is **`devops4me`** and **`p455word`**
 
 ```
 brew install wget
@@ -24,10 +21,15 @@ Now set it as an executable. If the mac complains about the executable not being
 ```
 cp ~/Downloads/fly /usr/local/bin/
 chmod u+x /usr/local/bin/fly 
-fly -t tutorial login -c http://localhost:8080 -u test -p test
+fly -t devops4me login -c http://localhost:8080 -u test -p test
 cd ~/assets
 git clone https://github.com/starkandwayne/concourse-tutorial.git
 cd concourse-tutorial/tutorials/basic/task-hello-world
-fly -t tutorial execute -c task_hello_world.yml
+fly -t devops4me execute -c task_hello_world.yml
 ```
+
+## Also See
+
+- **[]()
+- **[Concourse YouTube Presentation](https://www.youtube.com/watch?v=m_KpkupKITc)**
 
