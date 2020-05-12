@@ -5,7 +5,8 @@ You can install and run concourse using **`docker-compose`**. See the [docker-co
 
 ```
 brew install wget
-wget https://concourse-ci.org/docker-compose.yml
+git clone https://github.com/devops4me/concourse-pipeline
+cd concourse-pipeline/compose
 docker-compose up -d
 docker ps -a
 ```
@@ -14,19 +15,32 @@ docker ps -a
 
 The command line tools for the mac can be accessed via this link.
 
-**`http://localhost:8080/api/v1/cli?arch=amd64&platform=darwin`**
+**`http://localhost:4321/api/v1/cli?arch=amd64&platform=darwin`**
 
 Now set it as an executable. If the mac complains about the executable not being trusted go to **`System Preferences`** then **`Security and Privacy`** **`General`** and click **`Allow Anyway`** next to the fly statement.
 
 ```
 cp ~/Downloads/fly /usr/local/bin/
 chmod u+x /usr/local/bin/fly 
-fly -t devops4me login -c http://localhost:8080 -u test -p test
+fly --version
+```
+
+The **`fly --version`** command should now return a sensible value.
+
+## Login to a Fly Target
+
+The name of the target and url are stored in the **`~/.flyrc`** file. The url, port, username and password are stored in the **`docker-compose.yml`** file.
+
+```
+fly --target=maclocal login --concourse-url=http://localhost:4321 --username user4me --password p455w0rd
+fly -t devops4me login -c http://localhost:4321 -u user4me -p p455w0rd
 cd ~/assets
 git clone https://github.com/starkandwayne/concourse-tutorial.git
 cd concourse-tutorial/tutorials/basic/task-hello-world
 fly -t devops4me execute -c task_hello_world.yml
 ```
+
+
 
 ## Also See
 

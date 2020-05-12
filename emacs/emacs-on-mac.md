@@ -44,6 +44,30 @@ Now your emacs permission issues are resolved.
 Use alt-x toggle-frame-fullscreen to move emacs in and out of full screen mode on the mac.
 
 
+---
+
+
+## Copy and Paste from Terminal Shell
+
+In the unfortunate circumstance where you have to ssh into a remote computer - you install emacs and then you need to use terminal emacs - how do you copy from it and paste into the terminal emacs on a Mac.
+
+You don't use the Ctrl-Shift-C nor the Ctrl-Shift-V
+
+### Copy from Terminal Emacs
+
+To copy you select with the mouse and then do command-c
+Now you can paste elsewhere including Ctrl-y in a proper emacs window.
+
+
+### Paste into Terminal Emacs
+
+To paste you simply use command-v
+This drops in text for example previously copied with Option-w from a proper emacs window.
+
+
+---
+
+
 ## Where is the History
 
 Instead of .bash_history the z shell uses the .zsh_history file.
