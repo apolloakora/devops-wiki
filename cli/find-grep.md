@@ -32,7 +32,7 @@ This command finds files with **vpn** in (either) their path (or name) in which 
 sudo find . -path "*vpn*" -type f -exec grep -i "staging" {} +
 ```
 
-## find emacs squiggle file
+## find emacs squiggle files
 
 Need to scan a repo for those pesky but sometimes life-saving emacs squiggle files? Look no further.
 
@@ -40,6 +40,17 @@ Need to scan a repo for those pesky but sometimes life-saving emacs squiggle fil
 find . -name "*.*~"             # find any type of squiggle file
 find . -name "*.*~" 2>/dev/null # find squiggle files but ignore permission errors
 find . -name "*.md~"            # squiggle markdown files
+```
+
+## find and remove .DS_Store files
+
+Need to scan for (and remove) those pesky Mac Finder .DS_Store files? Look no further.
+
+```bash
+cd                                # go to the home folder
+find . -name .DS_Store            # find all instances of the .DS_Store file
+rm $(find . -name .DS_Store)      # recursively remove all the .DS_Store files
+git rm $(find . -name .DS_Store)  # recursively remove from git repos
 ```
 
 ## find | find files and filter the results
