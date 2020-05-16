@@ -104,6 +104,46 @@ find . -name *.pdf 2>/dev/null | wc -l   # no error lines - I just want the PDF 
 find . -name *.pdf | grep -i python | wc -l  # count the pdf files with p(P)ython in the name
 ```
 
+## Exclude Folder from Find
+
+We can pipe the list of found files through **`grep -v <folder-name>`** but more naturally we can use the **`-not`** switch.
+
+```
+find . -name \*.pdf -not -path \*folder-to-exclude\*   # the backslashes are for mac osx zshell
+find . -name \*.pdf -not -path *folder-to-exclude*     # no backslash for bash (ubuntu) shells
+```
+
+## xargs and find | Copy found files to a folder
+
+We use xargs to line things up for the copy **`cp`** command. Note that
+- **`-J`** sets out the files to copy on one line (one copy command)
+- **`-I`** calls the copy command multiple times (for each file)
+
+The echo commands below illustrate the effect of **`-I`** vs **`-J`**.
+
+```
+find . -name \*.pdf -not -path \*folder-to-exclude\* | xargs -J % echo cp % ~/destination-folder
+find . -name \*.pdf -not -path \*folder-to-exclude\* | xargs -I % echo cp % ~/destination-folder
+```
+
+To actually copy the files use one of these commands.
+
+```
+find . -name \*.pdf -not -path \*folder-to-exclude\* | xargs -J % cp % ~/destination-folder
+find . -name \*.pdf -not -path \*folder-to-exclude\* | xargs -I % cp % ~/destination-folder
+```
+
+### Copy multiple files with command substitution
+
+We do not need xargs to get the job done. We can do it just as well (simpler even) with shell command substitution.
+
+```
+echo cp $(find . -name \*.pdf -not -path \*folder-to-exclude\*) ~/destination-folder
+cp $(find . -name \*.pdf -not -path \*folder-to-exclude\*) ~/destination-folder
+```
+
+The echo look-sees and if you are happy use the copy.
+
 ## double grep commands | match one not another
 
 Find lines matching one string but excluding another string.
