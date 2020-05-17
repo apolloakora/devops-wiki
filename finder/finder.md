@@ -46,6 +46,8 @@ Finder has four powerful ways to view files and folders.
 1. **Column View** - **`Command 3`** switches to the **column** view
 1. **Gallery View** - **`Command 4`** switches to the **gallery (preview)** view
 
+To view more information about a file or folder you can use **`Command i`** and a card will popup with the **info**.
+
 ## Grouping your Icons and Lists | Command Control <N>
 
 Use **`Command Control 1`** to tidy up your view. If new files and folders are messily placed or if there are holes from deletions use **`Cmd Ctrl 1`** to restore sanity.
