@@ -42,6 +42,18 @@ find . -name "*.*~" 2>/dev/null # find squiggle files but ignore permission erro
 find . -name "*.md~"            # squiggle markdown files
 ```
 
+## find all pdf files excluding many paths
+
+On the MAC command line we must escape asterices. Use this to find all the PDF documents in the present working tree excluding some common places.
+
+```
+find . -name \*.pdf \
+   -not -path \*apollo-clouds-documents\* \
+   -not -path \*.Trash\* \
+   -not -path \*/Books/\* \
+   -not -path \*ReferenceCard\*.pdf
+```
+
 ## find and remove .DS_Store files
 
 Need to scan for (and remove) those pesky Mac Finder .DS_Store files? Look no further.
