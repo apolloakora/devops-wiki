@@ -14,6 +14,8 @@ These settings will work on Windows, Linux and MacOS as long as you set the Keym
 | Move Line Down         | **`Option Shift (Down)`**       | **`Alt Shift (Down)`**       | Coding    |
 | Move Method Vars Left  | **`Ctrl Option Shift (Left)`**  | **`Ctrl Alt Shift (Left)`**  | Coding    |
 | Move Method Vars Right | **`Ctrl Option Shift (Right)`** | **`Ctrl Alt Shift (Right)`** | Coding    |
+| Generate Getters/Setters | **``** | **``** | Coding    |
+
 | Run Tests or App       | **`Ctrl Shift F10`**            | **`Ctrl Shift F10`**         | Run       |
 | Organize Imports       | **`Ctrl Option o`**             | **`Ctrl Alt o`**             | Refactor  |
 | Undo the last action   | **`Ctrl Shift - (hyphen)`**     | **`Ctrl Shift - (hyphen)`**  | Editor    |
@@ -21,6 +23,25 @@ These settings will work on Windows, Linux and MacOS as long as you set the Keym
 | Unfold a Code Block    | **`Ctrl = (equals)`**           | **`Ctrl = (equals)`**        | Editor    |
 | Push to Git Remote     | **`Ctrl Shift K`**              | **`Ctrl Shift K`**           | Git       |
 | Open Settings Window   | **`Command , (Comma)`**         | **`Windows ,(Comma)`**       | Configure |
+
+## Navigating Projects, Tool Windows and Editor Tabs
+
+Each keyboard shortcut is grouped by What is being navigated.
+
+| Capability             | Mac Keyboard                    | Ordinary Keyboard            | What?          |
+|:---------------------- |:------------------------------- |:---------------------------- |:-------------- |
+| Kill Editor Tab        | **`Ctrl x k`**                  | **`Ctrl x k`**               | Editor Tabs    |
+| Previous / Next Tab    | **`Ctrl x p (n)`**              | **`Ctrl x p (n)`**           | Editor Tabs    |
+| Previous / Next Tab    | **`Option Left(Right) Arrow`**  | **`Alt Left(Right) Arrow`**  | Editor Tabs    |
+| Kill Editor Tab        | **`Ctrl x k`**                  | **`Ctrl x k`**               | Editor Tabs    |
+
+### Navigating to Different Tool Windows
+
+| Capability             | Mac Keyboard                    | Ordinary Keyboard            | What?          |
+|:---------------------- |:------------------------------- |:---------------------------- |:-------------- |
+| Goto Project Hierarchy | **`Option 1`**                  | **`Alt 1`**                  | Tool Windows   |
+| Goto Version Control   | **`Option 9`**                  | **`Alt 9`**                  | Tool Windows   |
+
 
 ## Surrounding Code Blocks With ...
 

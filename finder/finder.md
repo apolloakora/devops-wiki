@@ -89,6 +89,17 @@ So to sort within groups of files (in icons and lists)
 Command Shift and Dot toggles viewing the hidden files within the folder's portfolio.
 
 
-## Finder Settings | Command Comma
+## Finder Settings | Command Comma | Command j
 
 As with most MacOsx apps, **`Command ,`** opens up the settings dialog. With finder you can set the default home folder.
+
+### Configuring Finder Views | Command j
+
+Use **`Command j`** to get into the view configuration to set and decide
+
+- which columns you want to see (within the list view)?
+- whether you want folder tree sizes calculated?
+- what default grouping (and sorting within the group) would you like?
+- whether you want to default to an icon or a list view?
+- whether you want every folder view to use the above defaults
+
