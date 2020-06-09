@@ -15,6 +15,22 @@ The key environment variables that the postgres container will respond to are
 
 
 
+## Install PostgreSQL (psql) on Mac
+
+First we need to upgrade homebrew a little.
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Now enter sudo password
+brew update
+brew install postgresql
+postgres --version
+psql --version
+psql --help
+```
+
+To load a SQL file you use **`\i ~/path/to/file.sql`**
+
 ## Install psql on Ubuntu and Emacs
 
 ```
@@ -22,9 +38,10 @@ sudo apt update --assume-yes
 sudo apt install postgresql postgresql-contrib --assume-yes
 psql --help
 psql --version
-# Type alt-x sql-postgres
 ```
-Now to connect using emacs you simply
+## Use psql through Emacs
+
+You can talk to a postgres database within a familiar emacs environment.
 
 - type alt-x sql-postgres
 - enter the connection details hostname, username, database name and password
