@@ -3,6 +3,42 @@
 
 A lot can go wrong in the world of Kubernetes. Here is a list of symptoms, ways to dig deeper, likely culprits, what doesn't work and remedial actions.
 
+
+## Kubernetes Nodes NotReady
+
+### symptoms | `kubectl get nodes`
+
+The node status is marked as **NotReady** by the **`kubectl get nodes`** command.
+
+```
+NAME         STATUS     ROLES    AGE     VERSION
+k8s-master   NotReady   master   27m     v1.18.3
+node-1       NotReady   <none>   11m     v1.18.3
+node-2       NotReady   <none>   10m     v1.18.3
+node-3       NotReady   <none>   9m54s   v1.18.3
+```
+
+### try | `kubectl describe nodes`
+
+Describing the nodes gives you a lot more information and can reveal the error in many cases. The below example shows that the runtime network is not ready.
+
+
+#### `runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized`
+
+```
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Tue, 16 Jun 2020 11:13:42 +0000   Tue, 16 Jun 2020 10:03:09 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 16 Jun 2020 11:13:42 +0000   Tue, 16 Jun 2020 10:03:09 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Tue, 16 Jun 2020 11:13:42 +0000   Tue, 16 Jun 2020 10:03:09 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            False   Tue, 16 Jun 2020 11:13:42 +0000   Tue, 16 Jun 2020 10:03:09 +0000   KubeletNotReady              runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+```
+
+
+---
+
+
 ## Error from server (BadRequest): container in pod is waiting to start: trying and failing to pull image
 
 ### Symptoms | ErrImagePull | ImagePullBackOff
