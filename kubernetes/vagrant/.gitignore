@@ -1,0 +1,12 @@
+
+## Ignore the .vagrant file created when vagrant up is issued
+.vagrant
+
+## Ignore VirtualBox VM log for an Ubuntu 18.04 box
+ubuntu-bionic-18.04-cloudimg-console.log
+
+## Ignore the kubernetes cluster (kubectl) configuration files
+kubectl-configuration.yml
+
+## Ignore the file storing the kubernetes cluster join command
+cluster-join-command.sh

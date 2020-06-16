@@ -1,6 +1,7 @@
 ---
 - hosts: all
   become: true
+  name: Configure the Kubernetes Cluster Nodes
   tasks:
   - name: Install packages that allow apt to be used over HTTPS
     apt:
@@ -91,7 +92,6 @@
   - name: Storing Logs and Generated token for future purpose.
     local_action: copy content={{ kubeadm_init_output.stdout }} dest=join_token_file
     become: false
-######    sudo: False
 
   - name: Setup kubeconfig for vagrant user
     command: "{{ item }}"
@@ -110,19 +110,20 @@
     register: join_command
 
   - name: Copy join command to local file
-    become: true
-    local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
+    local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="cluster-join-command.sh"
     become: false
-#####    sudo: False
 
-###########- name: 'Configure the Leapwork Controllers'
-###########  hosts: 'leapwork_controllers'
-###########  tasks:
+  - name: Fetch kubectl configuration file from the master
+    fetch:
+      src: /home/vagrant/.kube/config
+      dest: kubectl-configuration.yml
+      flat: yes
 
-###########- file:
-###########    path: /etc/foo.conf
-###########    owner: foo
-###########    group: foo
+  - name: Copy the kubectl configuration file to its local home
+    copy:
+     src: kubectl-configuration.yml
+     dest: ~/.kube/config
+    delegate_to: localhost
 
   handlers:
     - name: docker status
