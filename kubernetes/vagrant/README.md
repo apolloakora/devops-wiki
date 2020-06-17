@@ -398,3 +398,19 @@ Initially to access the cluster you
 - run **`kubectl get nodes`**
 
 Now your cluster is ready for lots of learning, validating and provisioning in a local setting without the hefty cloud fees.
+
+
+## Kubernetes Cluster Internet Resources
+
+This is the only resource that works out of the box with one **`vagrant up`** command. However there are still some great references pages where authors have built kubernetes clusters with Ansible and Vagrant.
+
+- **[Create Kubernetes Cluster from IT WonderLab](https://www.itwonderlab.com/ansible-kubernetes-vagrant-tutorial/)**
+- **[Install Calico Networking for On-Premise Deployments](https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises)**
+- **[Kubernetes Vagrant and Ansible Github Repo](https://github.com/ctienshi/kubernetes-ansible/tree/master/centos)**
+- **[Ansible Official User Guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)**
+- **[Installing Kubernetes on Docker](https://www.howtoforge.com/tutorial/how-to-install-kubernetes-on-ubuntu/)**
+- **[Out of Date Kubernetes Guide using Ubuntu 16.04](https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant/)**
+- **[Medium Kubernetes Cluster with Vagrant and Ansible](https://medium.com/@MonadicT/create-a-kubernetes-cluster-with-vagrant-and-ansible-88af7948a1fc)**
+- **[Using Ansible to Create a Kubernetes Virtual Lab](https://graspingtech.com/create-kubernetes-cluster/)**
+- **[Create a Kubernetes Cluster on Vagrant using Ansible](https://jeremievallee.com/2017/01/31/kubernetes-with-vagrant-ansible-kubeadm.html)**
+- **[Create a Standalone Kubernetes Cluster with Vagrant](https://nextbreakpoint.com/posts/article-create-standalone-kubernetes-cluster-with-vagrant.html)**

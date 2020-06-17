@@ -10,3 +10,6 @@ kubectl-configuration.yml
 
 ## Ignore the file storing the kubernetes cluster join command
 cluster-join-command.sh
+
+## Ignore the kubeadm cluster initialization log output file
+kubeadm-init-output.log
