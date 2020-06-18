@@ -4,6 +4,40 @@
 A lot can go wrong in the world of Kubernetes. Here is a list of symptoms, ways to dig deeper, likely culprits, what doesn't work and remedial actions.
 
 
+
+## Kubernetes Nodes have Same IP Address
+
+If **`kubectl get nodes -o wide`** returns a table with **INTERNAL-IP** having all the same values like the table below, wht do you do?
+
+```
+NAME         STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION       CONTAINER-RUNTIME
+k8s-master   Ready    master   18m   v1.18.4   10.0.2.15     <none>        Ubuntu 18.04.4 LTS   4.15.0-106-generic   docker://19.3.11
+node-1       Ready    <none>   16m   v1.18.4   10.0.2.15     <none>        Ubuntu 18.04.4 LTS   4.15.0-106-generic   docker://19.3.11
+node-2       Ready    <none>   14m   v1.18.4   10.0.2.15     <none>        Ubuntu 18.04.4 LTS   4.15.0-106-generic   docker://19.3.11
+```
+
+This problem occurs because if you do not override the kubelet service definition to override the hostname. Without this statement kubelet picks the first interface address available which on Vagrant (the NAT interface) is always the same.
+
+#### `Environment="KUBELET_EXTRA_ARGS=--hostname-override=xx.x.x.xx"`
+
+We need to insert the above line in the kubelet service file and set **`xx.x.x.xx`** to **`10.0.2.16`** then **`10.0.2.17`** and so on. After that we need to restart the kubelet service.
+
+### Solution | Setting the Node's IP Address
+
+On older kubernetes versions the workaround was to manually insert the **`KUBELET_EXTRA_ARGS`** line above into the **`/etc/default/kubelet`** file. More recently this file will not exist and even the official Kubernetes Vagrant Ansible install blog (for Ubuntu 16.04) will cause a **file not found** failure.
+
+The **[kubeadm init documentation](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/)** explains how to address this issue in the **`Setting the node name`** section.
+
+<blockquote>
+By default, kubeadm assigns a node name based on a machine's host address. You can override this setting with the --node-name flag. The flag passes the appropriate --hostname-override value to the kubelet.
+</blockquote>
+
+So set the --node-name flag when running the kubeadm init command and it will result in **`--hostname-override`** being set in the kubelet service file.
+
+
+---
+
+
 ## Kubernetes Nodes NotReady
 
 ### symptoms | `kubectl get nodes`

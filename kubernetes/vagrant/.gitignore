@@ -9,7 +9,7 @@ ubuntu-bionic-18.04-cloudimg-console.log
 kubectl-configuration.yml
 
 ## Ignore the file storing the kubernetes cluster join command
-cluster-join-command.sh
+node-join-cmd.sh
 
 ## Ignore the kubeadm cluster initialization log output file
 kubeadm-init-output.log
