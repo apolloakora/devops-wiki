@@ -84,15 +84,15 @@
       daemon_reload: yes
       state: restarted
 
-  - name: Append node IP address to the cluster join command
-    local_action: command echo "$(cat node-join-cmd.sh) --node-name={{ node_ip }}" > node-{{ node_index }}-join-cmd.sh
-    become: false
+#####  - name: Append node IP address to the cluster join command
+#####    local_action: command 'echo "$(cat node-join-cmd.sh) --node-name={{ node_ip }}" > node-{{ node_index }}-join-cmd.sh'
+#####    become: false
 
-  - name: Copy the join command to server location
-    copy: src=node-{{ node_index }}-join-cmd.sh dest=/tmp/join-command.sh mode=0777
+#####  - name: Copy the join command to server location
+#####    copy: src=node-{{ node_index }}-join-cmd.sh dest=/tmp/join-command.sh mode=0777
 
   - name: Join the node to cluster
-    command: sh /tmp/join-command.sh
+    command: kubeadm join 192.168.50.10:6443 --token wls1ik.grvjcscyd0xrysrx --discovery-token-unsafe-skip-ca-verification --node-name={{ node_ip }}
 
   handlers:
     - name: docker status
