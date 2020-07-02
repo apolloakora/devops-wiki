@@ -1,6 +1,23 @@
 
 # Python Software Development
 
+## How to Run Python Software
+
+As with any programming language you can run python from an IDE, from the command line, from a website, REST API or from containerized environments. The command line is best and typically pipenv and pyenv are ubiquitous for python environment management.  
+
+```
+cd thepythonproject
+pipenv install
+pipenv shell
+python --version
+```
+
+For the above to work there needs to be a Pipfile (in INI format) to state the dependencies (the equivalent of Ruby's gemspec). Typically both the Pipfile and the resulting Pipfile.lock are versioned (as long as only one Python version is being used).
+
+
+
+
+
 Python's eco-system will soon surpass Java to be the largest ever seen for a programming language. To see the many Pythonic angles visit
 
 - [[PyCharm Desktop App]] - to auto install and configure it on your workstation
