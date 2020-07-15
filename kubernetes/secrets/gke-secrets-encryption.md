@@ -12,7 +12,7 @@ Specifically the Kubernetes secrets are encrypted with a local AES-256-CBC key w
 This command checks whether application layer secrets are encrypted. **Change the project ID as appropriate**. Specify your zone and project identifier.
 
 ```
-gcloud container clusters describe rm-k8s-cluster \
+gcloud container clusters describe <CLUSTER_NAME> \
   --zone europe-west2 \
   --format 'value(databaseEncryption)' \
   --project <GOOGLE-PROJECT-ID>
@@ -21,6 +21,130 @@ gcloud container clusters describe rm-k8s-cluster \
 The response will either be **`state=DECRYPTED`** or **`state=ENCRYPTED`** prefixed by the encryption configuration.
 
 
+
+---
+
+
+
+## Enable the Key Management API
+
+The key management API needs to be enabled for the project. You do this by navigating to the below URL (after inserting the project ID) and clicking **`Enable API`**.
+
+```
+https://console.developers.google.com/apis/library/cloudkms.googleapis.com?project=<GOOGLE-PROJECT-ID>
+```
+
+
+
+---
+
+
+
+## Create the Google KMS (Key Management Service) Ring and Key
+
+Create the keyring with the name **`gke-secrets-keyring`** and validate it with the list command.
+
+```
+gcloud kms keyrings create gke-secrets-keyring \
+    --location europe-west2 \
+    --project <GOOGLE-PROJECT-ID>
+gcloud kms keyrings list --location europe-west2
+```
+
+Create the KMS key with the name **`gke-secrets-crypt-key`** and validate it with the list command.
+
+```
+gcloud kms keys create gke-secrets-crypt-key \
+    --location europe-west2 \
+    --keyring gke-secrets-keyring \
+    --purpose encryption \
+    --project <GOOGLE-PROJECT-ID>
+gcloud kms keys list --location europe-west2 --keyring gke-secrets-keyring
+```
+
+Your key should now be listed.
+
+
+
+---
+
+
+
+## Grant Access to the GKE Cluster Service Account
+
+
+This aspect will The GKE cluster service accounts needs some extra IAM permissions to be able to access the KMS key-ring and key.
+
+Use the service-accounts list command to discover the service accounts and enter the **service account email address** in the placeholder below.
+
+### NOTE THIS COMMAND DID NOT WORK FOR ME
+
+The official documentation states using this command but it did not work for me. It failed with a `GKE service account does not have the required IAM permissions to encrypt/decrypt with the supplied key` error.
+
+```
+gcloud iam service-accounts list
+gcloud kms keys add-iam-policy-binding gke-secrets-crypt-key \
+  --location europe-west2 \
+  --keyring gke-secrets-keyring \
+  --member serviceAccount:<SERVICE-ACCOUNT-EMAIL-ADDRESS> \
+  --role roles/cloudkms.cryptoKeyEncrypterDecrypter \
+  --project <GOOGLE-PROJECT-ID>
+```
+
+If you add a role that is not needed simply replace **`add`**-iam-policy-binding with **`remove`**-iam-policy-binding to remove it.
+
+
+### GKE service account does not have the required IAM permissions to encrypt/decrypt with the supplied key
+
+Setting the correct permissions and roles on the right object is always more difficult than it should be. Also the documentation on the internet is fast-changing and most docs are unreliable.
+
+The above documented command did not work for me. Instead I looked within the error which stated the service account email address with **container-engine-robot** and also I set the **owner** role.
+
+```
+gcloud kms keys add-iam-policy-binding gke-secrets-crypt-key \
+  --location europe-west2 \
+  --keyring gke-secrets-keyring \
+  --member 'serviceAccount:service-<12-DIGIT-NUMBER>@container-engine-robot.iam.gserviceaccount.com' \
+  --role 'roles/owner' \
+  --project <GOOGLE-CLUSTER-PROJECT-ID>
+```
+
+You may have to wait a little for the role to kick in - and there is no harm in a **`gcloud auth revoke --all`** and logging in again. Also try adding the role for your user by changing **`--member 'user:<YOUR_EMAIL_ADDRESS>'`**
+
+
+
+
+---
+
+
+
+
+
+## _Danger_ | Use Terraform to Enable Application Layer Secrets Encryption
+
+**If you use Terraform to Enable application layer secrets encryption be warned that the entire cluster _may be_ torn down and all manually applied Kubernetes objects destroyed.**
+
+Once the cluster is rebuilt all secrets have to be re-created.
+
+
+
+---
+
+
+
+## Use gcloud to Enable Application Layer Secrets Encryption
+
+Unlike Terraform, **`gcloud`** takes a softly softly stance when switching on Kubernetes secrets encryption. So softly in fact - that it doesn't actually encrypt any secrets. It is poised to encrypt any new secrets - however all the old ones remain in plain text until you replace them.
+
+```
+gcloud container clusters update <CLUSTER-NAME> \
+  --zone europe-west2 \
+  --database-encryption-key projects/<GOOGLE-KEY-PROJECT-ID>/locations/europe-west2/keyRings/gke-secrets-keyring/cryptoKeys/gke-secrets-crypt-key
+```
+
+
+
+---
 
 
 
@@ -45,200 +169,11 @@ Finally delete the previous key version to avoid paying for it.
 
 
 
-
-
-
-## Application-layer Secrets Encryption
-
-- [https://cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets#gcloud_1]
-
-
-What happens when you create a Secret
-When you create a new Secret, here's what happens:
-
-The Kubernetes API server generates a unique DEK for the Secret by using a random number generator.
-
-The Kubernetes API server uses the DEK locally to encrypt the Secret.
-
-The KMS plugin sends the DEK to Cloud KMS for encryption. The KMS plugin uses your project's GKE service account to authenticate to Cloud KMS.
-
-Cloud KMS encrypts the DEK, and sends it back to the KMS plugin.
-
-The Kubernetes API server saves the encrypted Secret and the encrypted DEK. The plaintext DEK is not saved to disk.
-
-When a client requests a Secret from the Kubernetes API server, the process described above is reversed.
-
-What happens when you destroy a Key
-Warning: Destroying a key is NOT reversible - any data encrypted with the destroyed version will be unrecoverable.
-When you destroy a key in Cloud KMS used to encrypt a Secret in GKE, that Secret is no longer available. Unless using a Service Account Token Volume Projection, Service Accounts used by GKE also use Secrets, and if a key is destroyed these become unavailable. The inability to access these means that the cluster will fail to start.
-
-Prior to destroying a key, it is recommended that you verify if it is being used by your cluster. You can also create an alerting policy for key destruction in Cloud KMS.
-
-Before you begin
-To do the exercises in this topic, you need two Google Cloud projects.
-
-Key project: This is where you create a key encryption key.
-
-Cluster project: This is where you create a cluster that enables Application-layer Secrets Encryption.
-
-Note: You can use the same project for your key project and cluster project. But the recommended practice is to use separate projects.
-In your key project, ensure that you have enabled the Cloud KMS API.
-
-Enable Cloud KMS API
-
-In your key project, the user who creates the key ring and key needs the following Cloud IAM permissions:
-
-cloudkms.keyRings.getIamPolicy
-cloudkms.keyRings.setIamPolicy
-These permissions (and many more) are granted to the pre-defined roles/cloudkms.admin Cloud Identity and Access Management role. You can learn more about granting permissions to manage keys in the Cloud KMS documentation.
-
-In your cluster project, ensure that you have enabled the Google Kubernetes Engine API.
-
-Enable Google Kubernetes Engine API
-
-Ensure that you have installed the Cloud SDK.
-
-Update gcloud to the latest version:
-
-gcloud components update
-
-Creating a Cloud KMS key
-When you create key ring, specify a location that matches the location of your GKE cluster:
-
-A zonal cluster should use a key ring from a superset location. For example, a cluster in the zone us-central1-a can only use a key in the region us-central1.
-
-A regional cluster should use a key ring from the same location. For example, a cluster in the region asia-northeast1 should be protected with a key ring from region asia-northeast1.
-
-The Cloud KMS global region is not supported for use with GKE.
-
-You can use the Google Cloud Console or the gcloud command.
-
-console
-gcloud
-In your key project, create a key ring:
-
-gcloud kms keyrings create ring-name \
-    --location location \
-    --project key-project-id
-
-where:
-
-ring-name is a name that you choose for your key ring.
-location is the region where you want to create the key ring.
-key-project-id is your key project ID.
-Create a key:
-
-gcloud kms keys create key-name \
-    --location location \
-    --keyring ring-name \
-    --purpose encryption \
-    --project key-project-id
-
-where:
-
-key-name is a name that you choose for your key.
-location is the region where you created your key ring.
-ring-name is the name of your key ring.
-key-project-id is your key project ID.
-Grant permission to use the key
-The GKE service account in your cluster project has this name:
-
-service-cluster-project-number@container-engine-robot.iam.gserviceaccount.com
-
-where cluster-project-number is your cluster project number.
-
-To grant access to the service account, you can use the Google Cloud Console or the gcloud command.
-
-console
-gcloud
-Grant your GKE service account the Cloud KMS CryptoKey Encrypter/Decrypter role:
-
-gcloud kms keys add-iam-policy-binding key-name \
-  --location location \
-  --keyring ring-name \
-  --member serviceAccount:service-account-name \
-  --role roles/cloudkms.cryptoKeyEncrypterDecrypter \
-  --project key-project-id
-
-where:
-
-key-name is the name of your key.
-location is the region where you created your key ring.
-ring-name is the name of your key ring.
-service-account-name is the name of your GKE service account.
-key-project-id is your key project ID.
-Enabling Application-layer Secrets Encryption
-On a new cluster
-You can create a new cluster by using the Google Cloud Console or the gcloud tool.
-
-console
-gcloud
-To create a cluster that supports Application-layer Secrets Encryption, specify a value for the --database-encryption-key parameter in your creation command.
-
-gcloud container clusters create cluster-name \
-  --cluster-version=latest \
-  --zone zone \
-  --database-encryption-key projects/key-project-id/locations/location/keyRings/ring-name/cryptoKeys/key-name \
-  --project cluster-project-id
-
-where:
-
-cluster-name is a name that you choose for your cluster.
-zone is the zone where you want to create the cluster.
-key-project-id is your key project ID.
-location is the location of your key ring.
-ring-name is the name of your key ring.
-key-name is the name of your key.
-cluster-project-id is your cluster project ID.
-On an existing cluster
-You can update an existing cluster to use Application-layer Secrets Encryption, as long as one of the following statements is true:
-
-Cluster version is greater than or equal to v1.11.9 and less than v1.12.0.
-Cluster version is greater than or equal to v1.12.7.
-You can use the Google Cloud Console or the gcloud command.
-
-console
-gcloud
-To enable Application-layer Secrets Encryptions on an existing cluster, run the following command:
-
-gcloud container clusters update cluster-name \
-  --zone zone \
-  --database-encryption-key projects/key-project-id/locations/location/keyRings/ring-name/cryptoKeys/key-name \
-  --project cluster-project-id
-
-where:
-
-cluster-name is a name that you choose for your cluster.
-zone is the zone where you want to create the cluster.
-key-project-id is your key project ID.
-location is the location of your key ring.
-ring-name is the name of your key ring.
-key-name is the name of your key.
-cluster-project-id is your cluster project ID.
-Updating a Cloud KMS key
-console
-gcloud
-Update your existing cluster to use a new Cloud KMS key:
-
-gcloud container clusters update cluster-name \
-  --zone zone \
-  --database-encryption-key projects/key-project-id/locations/location/keyRings/ring-name/cryptoKeys/key-name \
-  --project cluster-project-id
-
-where:
-
-cluster-name is a name that you choose for your cluster.
-zone is the zone where you want to create the cluster.
-key-project-id is your key project ID.
-location is the location of your key ring.
-ring-name is the name of your key ring.
-key-name is the name of your key.
-cluster-project-id is your cluster project ID.
-
-
-
-
 ---
+
+
+
+
 
 
 
