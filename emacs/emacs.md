@@ -82,3 +82,10 @@ You can visit a HTML file in an emacs buffer and then launch the page within the
 Viewing bookmarks as an HTML page is powerful as is viewing them as satellites within a devops wiki page.
 
 In firefox **Ctrl-Shift-O** will bring up the bookmarks page. Use hotkeys to export the bookmarks as HTML. Then navigate using **emacs** to the bookmarks buffer and do **Ctrl-c, Ctrl-v** to launch them within a Firefox page.
+
+## Disable Line Wrapping in Emacs Buffer
+
+```
+Alt-x toggle-truncate-lines
+```
+
