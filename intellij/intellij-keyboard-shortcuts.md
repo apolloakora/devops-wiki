@@ -61,12 +61,15 @@ Finding files, finding text, finding usage of a particular class, method or vari
 **`Option 9`** or **`Alt-9`** is the gateway to the version control perspective. From this context these keyboard shortcuts become available.
 
 
-| Capability             | Mac Keyboard                    | Ordinary Keyboard            | Activity  |
-|:---------------------- |:------------------------------- |:---------------------------- |:--------- |
-| Enter Commit Message   | **`Option 9`**                  | **`Alt 9`**                  | Git VCS   |
-| Show Commit DropDown   | **`Option Shift Enter`**        | **`Alt Shift Enter`**        | Git VCS   |
-| Commit                 | **`Ctrl k`**                    | **`Ctrl k`**                 | Git VCS   |
-| Commit and Push        | **`Ctrl Option K`**             | **`Ctrl Alt K`**             | Git VCS   |
+| Capability             | Shortcut Key Sequence         | Worth Noting that      | Activity  |
+|:---------------------- |:----------------------------- |:---------------------- |:--------- |
+| Enter Commit Message   | **`Option 9 Ctrl k`**         |                        | Git VCS   |
+| Show Commit DropDown   | **`Option Shift Enter`**      |                        | Git VCS   |
+| Commit                 | **`Ctrl k`**                  |                        | Git VCS   |
+| Commit and Push        | **`Ctrl Option K`**           |                        | Git VCS   |
+| Just Push              | **`Ctrl Shift K`**            | Esc Esc to jump out    | Git VCS   |
+| Actually Push          | **`Shift Tab Enter`**         |                        | Git VCS   |
+| Navigating Git Tabs    | **`Option Left/Right Arrow`** | Local, log and Console | Git VCS   |
 
 
 ---
@@ -83,12 +86,32 @@ Each keyboard shortcut is grouped by What is being navigated.
 | Previous / Next Tab    | **`Option Left(Right) Arrow`**  | **`Alt Left(Right) Arrow`**  | Editor Tabs    |
 | Kill Editor Tab        | **`Ctrl x k`**                  | **`Ctrl x k`**               | Editor Tabs    |
 
+
+---
+
+
 ## Navigating within Code
 
 | What sort of Navigation? | Mac Keyboard Shortcut           |
 |:------------------------ |:------------------------------- |
 | Goto the next method     | **`Ctrl Option e`**             |
 | Goto the previous method | **`Ctrl Option a`**             |
+
+
+---
+
+
+## Opening and Closing Projects and the IDE
+
+
+| Capability               | Mac Keyboard                 | What?          |
+|:------------------------ |:---------------------------- |:-------------- |
+| Close the Project Window | **`Command 9`**              | IDE Projects   |
+|                          | **`xxx`**                    | IDE Projects   |
+
+
+
+---
 
 
 ## Surrounding Code Blocks With ...

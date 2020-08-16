@@ -1,4 +1,20 @@
-# How to Install Terraform | Ubuntu
+# How to Install Terraform | Ubuntu | Mac | Windows
+
+
+## How to Install Terraform on Mac (OSx)
+
+On the mac we use Homebrew to install terraform.
+
+```
+brew install terraform
+```
+
+
+---
+
+
+
+## How to Install Terraform on Ubuntu (Linux)
 
 Installing **HashiCorp's Terraform** on Ubuntu (Linux) requires that you , unpack it and then put the command on the path.
 
@@ -10,7 +26,7 @@ First though, how can your script check whether Terraform is installed.
 
 ![terraform logo](/media/terraform-logo-rectangle.png "HashiCorp Terraform Logo")
 
-## Is Terraform Installed?
+### Step 1 | Is Terraform Installed?
 
 Checking whether Terraform is already installed can be done with the below lines is bash.
 
@@ -25,7 +41,7 @@ fi
 
 If the **<code>terraform --version</code>** command returns a zero code - we know it is installed. You can add more code to check to see if an upgrade is required.
 
-## Terraform Zip File Url | Linux (and Ubuntu)
+### Step 2 | Download the Terraform Zip
 
 The **current terraform version** is ***0.12.5*** and acquiring the Linux 64bit zip file is done using the below url.
 
@@ -33,7 +49,7 @@ The **current terraform version** is ***0.12.5*** and acquiring the Linux 64bit 
 https://releases.hashicorp.com/terraform/0.12.5/terraform_0.12.5_linux_amd64.zip
 ```
 
-## Install Terraform on Linux
+### Step 3 | Commands to Install Terraform
 
 These are the commands to download, unpack and set execute permissions.
 
@@ -46,3 +62,19 @@ terraform --version
 ```
 
 The `terraform --version` asserts that Terraform is installed - the command returns a zero exit code.
+
+
+
+---
+
+
+
+## How to Install Terraform on Windows
+
+Installing Terraform on Windows is simple if you have **Chocolatey** installed.
+
+```
+choco install terraform
+```
+
+Windows now has an impressive DevOps tool suite including Docker, Kubectl, Terraform, Chef, Puppet and Helm. Only a stable Ansible implementation is missing from this Windows Devops Toolkit.
