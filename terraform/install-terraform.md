@@ -64,7 +64,6 @@ terraform --version
 The `terraform --version` asserts that Terraform is installed - the command returns a zero exit code.
 
 
-
 ---
 
 
@@ -78,3 +77,20 @@ choco install terraform
 ```
 
 Windows now has an impressive DevOps tool suite including Docker, Kubectl, Terraform, Chef, Puppet and Helm. Only a stable Ansible implementation is missing from this Windows Devops Toolkit.
+
+
+
+---
+
+
+
+## tfenv | Install Terraform Environment Manager
+
+Like rbenv, pyenv and pipenv, tfenv makes the terraform version equal to the version inside the **`.terraform-version`** file.
+
+You can install tfenv with **`homebrew`** on MacOSx or **`apt`** on Ubuntu.
+
+```
+tfenv install          # install the version within .terraform-version
+tfenv install 0.12.24  # install this specific version
+```

@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+    webserver:
+        build: .
+        container_name: vm.web.flask
+        ports:
+            - 5000:5000
+
+    redis:
+        image: "redis:alpine"
+        container_name: vm.web.redis
+
+    master:
+        image: locustio/locust
+        container_name: vm.locust.master
+        ports:
+            - 8089:8089
+        volumes:
+            - ./:/mnt/locust
+        command: -f /mnt/locust/locustfile.py --master -H http://master:8089
+
+    worker:
+        image: locustio/locust
+        volumes:
+            - ./:/mnt/locust
+        command: -f /mnt/locust/locustfile.py --worker --master-host master

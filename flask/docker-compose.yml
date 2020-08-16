@@ -1,8 +1,13 @@
 version: '3'
+
 services:
-  web:
-    build: .
-    ports:
-      - "5000:5000"
-  redis:
-    image: "redis:alpine"
+
+    webserver:
+        build: .
+        container_name: vm.web.flask
+        ports:
+            - "5000:5000"
+
+    redis:
+        image: "redis:alpine"
+        container_name: vm.web.redis
