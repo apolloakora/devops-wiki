@@ -1,25 +1,44 @@
 
-# IntelliJ Keyboard Shortcuts
+# IntelliJ, PyCharm and RubyMine EMacs Keyboard Shortcuts
 
-## For the Emacs KeyMap
+## Editing (Cutting) Code
 
 These settings will work on Windows, Linux and MacOS as long as you set the Keymap to Emacs (**`Command ,`** or **`Ctrl ,`**).
 
-| Capability             | Mac Keyboard                    | Ordinary Keyboard            | Activity  |
-|:---------------------- |:------------------------------- |:---------------------------- |:--------- |
-| (Un)Comment Code Block | **`Ctrl Shift /`**              | **`Ctrl Shift /`**           | Editing Code    |
-| (Un)Comment Code Lines | **`Option Semicolon`**          | **`Alt Semicolon`**          | Editing Code    |
-| Auto-Indent Code Block | **`Ctrl Option q`**             | **`Ctrl Alt q`**             | Editing Code    |
-| Move Line Up           | **`Option Shift (Up)`**         | **`Alt Shift (Up)`**         | Editing Code    |
-| Move Line Down         | **`Option Shift (Down)`**       | **`Alt Shift (Down)`**       | Editing Code    |
-| Move Method Vars Left  | **`Ctrl Option Shift (Left)`**  | **`Ctrl Alt Shift (Left)`**  | Editing Code    |
-| Move Method Vars Right | **`Ctrl Option Shift (Right)`** | **`Ctrl Alt Shift (Right)`** | Editing Code    |
-| Run Tests or App       | **`Ctrl Shift F10`**            | **`Ctrl Shift F10`**         | Run       |
-| Organize Imports       | **`Ctrl Option o`**             | **`Ctrl Alt o`**             | Editing Code  |
-| Undo the last action   | **`Ctrl Shift - (hyphen)`**     | **`Ctrl Shift - (hyphen)`**  | Editing Code    |
-| Fold Up a Code Block   | **`Ctrl - (hyphen)`**           | **`Ctrl - (hyphen)`**        | Reading Code    |
-| Unfold a Code Block    | **`Ctrl = (equals)`**           | **`Ctrl = (equals)`**        | Reading Code    |
-| Duplicate Current Line | **`Command d`**                 | **`Windows d`**              | Editing Code    |
+| Capability             | Keyboard Shortcut               | And then ...                                   |
+|:---------------------- |:------------------------------- |:---------------------------------------------- |
+| (Un)Comment Code Block | **`Ctrl Shift /`**              | |
+| (Un)Comment Code Lines | **`Option Semicolon`**          | |
+| Auto-Indent Code Block | **`Ctrl Option q`**             | |
+| Move Line Up           | **`Option Shift (Up)`**         | |
+| Move Line Down         | **`Option Shift (Down)`**       | |
+| Move Method Vars Left  | **`Ctrl Option Shift (Left)`**  | |
+| Move Method Vars Right | **`Ctrl Option Shift (Right)`** | |
+| Run Tests or App       | **`Ctrl Shift F10`**            | |
+| Organize Imports       | **`Ctrl Option o`**             | |
+| Undo the last action   | **`Ctrl Shift - (hyphen)`**     | |
+| Fold Up a Code Block   | **`Ctrl - (hyphen)`**           | |
+| Unfold a Code Block    | **`Ctrl = (equals)`**           | |
+| Duplicate Current Line | **`Command d`**                 | |
+| Refactor Create Method | **`Ctrl Option m`**             | select code block then enter method name and Enter|
+
+
+---
+
+
+## Reading and Exploring the Code
+
+
+| Exploring and Cutting Code      | Mac Keyboard                      | And then ...                   |
+|:------------------------------- |:--------------------------------- |:------------------------------ |
+| Find usages of a code element   | **`Ctrl Option g`** (in IntelliJ) | **`Ctrl-n`** to move down, Enter to visit |
+| Navigate to element definition  | **`Ctrl Option g`** (in RubyMine) | to go back press |
+| Find usages tab                 | **`Option Shift S`**              | use Ctrl-n to move down, Enter to jump to editor, Ctrl-x k to close |
+| When was file read/changed      | **`Option Shift \`**              | read info from project window (includes size) - repeat to switch off |
+| Goto the next method            | **`Ctrl Option e`**               |  |
+| Goto the previous method        | **`Ctrl Option a`**               |  |
+| View Class Elements Structure   | **`Ctrl Fn F12`**                 | use Ctrl-n and p to move up and down and enter to visit |
+| View Class Method Documentation | **`Ctrl q`**                      | read documentation and scroll with arrow keys |
 
 
 ---
@@ -31,6 +50,7 @@ Finding files, finding text, finding usage of a particular class, method or vari
 
 | Find Search Replace             | Mac Keyboard                   |
 |:------------------------------- |:------------------------------ |
+| Goto any class in the editor    | **`Option Shift G`**           |
 | Find any file, class or package | **`Shift Shift`**              |
 | Find a String Globally          | **`Ctrl Shift f`**             |
 | In projects search within names | **`Option 9`** then type       |
@@ -42,74 +62,103 @@ Finding files, finding text, finding usage of a particular class, method or vari
 
 ## Navigating to Tools Views and Settings
 
-| Perspective             | Mac Keyboard Shortcut                   |
-|:------------------------------- |:------------------------------ |
-| Open Settings Window   | **`Command , (Comma)`**         |
-| Class Hierarchy | **`Ctrl h`**              |
-| Project Hierarchy | **`Option 1`**              |
-| Console (Run) and Logs | **`Option 4`**              |
-| Structure | **`Option 7`**              |
-| Git Version Control | **`Option 9`**              |
-| Messages | **`Option 0`**              |
+| Perspective             | Mac Keyboard Shortcut          | And then ...        |
+|:----------------------- |:------------------------------ |:------------------- |
+| Open Settings Window    | **`Command , (Comma)`**        |   |
+| Project Hierarchy       | **`Option 1`**                 | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
+| Class Hierarchy         | **`Ctrl h`**                   | Ctrl-x k to close and return  |
+| View @todo locations    | **`Option 6`**                 | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 6 again) to close  |
+| Console (Run) and Logs  | **`Option 4`**                 |   |
+| Class/Method Structure  | **`Option 7`**                 | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 7 again) to close  |
+| Git Version Control     | **`Option 9`**                 |   |
 
 
 ---
 
 
-## Git Version Control Keys
+## Switch Themes | Switch View Mode | Switch Key Mappings
 
-**`Option 9`** or **`Alt-9`** is the gateway to the version control perspective. From this context these keyboard shortcuts become available.
+There's something cool about switching - be it **switching lanes** or **switching up the program**. You can switch up themes, view modes, keymaps and more with **`Ctrl backtick`**. Try
+- **`Ctrl backtick`** to access the switcher
+- **`Ctrl-n**` and **`Ctrl-p`** (or type the number) to move up and down
+- and then **`Enter`** to switch
 
+### Swithcing Keymaps
 
-| Capability             | Shortcut Key Sequence         | Worth Noting that      | Activity  |
-|:---------------------- |:----------------------------- |:---------------------- |:--------- |
-| Enter Commit Message   | **`Option 9 Ctrl k`**         |                        | Git VCS   |
-| Show Commit DropDown   | **`Option Shift Enter`**      |                        | Git VCS   |
-| Commit                 | **`Ctrl k`**                  |                        | Git VCS   |
-| Commit and Push        | **`Ctrl Option K`**           |                        | Git VCS   |
-| Just Push              | **`Ctrl Shift K`**            | Esc Esc to jump out    | Git VCS   |
-| Actually Push          | **`Shift Tab Enter`**         |                        | Git VCS   |
-| Navigating Git Tabs    | **`Option Left/Right Arrow`** | Local, log and Console | Git VCS   |
+When pair-programming and your other half isn't an emacs fan you can quickly use the sequence
+
+- **`Ctrl Backtick 3 1`** - to switch to the MacOS keymap
+- **`Ctrl Backtick 3 4`** - to switch back to an emacs keymap
 
 
 ---
 
 
-## Navigating Projects, Tool Windows and Editor Tabs
+## Git Version Control Shortcuts
 
-Each keyboard shortcut is grouped by What is being navigated.
+**`Option 9`** is the gateway to the version control perspective. From this context these keyboard shortcuts become available.
 
-| Capability             | Mac Keyboard                    | Ordinary Keyboard            | What?          |
-|:---------------------- |:------------------------------- |:---------------------------- |:-------------- |
+### How to Commit and Push
+
+The fastest shortcuts to commiting and pushing to the current branch is as follows.
+
+- **`Option 9`** - to go to the VCS context
+- **`Ctrl k`** - to open the commit and push context
+- then type the commit message
+- either **`Ctrl Option k`** or **`Option Shift Enter Enter`** - to commit and goto lising of commits to be pushed
+- **`Ctrl Option p`** - to push the list of commits
+
+### How to just Commit (without pushing)
+
+If you want to just commit and then push a bunch of them later you
+
+- **`Option 9`** - to go to the VCS context
+- **`Ctrl k`** - to open the commit and push context
+- **`Shift Tab Tab Enter`** - performs the commit and returns to the VCS tab
+- **`Ctrl-x k`** to return to the editor tab
+
+### How to Push without Committing
+
+When you've done a bunch of commits already you may want to push one some or all of them without having to go down the commit route. To do this
+
+- **`Ctrl shift k`** - opens the push window (no need to do Option 9)
+- **`Ctrl option p`** - pushes the selected commits and returns you
+
+Note that even from the VCS tab (arrived at by **`Option 9`**) you can still use **`Ctrl shift k`** to open the push window.
+
+### Other Useful Version Control Shortcuts
+
+Whilst in version control mode **`Option 9`** you can
+
+- **`Ctrl-x k`** to close the Version Control tab (perspective)
+- **`Option Left Arrow`** - to visit the console to see the IDE's actual git command
+
+
+
+---
+
+
+## Navigating the Editor Tabs
+
+| Capability             | Mac Keyboard                    | Worth noting that
+|:---------------------- |:------------------------------- |:---------------------------- |
+| Kill Editor Tab        | **`Ctrl x k`**                  |  |
+| Switch Editor Tabs (1) | **`Ctrl x p (n)`**              | Use when there aren't many tabs |
+| Switch Editor Tabs (2) | **`Option Left(Right) Arrow`**  | Use to cycle through every tab  |
+| Switch Editor Tabs (3) | **`Ctrl-x b`** Ctrl-n Enter     | Use when many tabs and you know which one you want |
 | Kill Editor Tab        | **`Ctrl x k`**                  | **`Ctrl x k`**               | Editor Tabs    |
-| Previous / Next Tab    | **`Ctrl x p (n)`**              | **`Ctrl x p (n)`**           | Editor Tabs    |
-| Previous / Next Tab    | **`Option Left(Right) Arrow`**  | **`Alt Left(Right) Arrow`**  | Editor Tabs    |
-| Kill Editor Tab        | **`Ctrl x k`**                  | **`Ctrl x k`**               | Editor Tabs    |
 
 
 ---
-
-
-## Navigating within Code
-
-| What sort of Navigation? | Mac Keyboard Shortcut           |
-|:------------------------ |:------------------------------- |
-| Goto the next method     | **`Ctrl Option e`**             |
-| Goto the previous method | **`Ctrl Option a`**             |
-
-
----
-
-
 ## Opening and Closing Projects and the IDE
 
 
 | Capability               | Mac Keyboard                 | What?          |
 |:------------------------ |:---------------------------- |:-------------- |
-| Close the Project Window | **`Command 9`**              | IDE Projects   |
+| Close the Project Window | **`Command q`**              | IDE Projects   |
 |                          | **`xxx`**                    | IDE Projects   |
 
-
+It is a shame that switching between IDE projects does not have a keyboard shortcut. On Mac you can switch by left clicking the icon in the Dock. If you have more than 2 projects open you can right click and then select the one you want.
 
 ---
 
