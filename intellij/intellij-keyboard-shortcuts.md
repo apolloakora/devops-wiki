@@ -1,5 +1,9 @@
 
-# IntelliJ, PyCharm and RubyMine EMacs Keyboard Shortcuts
+# Emacs Keyboard Shortcuts for IntelliJ PyCharm and RubyMine
+
+These keyboard shortcuts are for the Emacs keymap in IntelliJ, PyCharm and RubyMine. They come out-of-the-box so you don't need to do any custom key bindings. It is sad that the keyboard shortcuts PDF from the IntelliJ IDE are incorrect when you opt for the Emacs keymap.
+
+Thankfully the shortcuts below are all tested and verified to work with all the aforementioned IDEs.
 
 ## Editing (Cutting) Code
 
@@ -50,9 +54,9 @@ Finding files, finding text, finding usage of a particular class, method or vari
 
 | Find Search Replace             | Mac Keyboard                   |
 |:------------------------------- |:------------------------------ |
+| Find Text in any File           | **`Ctrl Shift f`**             |
 | Goto any class in the editor    | **`Option Shift G`**           |
 | Find any file, class or package | **`Shift Shift`**              |
-| Find a String Globally          | **`Ctrl Shift f`**             |
 | In projects search within names | **`Option 9`** then type       |
 | In console search log output    | **`Option 4`** then **`Ctrl s`** then type. **`Ctrl s`** next and **`Option r`** previous and **`esc esc`** to jump out. |
 
@@ -105,7 +109,7 @@ The fastest shortcuts to commiting and pushing to the current branch is as follo
 - **`Option 9`** - to go to the VCS context
 - **`Ctrl k`** - to open the commit and push context
 - then type the commit message
-- either **`Ctrl Option k`** or **`Option Shift Enter Enter`** - to commit and goto lising of commits to be pushed
+- either **`Ctrl Option k`** or **`Option Shift Enter Enter`** - to commit and goto listing of commits to be pushed
 - **`Ctrl Option p`** - to push the list of commits
 
 ### How to just Commit (without pushing)
@@ -126,6 +130,28 @@ When you've done a bunch of commits already you may want to push one some or all
 
 Note that even from the VCS tab (arrived at by **`Option 9`**) you can still use **`Ctrl shift k`** to open the push window.
 
+### How to Create a Branch
+
+To create a branch within the IDE you
+
+- **`Ctrl Shift Backtick`** to awaken the branches popup
+- opt to create a branch, type in the branch name and Enter
+- **`Ctrl Shift k`** then **`Ctrl Option p`** to push it up
+
+### How to Merge a Branch into Master
+
+Although you can merge through Github/Gitlab user interfaces it is better to merge locally so that you can run tests against the merged code and fix any conflicts, that may be lurking.
+
+To merge within the IDE
+
+- do a git pull from both the master and current branch (teammates may have done a cheeky push in-between)
+- **`Ctrl Shift Backtick`** to awaken the branches popup
+- **`Ctrl n`** and **`Ctrl p`** to move to master
+- hit Enter then select **`Checkout`**
+- fix conflicts and run the tests against the new branch
+- if conflict free no commits are needed - just pushing the list of merged commits
+- **`Ctrl Shift k`** then **`Ctrl Option p`** to push
+
 ### Other Useful Version Control Shortcuts
 
 Whilst in version control mode **`Option 9`** you can
@@ -133,6 +159,19 @@ Whilst in version control mode **`Option 9`** you can
 - **`Ctrl-x k`** to close the Version Control tab (perspective)
 - **`Option Left Arrow`** - to visit the console to see the IDE's actual git command
 
+
+---
+
+
+## Run Code | Run Tests | Run Rake Tasks | Run Gem Install | Running Maven Goals | Run Configurations
+
+You can execute unit tests (in Cucumber, Behave, Minitest) and you can execute code using interpreters (for Ruby and Python) and much more.
+
+| Running Capabilities             | Keyboard Shortcut                      | And then ...                            |
+|:-------------------------------- |:-------------------------------------- |:--------------------------------------- |
+| Run a Rake task                  | **`Ctrl Ctrl`**                        | "rake build" or "rake install"          |
+| Run Recently ran again           | **`Ctrl Ctrl`**                        | **`Ctrl n`** or **`Ctrl p`** then Enter |
+| Running a Class (Code or Test)   | **`Ctrl Shift F10`**                   | b4 - go to class with **`Option 1`**    |
 
 
 ---

@@ -28,6 +28,11 @@ Note that the --require option switches off automatic loading and everything loa
 
 These are links to excellent resources on behavioural driven development (BDD) with Cucumber (and Aruba).
 
+
+- **[Setting up Ruby Project with Cucumber Feature Tests 1](https://www.aktuellum.com/mobile/ruby/ex1/)**
+- **[Great Acceptance Tests Blog 2](https://www.aktuellum.com/mobile/ruby/ex2/)**
+- **[Great Acceptance Tests Blog 3](https://www.aktuellum.com/mobile/ruby/ex3/)**
+- **[Great Acceptance Tests Blog 4](https://www.aktuellum.com/mobile/ruby/ex4/)**
 - **[Excellent Gherkin Reference Documentation](https://cucumber.io/docs/gherkin/reference/)**
 - **[Cucumber Aruba Github Command Line App](https://github.com/cucumber/aruba-getting-started)**
 - **[Cucumber Aruba Github Example Explained](https://app.cucumber.pro/p/af1681aa-415f-44f0-8260-5454a69c472a/aruba/documents/branch/master/#your-first-tests-with-aruba)**

@@ -172,6 +172,54 @@ ruby-2.5.1 - #generating default wrappers........
 </pre>
 
 
+## You don't have write permissions into the /usr/bin directory | Mac OSx
+
+On the mac you may get this error when running either **`rake install`** or **`gem install`**.
+
+```
+You don't have write permissions into the /usr/bin directory
+```
+
+You can temporarily fix it by adding a -n suffix to the gem install command.
+
+```
+gem install -n /usr/local/bin /path/to/gem
+```
+
+The problem is that when using rake install you cannot change the gem install command it uses easily - so the better method is to add a **`.gemrc**` file in your home directory.
+
+### Contents of `~/.gemrc`
+
+```
+:gemdir:
+   - ~/.gem/ruby
+install: -n /usr/local/bin
+```
+
+### Run rake install
+
+If your rake install still fails it is probably to do with permissions. Find out the location of the gem directory. If the failure states that you are using 2.6.0 run this command.
+
+```
+sudo chown -R $(whoami):staff /Library/Ruby/Gems/2.6.0
+```
+
+Now **`rake install`** works!
+
+
+### Using `rake build` and `gem install`
+
+Another workaround for **`rake install`** issues is to run its two constituent commands separately.
+
+```
+rake build  # this puts the gen into the pkg directory
+gem install -n /usr/local/bin pkg/<GEM_NAME>-<VERSION_NUMBER>.gem
+```
+
+The **`gem install`** command needs editing with the correct version number. This is also a great method to roll back to earlier code versions when troubleshooting.
+
+
+
 ## rvm | is not emacs friendly
 
 Remember that rvm does not work inside emacs (the old version anyway - try the new emacs). If it still complains then use a simple shell.
