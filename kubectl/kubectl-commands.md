@@ -21,6 +21,14 @@ Sometimes pod get stuck in the **`terminating`** state and never actually termin
 kubectl delete pod <pod-name> --grace-period=0 --force --namespace default
 ```
 
+## remove pods in an Evicted state
+
+We can remove pods that have got into some kindo of state by using field selectors.
+
+```
+kubectl get pods --all-namespaces --field-selector 'status.phase==Failed' -o json | kubectl delete -f -
+```
+
 
 ## kubectl logs
 
