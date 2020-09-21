@@ -12,7 +12,7 @@ Pipes | are the thing that put Unix head and shoulders above the competition. Th
 We can combine the disk used, sort and grep commands to examine the disk usage for particular types of files or folders.
 
 ```bash
-du -cah * | sort -hr | grep pdf   # find and list the sizes of all pdf files in the folder tree
+du -cah * | sort -hr | grep pdf   # grab and list the sizes of all pdf files in the folder tree
 du -cah * | sort -hr              # human readable (size) sorted list of every file and folder
 du -shc * | sort -hr              # summarize but exclude all the hidden (dot files and folders)
 ```
@@ -40,6 +40,16 @@ Need to scan a repo for those pesky but sometimes life-saving emacs squiggle fil
 find . -name "*.*~"             # find any type of squiggle file
 find . -name "*.*~" 2>/dev/null # find squiggle files but ignore permission errors
 find . -name "*.md~"            # squiggle markdown files
+```
+
+## find only in current directory (or in children)
+
+Use **`-maxdepth N`** to stop **`find`** operating recursively.
+
+```bash
+find . -name .\* -maxdepth 1          # find dot files AND folders in directory
+find . -name .\* -maxdepth 1 -type f  # find dot files in current directory
+find . -name .\* -maxdepth 1 -type d  # find dot folders in current directory
 ```
 
 ## find all pdf files excluding many paths
