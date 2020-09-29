@@ -151,10 +151,10 @@ To pull from any remote branch (including master) you
 
 - **`Ctrl Shift Backtick`** for the branches popup
 - **`Ctrl n`** and **`Ctrl p`** to navigate do the remote branch to pull from
-- **`Enter`** then **`Ctrl n`**
-- **`Merge into Current`**
+- **`Ctrl f`** or **`Enter`** then **`Ctrl n`** to move to option
+- Hit **`Enter`** to **`Merge into Current`**
 
-To see what's coming down the tracks select **`Compare with Current`**
+You can back out with a **`Ctrl b`** after a **`Ctrl f`** (forward). Also to see what's coming down the tracks select **`Compare with Current`**
 
 ### How to Push without Committing
 
