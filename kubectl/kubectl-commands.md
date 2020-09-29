@@ -3,6 +3,45 @@
 
 When running a Kubernetes deployment, you use kubectl (on your client's command line) to ask about status, to perform software as a service (SAAS) releases, and to perform administrative duties.
 
+## kubectl exec
+
+Jump onto the command line of a pod.
+
+Give the first part of the pod name to this command and it will hopefully complete the rest of the name and then kubectl exec into the pod.
+
+```
+kubectl exec -it `kubectl get pods -o name | grep -m1 <POD-NAME-PART> | cut -d'/' -f 2` -- /bin/bash
+```
+
+Use a selector (project name) to identify which pod to jump into.
+
+```
+kubectl exec -it $(kubectl get pods --selector=app=<PROJECT-NAME> -o jsonpath='{.items[*].metadata.name}') -- /bin/bash
+```
+
+Run a python script using a docker container-like tag.
+
+```
+kubectl exec -it census-rm-something -- python my-python-script.py
+```
+
+Exec into the pod name and then after a short while launch the command with its parameters.
+
+```
+kubectl exec -it <POD-NAME> -- /bin/bash -c "sleep 2; command parameters"
+```
+
+
+### kubectl exec without jumping onto the command line
+
+This command runs the command in the first pod matched by the name prefix.
+
+```
+kubectl exec -it `kubectl get po -oname | grep --max-count=1 <POD_NAME_PREFIX> | cut -d / -f 2` -- printenv;
+```
+
+
+
 ## kubectl copy
 
 Copying one file or **recursively copying** a file tree to and from a container in a kubernetes pod is something we all need to do from time to time.

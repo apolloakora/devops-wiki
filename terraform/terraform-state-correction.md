@@ -34,7 +34,7 @@ terraform import google_kms_crypto_key.cluster_key projects/devops4me/locations/
 ```
 
 
-### Importing Using Resource Specifiers
+## terraform import | using resource specifiers
 
 Using terraform import with a resource specifier of projects/abc/locations/xyz/clusters/mycluster sometimes does not work. The resource needs to be specified more succinctly.
 
@@ -51,4 +51,40 @@ To import this resource we a more succinct resource specifier holding the projec
 
 ```
 terraform import google_container_cluster.<terraform-resource-name> <project-id>/<location-id>/<cluster-id>
+```
+
+## terraform import (Example 2)
+
+### Error creating GlobalAddress: googleapi: Error 409: The resource 'projects/...' already exists, alreadyExists
+
+```
+  on main.tf line 15, in resource "google_compute_global_address" "postgres-db":
+  15: resource "google_compute_global_address" "postgres-db" {
+```
+
+With this we use the below terraform import command.
+
+```
+terraform import google_compute_global_address.postgres-db projects/...
+```
+
+
+
+## Invalid Index Error
+
+```
+Error: Invalid index
+
+  on this_file.tf line 3, in locals:
+   3:     "serviceAccount:${google_service_account.this-one[0].email}",
+    |----------------
+    | google_service_account.this-one is empty tuple
+
+The given key does not identify an element in this collection value.
+```
+
+When state gets out of sync you can get this invalid index error and fix it by (target) destroying the resource specified.
+
+```
+terraform destroy -target google_service_account.this-one
 ```

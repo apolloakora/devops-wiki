@@ -91,6 +91,8 @@ Like rbenv, pyenv and pipenv, tfenv makes the terraform version equal to the ver
 You can install tfenv with **`homebrew`** on MacOSx or **`apt`** on Ubuntu.
 
 ```
+terraform version    # which terraform and previders are being used
+tfenv list             # list the versions of terraform installed
 tfenv install          # install the version within .terraform-version
 tfenv install 0.12.24  # install this specific version
 ```
