@@ -151,7 +151,7 @@ To pull from any remote branch (including master) you
 
 - **`Ctrl Shift Backtick`** for the branches popup
 - **`Ctrl n`** and **`Ctrl p`** to navigate do the remote branch to pull from
-- **`Right Arrow`** then **`Ctrl n`**
+- **`Enter`** then **`Ctrl n`**
 - **`Merge into Current`**
 
 To see what's coming down the tracks select **`Compare with Current`**
