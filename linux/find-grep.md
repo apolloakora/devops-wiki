@@ -7,6 +7,22 @@ Pipes | are the thing that put Unix head and shoulders above the competition. Th
 
 **`find`** and **`grep`** are the stand out performers amongst a gaggle of search commands.
 
+## How to Include Hidden Files in a Grep Search
+
+It is easy to forget hidden files when you are doing a grep. Also the protocol for Bash vs ZSh (Ubuntu vs Mac) is different. This is how to recursively search for the string **`guest`**.
+
+```
+grep -Frn guest *                          # Only for zsh within MacOSx
+grep -Frn guest * .*                       # For Ubuntu and other Linux flavours with Bash
+find . -type f -exec grep -Hn guest {} \;  # Works as a double check in Bash and Zsh
+```
+
+To double check the search plant a match within the search field in a dot prefixed hidden file.
+
+
+---
+
+
 ## How to Search for Files Folders and Strings
 
 We can combine the disk used, sort and grep commands to examine the disk usage for particular types of files or folders.
@@ -33,7 +49,7 @@ sudo find . -path "*vpn*" -type f -exec grep -i "staging" {} +
 ```
 
 ## find emacs squiggle files
-
+	
 Need to scan a repo for those pesky but sometimes life-saving emacs squiggle files? Look no further.
 
 ```bash
@@ -179,7 +195,7 @@ grep -Frn "amazon.com" * | grep "Binary file" -v # match amazon.com but exclude 
 
 ## grep | handy grep commands
 
-find lines inn markdown files.
+Find lines in markdown files.
 
 ``` bash
 grep -Frn "grep" * --include=*.md        # find lines in markdown files

@@ -71,11 +71,44 @@ If Ubuntu starts up the launcher when you press the ALT key in emacs - it pays t
 That's it - no more launcher activation when the ALT key is pressed,
 
 
+---
+
+
 ## Launch Web Browser (like Firefox) from Emacs
 
 You can visit a HTML file in an emacs buffer and then launch the page within the default web browser.
 
 **Ctrl-c, Ctrl-v**
+
+
+---
+
+
+## How to go to the top and bottom of a file
+
+The most common keyboard shortcuts for navigating to the extremeties are
+- **`ESC Shift <`** - go to the beginning
+- **`ESC Shift >`** - go to the end
+
+However the ESC key can be a bit of a pain to hit espeically on MacBook's that relegate the escape key to tracker pad. It's a pain because you don't get the key press feedback so you must look at the keyboard to ensure you have hbit (or missed) it.
+
+- **`Ctrl-u 1 Option-g-g`** - go to the top on a Mac keyboard
+- **`Ctrl-u 1 Alt-g-g`** - go to the top on standard keyboards
+- **`Ctrl-u 1000 Option-g-g`** - go to the bottom on a Mac keyboard
+- **`Ctrl-u 1000 Alt-g-g`** - go to the bottom on standard keyboards
+
+Yes the **`1000`** is a bit of a hack - it works for files with 10 or 20 or anything up to 1000 lines.
+
+Also you may prefer these (very slightly shorter) key sequences
+
+- **`Option-g-g 1 Enter`** - go to the top on a Mac keyboard
+- **`Alt-g-g 1 Enter`** - go to the top on standard keyboards
+- **`Option-g-g 1000 Enter`** - go to the bottom on a Mac keyboard
+- **`Alt-g-g 1000 Enter`** - go to the bottom on standard keyboards
+
+
+---
+
 
 ## Launch Firefox Bookmarks from Emacs
 
@@ -88,4 +121,3 @@ In firefox **Ctrl-Shift-O** will bring up the bookmarks page. Use hotkeys to exp
 ```
 Alt-x toggle-truncate-lines
 ```
-

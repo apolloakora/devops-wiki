@@ -148,6 +148,17 @@ If you want to just commit and then push a bunch of them later you
 - **`Shift Tab Tab Enter`** - performs the commit and returns to the VCS tab
 - **`Ctrl-x k`** to return to the editor tab
 
+### How to Pull from a Branch (like Master)
+
+To pull from any remote branch (including master) you
+
+- **`Ctrl Shift Backtick`** for the branches popup
+- **`Ctrl n`** and **`Ctrl p`** to navigate do the remote branch to pull from
+- **`Ctrl f`** or **`Enter`** then **`Ctrl n`** to move to option
+- Hit **`Enter`** to **`Merge into Current`**
+
+You can back out with a **`Ctrl b`** after a **`Ctrl f`** (forward). Also to see what's coming down the tracks select **`Compare with Current`**
+
 ### How to Push without Committing
 
 When you've done a bunch of commits already you may want to push one some or all of them without having to go down the commit route. To do this
@@ -198,7 +209,8 @@ You can execute unit tests (in Cucumber, Behave, Minitest) and you can execute c
 | Running Capabilities             | Keyboard Shortcut                      | And then ...                            |
 |:-------------------------------- |:-------------------------------------- |:--------------------------------------- |
 | Run a Rake task                  | **`Ctrl Ctrl`**                        | "rake build" or "rake install"          |
-| Run Recently ran again           | **`Ctrl Ctrl`**                        | **`Ctrl n`** or **`Ctrl p`** then Enter |
+| Run Recently ran again           | **`Ctrl Ctrl`**                        | **`Ctrl n`** or **`Ctrl p`** then Ent
+er |
 | Running a Class (Code or Test)   | **`Ctrl Shift F10`**                   | b4 - go to class with **`Option 1`**    |
 
 
