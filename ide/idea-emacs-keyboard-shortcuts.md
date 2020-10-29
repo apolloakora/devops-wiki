@@ -88,17 +88,20 @@ Finding files, finding text, finding usage of a particular class, method or vari
 ---
 
 
-## Navigating to Tooling and Settings
+## Navigate to Tool Windows (incl Settings)
 
-| Perspective             | Mac Keyboard Shortcut          | And then ...        |
-|:----------------------- |:------------------------------ |:------------------- |
-| Open Settings Window    | **`Command , (Comma)`**        |   |
-| Project Hierarchy       | **`Option 1`**                 | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
-| Class Hierarchy         | **`Ctrl h`**                   | Ctrl-x k to close and return  |
-| View @todo locations    | **`Option 6`**                 | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 6 again) to close  |
-| Console (Run) and Logs  | **`Option 4`**                 |   |
-| Class/Method Structure  | **`Option 7`**                 | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 7 again) to close  |
-| Git Version Control     | **`Option 9`**                 |   |
+| Perspective                  | Mac Keyboard Shortcut            | And then ...                                |
+|:---------------------------- |:-------------------------------- |:------------------------------------------- |
+| Goto Projects Tool Window    | **`F12`**                        | use **`Shift F12`** to invoke editor fullscreen |
+| Jump from Projects to Editor | **`Shift F12`** or **`Esc Esc`** | use **`F12`** to go back to the Projects tool window |
+| Goto Terminal                | **`Option F12`**                 | use **`Option F12`** again or **`Esc Esc`** to go back to the Editor |
+| Open Settings Window         | **`Command , (Comma)`**          |   |
+| Project Hierarchy            | **`Option 1`**                   | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
+| Class Hierarchy              | **`Ctrl h`**                     | Ctrl-x k to close and return  |
+| View @todo locations         | **`Option 6`**                   | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 6 again) to close  |
+| Console (Run) and Logs       | **`Option 4`**                   |   |
+| Class/Method Structure       | **`Option 7`**                   | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 7 again) to close  |
+| Git Version Control          | **`Option 9`**                   |   |
 
 
 ---
@@ -226,6 +229,17 @@ er |
 | Goto last edited tab   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
 | Goto to prev/next tab  | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
 | Open Recent Locations  | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
+
+
+
+---
+
+
+## Working in the Terminal Window
+
+| Capability             | Keyboard Shortcut                  | Worth noting that            |
+|:---------------------- |:---------------------------------- |:---------------------------- |
+| Grab previous command  | **`Ctrl p`**                       |  |
 
 
 ---

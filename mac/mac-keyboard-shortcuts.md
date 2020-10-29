@@ -29,6 +29,27 @@ Not on **emacs** but on other text areas like Outlook and TextEdit you can move 
 To select text whilst moving you hold the shift key.
 
 
+## How to Quit an Application in MacOSx
+
+**`command option esc`** is the best way to quit an application.
+
+Other ways are
+- **`Shift click`** on Apple icon in top left menu then **`Force Quit`**
+- go to the Activity Monitor and click from there
+- at the terminal do **`killall <appname>`** or **`kill -9 <appname>`**
+
+
+## Escaping in ZSh MacOSx Commands
+
+The mac zsh needs way more escaping in commands than say Ubuntu bash. Examples are
+
+- this tr (translate command) requires escaping of the left square braces
+
+```
+echo 96odP70u5CMnFlVnRp1BFct5X45RPzZg0xlfqvEmlbs= | tr \[:lower:] \[:upper:]
+```
+
+
 ## How to Quit the Finder
 
 You can quit the Finder and add the quit option to the Finder menu with this terminal command.
