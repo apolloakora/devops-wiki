@@ -51,7 +51,7 @@ What will `git commit` commit? This is the most frequent git query that is used 
 ```bash
 git config --local core.pager cat  # Just print without reference to less
 git config core.pager cat          # Same because git config defaults to --local
-git diff -U0                       # what has changed (with zero lines ofcontext)
+git diff -U0                       # what has changed (with zero lines of context)
 git diff --unified=0               # same
 git diff --unified=2               # print 2 lines (above and below) of context
 ```
@@ -124,7 +124,6 @@ Both the local and remote git repositories are at a commit reference at this poi
 ```
 git ls-remote https://github.com/devops4me/safedb.net.git ls-remote -b master   # tell us the remote commit reference
 git show-ref master
-
 ```
 
 
