@@ -43,6 +43,37 @@ You can just cat the output by changing the **core.pager** configuration.
 
 ---
 
+## git diff | What will be pulled?
+
+The lesser known triple dot comparator tells us what will happen when we do a git pull. You can even predict conflicts.
+
+```
+git diff ...master --unified=0                 # File line diffs incoming from master into current
+git diff ...master --stat --color              # Excellent files that will change including summary
+git diff --name-status <branch>...master       # 1 file per line difference between branch and master
+git log ..master  --format="%ai %h %ae %cn %s" # List all the commits that we are behind from master
+git --no-pager show ..master --unified=0       # List both the commit and the changes without context
+git --no-pager show master --pretty=oneline    # Exactly same as git diff with triple dots
+```
+
+---
+
+## git diff | What will be merged?
+
+Do you want to know the differences between two branches - what will be merged?
+
+```
+git diff --stat --color master..                        # Listing of files (and changes) to merge
+git diff --stat --color master...                       # Can be subtly different (not sure why)
+git diff --name-status origin/master                    # All file differences if merging into master
+git --no-pager show ...master --unified=0               # List each commit and each line changed
+git log ...master  --format="%ai %h %ae %cn %s"         # All commits on this branch not on master
+git log <branch>...master  --format="%ai %h %ae %cn %s" # Commits between any given branch and master
+```
+
+
+---
+
 
 ## Git Diff | What will be committed?
 
