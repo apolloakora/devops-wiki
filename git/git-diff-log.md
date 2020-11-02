@@ -1,8 +1,24 @@
 
 # Git Queries | diff | status | log | ls-files | ls-tree
 
-Let's ask Git to **tell us something we don't already know!**
+Ask Git to **tell us something we need to know** without changing anything. When we are using git we need to know
 
+- what will be committed
+- what will be pushed
+- what will be pulled from the remote matching branch
+- what will be pulled from the remote master
+- will a merge conflict occur
+- what will be merged (one way or the other)
+- what will be fetched
+- the number of commits we are ahead and behind
+- the difference between two commits
+- the difference between two branches
+- what branches are available (locally and remote)
+- what commits exist locally or in between two points on a branch
+- the files modified in chronological order
+- who last changed each line of a given file at a given point in time
+- what files exist on a given commit
+- what has been stashed
 
 ## Git Repo | The Last N Commits | Who When and Why
 
@@ -53,7 +69,7 @@ git diff ...master --stat --color              # Excellent files that will chang
 git diff --name-status <branch>...master       # 1 file per line difference between branch and master
 git log ..master  --format="%ai %h %ae %cn %s" # List all the commits that we are behind from master
 git --no-pager show ..master --unified=0       # List both the commit and the changes without context
-git --no-pager show master --pretty=oneline    # Exactly same as git diff with triple dots
+git --no-pager show ..master --pretty=oneline  # Exactly same as git diff with triple dots
 ```
 
 ---
@@ -63,8 +79,8 @@ git --no-pager show master --pretty=oneline    # Exactly same as git diff with t
 Do you want to know the differences between two branches - what will be merged?
 
 ```
-git diff --stat --color master..                        # Listing of files (and changes) to merge
 git diff --stat --color master...                       # Can be subtly different (not sure why)
+git diff --stat --color master..                        # Listing of files (and changes) to merge
 git diff --name-status origin/master                    # All file differences if merging into master
 git --no-pager show ...master --unified=0               # List each commit and each line changed
 git log ...master  --format="%ai %h %ae %cn %s"         # All commits on this branch not on master
