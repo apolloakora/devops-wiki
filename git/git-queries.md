@@ -1,5 +1,5 @@
 
-# Git Queries | diff | status | log | ls-files | ls-tree
+# Git Queries | git diff | git show | git log
 
 Ask Git to **tell us something we need to know** without changing anything. When we are using git we need to know
 
@@ -19,6 +19,13 @@ Ask Git to **tell us something we need to know** without changing anything. When
 - who last changed each line of a given file at a given point in time
 - what files exist on a given commit
 - what has been stashed
+- what commits has this developer done
+
+The number of useful git query commands are in the **teens** but 3 stand head and shoulders above the rest - **`git diff`**, **`git show`** and **`git log`**.
+
+
+---
+
 
 ## Git Repo | The Last N Commits | Who When and Why
 
@@ -81,7 +88,6 @@ Do you want to know the differences between two branches - what will be merged?
 ```
 git diff --stat --color master...                       # Can be subtly different (not sure why)
 git diff --stat --color master..                        # Listing of files (and changes) to merge
-git diff --name-status origin/master                    # All file differences if merging into master
 git --no-pager show ...master --unified=0               # List each commit and each line changed
 git log ...master  --format="%ai %h %ae %cn %s"         # All commits on this branch not on master
 git log <branch>...master  --format="%ai %h %ae %cn %s" # Commits between any given branch and master
