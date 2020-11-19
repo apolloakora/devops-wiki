@@ -1,29 +1,6 @@
 
 # Creating a RabbitMQ Cluster using Docker
 
-    --publish 4369:4369 \
-    --publish 15671:15671 \
-    --publish 15672:15672 \
-    --publish 25672:25672 \
-    --publish 5671:5671 \
-    --publish 5672:5672 \
-
-docker run \
-    --rm \
-    --network host \
-    --hostname rabbit1.local \
-    --name rabbit1 \
-    --env RABBITMQ_USE_LONGNAME=true \
-    --env RABBITMQ_ERLANG_COOKIE=abcdef0123456789abcdef0123456789 \
-    --env RABBITMQ_NODENAME=rabbit1@node.local \
-    rabbitmq:3-management;
-
-
-    --network host \
-
-    --publish 15671:15671 \
-    --publish 5671:5671 \
-
 docker run \
     --rm \
     --hostname rabbit1.local \
@@ -93,3 +70,16 @@ docker run \
     --link rabbit1:rabbit1.local \
     pivotalrabbitmq/perf-test:latest \
     --uri amqp://rabbit1
+
+
+
+- run a large test (like Sample Load) with n2-standard-8 = 8 vCPU & 32Gb RAM Rabbit Nodes
+- either automate or write IAP manual steps within the release script
+- make changes to pipelines for deploying to CI, Whitelodge, Greylodge, Blacklodge, PreProd and Prod
+- setup environment for testing pipeline activities
+- remove all external load balancers (including dev environments) and switch to IAP connecting to NodePort
+
+
+- decide and implement switch driving the dev/prod configuration
+- write script flow for updating rather than installing the RabbitMQ operator
+- hook up our own accurately mirrored performance test environment and run looping builds

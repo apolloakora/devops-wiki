@@ -8,11 +8,20 @@ There are 2 scenarios that cause terraform state mirroring errors and you need t
 
 ## Resource Deleted in Cloud
 
-To fix the first scenario we delete the terraform state.
+To fix the first scenario first find the resource class and name and then delete the terraform state.
+
+### Find the terraform state class and object name
+
+```
+terraform state list
+terraform state list | grep service_account # If looking for just service accounts
+```
+### Delete the terraform state
 
 ```
 terraform state rm resource-class-name.resource-object-name
 ```
+
 
 To fix the second we need to have 2 skills. The first skill is easy - simply go and delete the resource in the cloud. Now terraform tries to recreate and it no longer exists so all is good.
 
@@ -87,4 +96,62 @@ When state gets out of sync you can get this invalid index error and fix it by (
 
 ```
 terraform destroy -target google_service_account.this-one
+```
+
+## i/0 timeout error
+
+```
+Error: Get "https://56.112.222.101/api/v1/namespaces/default/secrets/xxx": dial tcp 56.112.222.101: i/o timeout
+```
+
+This is an error talking to the Kubernetes API server so first check that your Kubernetes API is at the given address and then check that you can access the API with
+
+- **`kubectl get pods`**
+- **`kubectl get namespaces`**
+
+```
+Unable to connect to the server: dial tcp 56.112.222.101:443: i/o timeout
+```
+
+If the above kubectl commands freeze and better still return a similar **`i/o timeout`** then you have your man.
+
+To solve this issue
+
+- check the Kubernetes cluster has a matching IP address
+- perform a whatsmyip
+- check that your IP address is whitelisted in the cluster
+- check there is no firewall disrupting traffic
+
+
+## Service Account Nightmares on Google Cloud and Kubernetes
+
+Terraform service accounts errors can drive you up the wall but there are ways.
+
+This alreadyExists error can be handled by deleting the google service account using **`gcloud`**.
+
+```
+Error: Error creating service account: googleapi: Error 409: Service account xxxxx-xxx already exists within project projects/this-project., alreadyExists
+```
+
+### List and Delete the google cloud service accounts 
+
+```
+gcloud iam service-accounts list
+gcloud iam service-accounts delete <EMAIL_IN_LIST>
+```
+
+### List and Delete Kubernetes Service Accounts
+
+Once those are deleted you may get grief from their matching Kubernetes service accounts.
+
+```
+Error: serviceaccounts "case-processor" already exists
+
+  on case_processor.tf line 7, in resource "kubernetes_service_account" "case-processor":
+   7: resource "kubernetes_service_account" "case-processor" {
+```
+
+```
+kubectl get serviceAccounts
+kubectl delete serviceAccount <name_from_list>
 ```
