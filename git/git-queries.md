@@ -1,7 +1,30 @@
 
-# Git Queries | diff | status | log | ls-files | ls-tree
+# Git Queries | git diff | git show | git log
 
-Let's ask Git to **tell us something we don't already know!**
+Ask Git to **tell us something we need to know** without changing anything. When we are using git we need to know
+
+- what will be committed
+- what will be pushed
+- what will be pulled from the remote matching branch
+- what will be pulled from the remote master
+- will a merge conflict occur
+- what will be merged (one way or the other)
+- what will be fetched
+- the number of commits we are ahead and behind
+- the difference between two commits
+- the difference between two branches
+- what branches are available (locally and remote)
+- what commits exist locally or in between two points on a branch
+- the files modified in chronological order
+- who last changed each line of a given file at a given point in time
+- what files exist on a given commit
+- what has been stashed
+- what commits has this developer done
+
+The number of useful git query commands are in the **teens** but 3 stand head and shoulders above the rest - **`git diff`**, **`git show`** and **`git log`**.
+
+
+---
 
 
 ## Git Repo | The Last N Commits | Who When and Why
@@ -43,6 +66,36 @@ You can just cat the output by changing the **core.pager** configuration.
 
 ---
 
+## git diff | What will be pulled?
+
+The lesser known triple dot comparator tells us what will happen when we do a git pull. You can even predict conflicts.
+
+```
+git diff ...master --unified=0                 # File line diffs incoming from master into current
+git diff ...master --stat --color              # Excellent files that will change including summary
+git diff --name-status <branch>...master       # 1 file per line difference between branch and master
+git log ..master  --format="%ai %h %ae %cn %s" # List all the commits that we are behind from master
+git --no-pager show ..master --unified=0       # List both the commit and the changes without context
+git --no-pager show ..master --pretty=oneline  # Exactly same as git diff with triple dots
+```
+
+---
+
+## git diff | What will be merged?
+
+Do you want to know the differences between two branches - what will be merged?
+
+```
+git diff --stat --color master...                       # Can be subtly different (not sure why)
+git diff --stat --color master..                        # Listing of files (and changes) to merge
+git --no-pager show ...master --unified=0               # List each commit and each line changed
+git log ...master  --format="%ai %h %ae %cn %s"         # All commits on this branch not on master
+git log <branch>...master  --format="%ai %h %ae %cn %s" # Commits between any given branch and master
+```
+
+
+---
+
 
 ## Git Diff | What will be committed?
 
@@ -51,7 +104,7 @@ What will `git commit` commit? This is the most frequent git query that is used 
 ```bash
 git config --local core.pager cat  # Just print without reference to less
 git config core.pager cat          # Same because git config defaults to --local
-git diff -U0                       # what has changed (with zero lines ofcontext)
+git diff -U0                       # what has changed (with zero lines of context)
 git diff --unified=0               # same
 git diff --unified=2               # print 2 lines (above and below) of context
 ```
@@ -124,7 +177,6 @@ Both the local and remote git repositories are at a commit reference at this poi
 ```
 git ls-remote https://github.com/devops4me/safedb.net.git ls-remote -b master   # tell us the remote commit reference
 git show-ref master
-
 ```
 
 

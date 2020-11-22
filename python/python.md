@@ -36,6 +36,13 @@ pip install awscli --upgrade --user
 sudo pip install awscli --upgrade pip
 ```
 
+## Install pip on MacOSx
+
+```
+sudo easy_install pip
+```
+
+
 ## Python 3 | Install and Configure
 
 Python3 is stable and new apps should be built with it. It however is incompatible with Python2 but the major operating systems now ship with both - so no need to install them. The corresponding tools are python3 and pip3.

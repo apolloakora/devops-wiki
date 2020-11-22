@@ -20,10 +20,10 @@ Tools such as IntelliJ, Eclipse and PyCharm allow you to opt for **emacs key map
 How do you find and replace a string across many files in a directory tree? How do you use a regular expression (regex) to match certain types of files?
 
 - **<tt>alt-x find-name-dired</tt>** - enter the root folder and filename pattern eg **`*.rb`** or **`key-*.java`**
-- **<tt>press t</tt>** to toggle mark all the files found and listed
-- **<tt>press Q</tt>** to query replace in files and enter the query and replace strings
+- press **<tt>t</tt>** to toggle mark all the files found and listed
+- press **<tt>Q</tt>** to query replace in files and enter the query and replace strings
 - **<tt>SPACE</tt>** replaces, **<tt>n</tt>** skips, **<tt>!</tt>** replaces all, **<tt>.</tt>** replace then stop, **<tt>Ctrl-g</tt>** to stop
-- **<tt>press ctrl-x s</tt>** to save the buffers one by one - **<tt>!</tt>** saves them all
+- press **<tt>Ctrl-x s</tt>** (NOT Ctrl-x Ctrl-s) to save the buffers one by one - **<tt>!</tt>** saves them all
 
 
 ## emacs grep | recursive string search

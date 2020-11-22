@@ -10,7 +10,7 @@ Jump onto the command line of a pod.
 Give the first part of the pod name to this command and it will hopefully complete the rest of the name and then kubectl exec into the pod.
 
 ```
-kubectl exec -it `kubectl get pods -o name | grep -m1 <POD-NAME-PART> | cut -d'/' -f 2` -- /bin/bash
+kubectl exec -it `kubectl get pods -o name | grep --max-count=1 <pod-name-prefix> | cut -d / -f 2` -- /bin/bash
 ```
 
 Use a selector (project name) to identify which pod to jump into.
