@@ -168,6 +168,16 @@ When you've done a bunch of commits already you may want to push one some or all
 
 Note that even from the VCS tab (arrived at by **`Option 9`**) you can still use **`Ctrl shift k`** to open the push window.
 
+### How to Add a File or Folder to Git
+
+To add an untracked file or folder use **`Option 9`** to go to the local changes and then
+
+- **`Ctrl n`** and **`Ctrl p`** to navigate to what you need to add
+- **`Ctrl Option a`** to add it
+- **`Ctrl k`** then enter a commit message
+- **`Ctrl Option k`** to Commit and **`Ctrl Option p`** to push
+
+
 ### How to Create a Branch
 
 To create a branch within the IDE you
