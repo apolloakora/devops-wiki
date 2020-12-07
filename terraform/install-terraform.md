@@ -86,13 +86,37 @@ Windows now has an impressive DevOps tool suite including Docker, Kubectl, Terra
 
 ## tfenv | Install Terraform Environment Manager
 
-Like rbenv, pyenv and pipenv, tfenv makes the terraform version equal to the version inside the **`.terraform-version`** file.
+The best way to run **tfenv** and **terraform** is by linking it via the cloned github repository. The steps are
 
-You can install tfenv with **`homebrew`** on MacOSx or **`apt`** on Ubuntu.
+### Uninstall `terraform` and `tfenv`
+
+- **`brew uninstall terraform`**  # if on a mac with terraform installed
+- **`brew uninstall tfenv`**      # if on a mac with tfenv installed
+
+### Clone and link to new `terraform` and `tfenv`
+
+Now we clone tfenv and link it in. This method is better than changing the PATH variable and writing it into bash and/or zsh profiles. **Remember to change Assets with your folder path of choice.**
+
+- **`cd Assets`**                                     # go to Assets folder
+- **`git clone https://github.com/tfutils/tfenv`**    # clone tfenv
+- **`ln -s ~/Assets/tfenv/bin/* /usr/local/bin`**     # link in the tfenv and terraform commands
+- **`tfenv --version`**
+- **`tfenv install <VERSION>`**                       # install this specific version
+- **`tfenv use <VERSION>`**                           # switch to using another version
+
+### Now use tfenv to install and use the versions of terraform you desire
 
 ```
-terraform version    # which terraform and previders are being used
 tfenv list             # list the versions of terraform installed
 tfenv install          # install the version within .terraform-version
-tfenv install 0.12.24  # install this specific version
+terraform version      # which terraform and previders are being used
 ```
+
+Although you can install tfenv with **`homebrew`** on MacOSx or **`apt`** on Ubuntu, I would advise against it.
+
+
+## Running Terraform Commands via Docker
+
+Another excellent method of terraform development is to run terraform commands via docker. With this method (and remote state management) you do not need to have terraform installed in your local environment.
+
+For large teams this method saves a lot of time and a lot of "it works on my machine" issues.
