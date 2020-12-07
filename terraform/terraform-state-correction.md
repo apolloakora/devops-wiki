@@ -155,3 +155,18 @@ Error: serviceaccounts "case-processor" already exists
 kubectl get serviceAccounts
 kubectl delete serviceAccount <name_from_list>
 ```
+
+## Unlocking Terraform State
+
+The terraform state is furnished with a lock to **prevent simultaneous access** from two client command interfaces.
+
+```
+Error releasing the state lock!
+```
+
+If you know you are the only one changing that state then you can unlock the state by
+
+- **`terraform state push errored.tfstate`**     # to print the lock ID
+- now copy the lock ID
+- **`terraform force-unlock <LOCK_ID>`**         # unlock the terraform state
+- **`terraform force-unlock <LOCK_ID> -force`**  # use -force to avoid the prompt
