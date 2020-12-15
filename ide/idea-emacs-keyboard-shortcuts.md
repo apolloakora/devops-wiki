@@ -41,27 +41,27 @@ These settings will work on Windows, Linux and MacOS as long as you set the Keym
 
 | Read Explore Activity            | Keyboard Shortcut                 | And then ...                   |
 |:-------------------------------- |:---------------------------------- |:------------------------------ |
-| Jump to the Last Edit Location   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
-| Jump to Previous/Next Location   | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
-| Open Recent Locations Dropdown   | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
 | Find usages of a code element    | **`Ctrl Option g`** (in IntelliJ)  | **`Ctrl-n`** to move down, Enter to visit |
 | Navigate to element definition   | **`Ctrl Option g`** (in RubyMine)  | to go back press **`Ctrl Option Left Arrow`** |
 | Navigate to element definition   | **`Option . (period)`**            | to go back press **`Ctrl Option Left Arrow`** |
 | Find usages tab                  | **`Option Shift S`**               | use Ctrl-n to move down, Enter to jump to editor, Ctrl-x k to close |
-| Show File Details (Project View) | **`Option Shift |`**               | read file size and date/time created and viewed |
+| Jump to the first line (top)     | **`Option Shift <`**               |  |
+| Jump to the last line (bottom)   | **`Option Shift >`**               |  |
 | Goto line (go to line)           | **`Option g`**                     | type 14:8 to go to line 14 column 8 (or just 14) |
 | Goto the next method             | **`Ctrl Option e`**                |  |
 | Goto the previous method         | **`Ctrl Option a`**                |  |
+| Jump to the Last Edit Location   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
+| Jump to Previous/Next Location   | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
+| Open Recent Locations Dropdown   | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
 | View Class Elements Structure    | **`Ctrl F12`**                     | use Ctrl-n and p to move up and down and enter to visit |
 | View Class Method Documentation  | **`Ctrl q`**                       | read documentation and scroll with arrow keys |
-| Options (Project View)           | **`Ctrl Option Enter`**            | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
-| View Gem Dependency Diagram      | **`Ctrl Option u`** (RubyMine)     |  |
-| Jump to the first line (top)     | **`Option Shift <`**               |  |
-| Jump to the last line (bottom)   | **`Option Shift >`**               |  |
-| Find Method or Class            | **`Ctrl Shift Option N`**         | |
-| Find Text in any File           | **`Ctrl Shift F`**                | **`Ctrl n`** and **`Ctrl p`** to select and **`Enter`** to visit |
+| Find Method or Class             | **`Ctrl Shift Option N`**         | |
+| Find Text in any File            | **`Ctrl Shift F`**                | **`Ctrl n`** and **`Ctrl p`** to select and **`Enter`** to visit |
 | Goto any class in the editor    | **`Option Shift G`**              | |
 | Find any file, class or package | **`Shift Shift`**                 | |
+| Show File Details (Project View) | **`Option Shift |`**               | read file size and date/time created and viewed |
+| Options (Project View)           | **`Ctrl Option Enter`**            | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
+| View Gem Dependency Diagram      | **`Ctrl Option u`** (RubyMine)     |  |
 
 
 ---
@@ -216,12 +216,11 @@ Whilst in version control mode **`Option 9`** you can
 
 You can execute unit tests (in Cucumber, Behave, Minitest) and you can execute code using interpreters (for Ruby and Python) and much more.
 
-| Running Capabilities             | Keyboard Shortcut                      | And then ...                            |
-|:-------------------------------- |:-------------------------------------- |:--------------------------------------- |
-| Run a Rake task                  | **`Ctrl Ctrl`**                        | "rake build" or "rake install"          |
-| Run Recently ran again           | **`Ctrl Ctrl`**                        | **`Ctrl n`** or **`Ctrl p`** then Ent
-er |
-| Running a Class (Code or Test)   | **`Ctrl Shift F10`**                   | b4 - go to class with **`Option 1`**    |
+| Running Capabilities           | Keyboard Shortcut                | And then ...                            |
+|:------------------------------ |:-------------------------------- |:--------------------------------------- |
+| Run a Rake task                | **`Ctrl Ctrl`**                  | "rake build" or "rake install"          |
+| Run "recently ran" again       | **`Ctrl Ctrl`**                  | **`Ctrl n`** or **`Ctrl p`** then Enter |
+| Running a Class (Code or Test) | **`Ctrl Shift F10`**             | b4 - go to class with **`Option 1`**    |
 
 
 ---
