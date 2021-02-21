@@ -37,4 +37,6 @@ Use this **[Ubuntu tutoriall to write Ubuntu Server on the SD card](https://ubun
 
 ## 3. Build the Raspberry Pi Rack
 
+This **[official YouTube video](https://www.youtube.com/watch?v=Fq2NmbZIl9c&t=364s)** takes you throught the steps to build the Raspberry Pi rack.
+
 
