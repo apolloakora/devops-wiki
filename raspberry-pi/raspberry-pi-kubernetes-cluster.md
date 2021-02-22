@@ -100,4 +100,21 @@ A network with 8 machines called **`ubuntu`** is disconcerting! Set the hostname
 
 Now on your laptop add a mapping in **`/etc/hosts`** linking the pi's IP address and its new hostname. This method doesn't scale - if you run more than 5 or 6 machines you should consider setting up a dedicated DNS server on one of your Raspberry Pis.
 
-Test connectivity with 
+Test connectivity with **`ping pi-r1d4`**
+
+## 9. Setup SSH Public/Private Keypair
+
+**Ansible** the configuration management tool will be used to setup our Kubernetes cluster. Ansible requires a private key and needs our Raspberry Pi machines to have the corresponding authorized public key.
+
+Use **`ssh-keygen`** or **`safe keygen`** to produce your keypair.
+
+1. **`ssh ubuntu@pi-r1d4`** - ssh in with password
+1. **`echo "<public key text>" >> ~/.ssh/authorized_keys`** - add public key
+1. **`cat ~/.ssh/authorized_keys`** - assert public key in authorized_keys
+1. **`exit`** - exit the ssh session
+
+Finally we place the private key equivalent inside the .ssh folder and connect **securely without a password**.
+
+1. **`safe write private.key --folder=~/.ssh`** - write the private key into **`~/.ssh`**
+1. **`ssh ubuntu@pi-r1d4 -i ~/.ssh/services.cluster.pi-r1d4.pem`** - ssh in securely
+
