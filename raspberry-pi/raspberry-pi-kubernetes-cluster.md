@@ -10,11 +10,11 @@ Why do you need a Raspberry Pi cluster. Clouds are expensive
 
 1. a **[52pi Raspberry Pi Rack Case with 4 Slots](https://www.amazon.co.uk/gp/product/B07J9VMNBL/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)** - **[or 8 slots](https://www.amazon.co.uk/gp/product/B085ZZV66P/ref=ox_sc_act_title_1?smid=A187Y4UVM6ZA0X&psc=1)**
 1. **[Raspberry Pi 4 Model B with 4GB of RAM](https://www.amazon.co.uk/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o03_s01?ie=UTF8&psc=1)** (either x4 or x8)
-1. **[128 GB SanDisk Extreme Pro SD Card](https://www.amazon.co.uk/SanDisk-Extreme-SDXC-Memory-Class/dp/B07H9DVLBB/ref=sr_1_3_mod_primary_new?crid=3UXMS1ANDWP88&dchild=1&keywords=sandisk%2Bextreme%2Bpro&qid=1613854314&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=sandisk%2Caps%2C175&sr=8-3&th=1)** (either x4 or x8)
+1. **[128 GB SanDisk Extreme Pro SD Card](https://www.amazon.co.uk/SanDisk-Extreme-microSDXC-Adapter-Performance/dp/B07G3H5RBT/ref=sr_1_3?crid=4MJLDBM9IVLL&dchild=1&keywords=extreme+pro+micro+sd&qid=1614018535&sprefix=extreme+pro+mi%2Caps%2C168&sr=8-3)** (either x4 or x8)
 1. **[Micro HDMI to HDMI Cable](https://www.amazon.co.uk/gp/product/B08DY45G2D/ref=ox_sc_act_title_1?smid=A1ED6JEOF71PSI&psc=1)** - two recommended
 1. **[NetGear 8-Port Gigabit Ethernet Switch](https://www.amazon.co.uk/gp/product/B017LWQIZA/ref=ox_sc_act_title_4?smid=A3P5ROKL5A1OLE&psc=1)**
-1. short ethernet cable for connecting Raspberry Pi to Ethernet switch (either x4 or x8)
-1. medium to long ethernet cable to connect the Ethernet Hub to your ISP's Hub
+1. **[short 0.5m ethernet cable](https://www.amazon.co.uk/gp/product/B07YTXCTY5/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)** from Pi to Ethernet Switch (either x2 or x3)
+1. **[medium to long ethernet cable](https://www.amazon.co.uk/gp/product/B0843SBMDD/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1)**  to connect the Ethernet Hub to your ISP's Hub
 
 For the Official USB-C Power Supply for Raspberry Pi 4 you'll need to get 4 or 8 of the
 
@@ -53,9 +53,10 @@ With the SD card in the first Raspberry Pi it is time to wire it up. The steps a
 
 ## 5. Initial Raspberry Pi Ubuntu Configuration
 
-When the Pi comes on change the password. Then proceed to
+When the Pi comes on login with username - **`ubuntu`** and password - **`ubuntu`** then change the password. Then proceed to
 
 1. **`sudo apt update`** - update the list of package repositories
+1. **`sudo dpkg --configure -a`** - get the package manager ready
 1. **`sudo apt upgrade --asssume-yes`** - upgrade the system packages
 1. check SSH server is running - **`sudo systemctl status ssh`**
 1. **`ip a`** - record the IP address of this pi
@@ -117,4 +118,3 @@ Finally we place the private key equivalent inside the .ssh folder and connect *
 
 1. **`safe write private.key --folder=~/.ssh`** - write the private key into **`~/.ssh`**
 1. **`ssh ubuntu@pi-r1d4 -i ~/.ssh/services.cluster.pi-r1d4.pem`** - ssh in securely
-
