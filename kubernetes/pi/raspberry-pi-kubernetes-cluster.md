@@ -120,11 +120,11 @@ WARNING: No oom kill disable support
 
 ## 9. Change Raspberry Pi Hostname
 
-A network with 8 machines called **`ubuntu`** is disconcerting! Set the hostname to uniquely identify the rack and the machine in the rack (1 is the top, 4 (or 8) is the botom).
+A network with 8 machines called **`ubuntu`** is disconcerting! Set the hostname to uniquely identify the rack and the position in the rack where **1 is high** and **4 is low**.
 
 <blockquote>
-**`pi-r1d1`** - is the hostname of the top machine in rack one
-**`pi-r2d8`** - the eighth (bottom) machine in the second rack
+pi-r1d1 is the hostname of the top machine in rack one
+pi-r2d8 the eighth (bottom) machine in the second rack
 </blockquote>
 
 1. **`sudo apt install emacs --assume-yes`** - install emacs editor
