@@ -130,6 +130,17 @@ A network with 8 machines called **`ubuntu`** is disconcerting! Set the hostname
 1. **`sudo hostnamectl set-hostname pi-r1d1`** - change the hostname
 1. **`sudo emacs /etc/hosts`** - edit the `/etc/hosts` file
 1. add this **`127.0.0.1 pi-r1d1`** as the second line
+
+### If this machine is master
+If this machine is going to be the master - add the IP address/hostname mappings for all the other raspberry pis.
+
+### If this machine is a worker
+For worker machines we only need to add the IP address/hostname mapping for the master.
+
+### Edit the cloud configuration
+
+Now edit the cloud configuration file and shutdown the machine
+
 1. **`sudo emacs /etc/cloud/cloud.cfg`** - edit the cloud config
 1. `preserve_hostname: true` - change flag from false to true
 1. **`sudo shutdown -r now`** - reboot the raspberry pi
