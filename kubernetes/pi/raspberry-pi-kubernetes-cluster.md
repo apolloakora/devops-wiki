@@ -95,13 +95,15 @@ The settings are
 - cgroup_memory=1
 - swapaccount=1
 
-Best to configure the settings with just one command.
+Use this command **`cat /boot/firmware/cmdline.txt`** to examine the one line file content. Then append the extra settings with this **sed** command.
 
-1. **`cat /boot/firmware/cmdline.txt`** - check the settings do not exist
-1. **`sudo sed -i '$ s/$/ cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 swapaccount=1/' /boot/firmware/cmdline.txt`**
-1. **`sudo shutdown -r now`** - reboot the raspberry pi
+```
+sudo sed -i \
+  '$ s/$/ cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 swapaccount=1/' \
+  /boot/firmware/cmdline.txt
+```
 
-Now check the settings do exist and are all space separated.
+Check the appendage and the space separation and then use **`sudo shutdown -r now`** to reboot the raspberry pi.
 
 ### Verification with `docker info`
 
@@ -136,6 +138,8 @@ If this machine is going to be the master - add the IP address/hostname mappings
 
 ### If this machine is a worker
 For worker machines we only need to add the IP address/hostname mapping for the master.
+
+Put the mapping/s to access the master raspberry pi (or all the worker pis) right under your new 127.0.0.1 entry.
 
 ### Edit the cloud configuration
 
