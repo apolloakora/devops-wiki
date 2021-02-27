@@ -123,7 +123,7 @@ WARNING: No oom kill disable support
 A network with 8 machines called **`ubuntu`** is disconcerting! Set the hostname to uniquely identify the rack and the position in the rack where **1 is high** and **4 is low**.
 
 <blockquote>
-pi-r1d1 is the hostname of the top machine in rack one
+pi-r1d1 is the hostname of the top machine in rack one<br/>
 pi-r2d8 the eighth (bottom) machine in the second rack
 </blockquote>
 
