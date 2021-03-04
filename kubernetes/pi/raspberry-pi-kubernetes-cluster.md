@@ -58,16 +58,23 @@ When the Pi comes on login with username - **`ubuntu`** and password - **`ubuntu
 1. **`sudo apt update`** - update the list of package repositories
 1. **`sudo dpkg --configure -a`** - get the package manager ready
 1. **`sudo apt upgrade --asssume-yes`** - upgrade the system packages
-1. check SSH server is running - **`sudo systemctl status ssh`**
 1. **`ip a`** - record the IP address of this pi
+
 
 ## 6. SSH in to Finish Initial Raspberry Pi Configuration
 
-Go to the terminal of your Linux/Mac laptop and ssh in like this.
+Copy and paste is easier from your laptop so go to the terminal of your Linux/Mac laptop and ssh in with your password like this.
 
 **`ssh ubuntu@<IP-Address>`**
 
-Enter your password and you are in. Complete the configuration with these steps.
+**If you are repeating this setup you may get a message with a banner like below.** In this case simply go to the **`~/.ssh/known_hosts`** file and remove any lines beginning with the IP address (and/or hostname) of the machine you are setting up.
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+```
+
 
 ## 7. Set Passwordless Sudo
 
@@ -76,8 +83,7 @@ After these commands you won't need to type the password every time you run a co
 ```bash
 sudo usermod -a -G sudo $USER
 sudo su root
-cd; pwd;
-echo $SUDO_USER
+cd;
 sudo echo "$SUDO_USER ALL=NOPASSWD: ALL" >> /etc/sudoers
 ```
 
@@ -103,11 +109,11 @@ sudo sed -i \
   /boot/firmware/cmdline.txt
 ```
 
-Check the appendage and the space separation and then use **`sudo shutdown -r now`** to reboot the raspberry pi.
+Check the appendage and the space separation. It needs a reboot to take effect but you can do this after changing the hostname.
 
 ### Verification with `docker info`
 
-Once docker is installed run **`docker info`** and if this step has not been done you will see these lines.
+Towards the end of this guide **after Ansible has installed docker** you can run **`docker info`** and if this step **has NOT been done** you will see these lines.
 
 ```
 WARNING: No memory limit support
@@ -116,6 +122,36 @@ WARNING: No kernel memory limit support
 WARNING: No kernel memory TCP limit support
 WARNING: No oom kill disable support
 ```
+
+### iptables bridged traffic configuration
+
+Open the **`/etc/modules`** file and add the line **`br_netfilter`** followed by a carriage return.
+
+```
+# /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with "#" are ignored.
+
+br_netfilter
+```
+
+Then continue on to
+
+- **`sudo modprobe br_netfilter`**
+- **`lsmod | grep br_netfilter`** - to check that this module now is listed
+
+Now create a file called **`/etc/sysctl.d/20-k8s-iptables.conf`** and place this content inside it.
+
+```
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+```
+
+And finally
+
+- **`sudo sysctl --system`**
+- check the output contains the name **`20-k8s-iptables.conf`**
 
 
 ## 9. Change Raspberry Pi Hostname
@@ -127,19 +163,30 @@ pi-r1d1 is the hostname of the top machine in rack one<br/>
 pi-r2d8 the eighth (bottom) machine in the second rack
 </blockquote>
 
+**emacs** is my preferred Linux editor - use yours.
+
 1. **`sudo apt install emacs --assume-yes`** - install emacs editor
 1. **`hostnamectl`** - report the current hostname and machine ID
 1. **`sudo hostnamectl set-hostname pi-r1d1`** - change the hostname
 1. **`sudo emacs /etc/hosts`** - edit the `/etc/hosts` file
 1. add this **`127.0.0.1 pi-r1d1`** as the second line
 
-### If this machine is master
-If this machine is going to be the master - add the IP address/hostname mappings for all the other raspberry pis.
+### Add /etc/hosts mappings for every Raspberry Pi
 
-### If this machine is a worker
-For worker machines we only need to add the IP address/hostname mapping for the master.
+**Note that you may need to return to this configuration when you have the ip address/hostnames of the other raspberry pis.**
 
-Put the mapping/s to access the master raspberry pi (or all the worker pis) right under your new 127.0.0.1 entry.
+<blockquote>
+As well as the 127.0.0.1 mapping add the IP address/hostname mappings for all the other Raspberry Pi machines.
+Every machine needs to talk to every other machine.
+</blockquote>
+
+```
+127.0.0.1 localhost
+127.0.0.1 pi-r1d1
+192.168.0.59 pi-r1d2
+192.168.0.61 pi-r1d3
+192.168.0.62 pi-r1d4
+```
 
 ### Edit the cloud configuration
 
