@@ -14,7 +14,14 @@ Resources are the network/bandwidth, drive/disks, RAM/Memory and Process/CPU
 
 
 
-### View Process List by Memory Consumed
+## Querying Running Services
+
+```
+service --status-all   # lists all services whether running or not
+```
+
+
+## View Process List by Memory Consumed
 
 **`ps -eo pid,ppid,%mem,%cpu,cmd,start,time --sort=-%mem | head -20`**
 **`watch ps -eo pid,ppid,%mem,%cpu,cmd,start,time --sort=-%mem | head -20`**

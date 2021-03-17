@@ -3,7 +3,20 @@
 
 When running a Kubernetes deployment, you use kubectl (on your client's command line) to ask about status, to perform software as a service (SAAS) releases, and to perform administrative duties.
 
-## kubectl exec
+
+
+## kubectl exec <pod-name> env
+
+Allows you to view the environment variables within the specified pod.
+
+Note the generalized form of this command is below with the double dash separator that is required to distinguish flags for kubectl vs flags for the command.
+
+
+```
+kubectl exec <pod-name> -- <command>
+```
+
+## kubectl exec -it <pod-name> bash
 
 Jump onto the command line of a pod.
 
@@ -78,6 +91,54 @@ We must access logs from **multiple containers** and **multiple pods** in order 
 
 This command will **tail all logs** from **all containers in pods** within the **`default`** namespace.
 
+
+
+
+## kubectl run
+
+This runs nginx from the kubectl command line
+
+```
+kubectl run nginx --image nginx
+kubectl expose deployment.apps/nginx --port 80
+kubectl get service
+kubectl describe svc/nginx
+kubectl proxy
+```
+
+The describe command has an **`Endpoints`** field. Pump this into your browser and the nginx welcome page should show up.
+
+
+---
+
+
+## kubectl apply
+
+Let's run this devopswiki from a deployment descriptor.
+
+You can run simple images like nginx from the command line but most of the time you use a deployment descriptor in the default yaml format.
+
+
+```
+kubectl apply -f example-deployment.yaml
+```
+
+
+``` yaml
+apiVersion: v1
+kind: Pod
+metadata:
+    name: devops-wiki
+    labels:
+        purpose: host-devops-wiki
+spec:
+    containers:
+    - name: vmwiki
+      image: "devops4me/wiki"
+      env:
+      - name: WIKI_CONTENT_REPO_URL
+        value: "https://github.com/apolloakora/devops-wiki"
+```
 
 
 ## Did You Know?
