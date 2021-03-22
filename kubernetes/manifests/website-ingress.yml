@@ -1,0 +1,23 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: website-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: pi-jenkins
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: website-service
+          servicePort: 80
+  - host: pi-r1d3
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: website-service
+          servicePort: 80

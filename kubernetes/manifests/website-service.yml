@@ -1,0 +1,20 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: website-pod
+  labels:
+    app: website-app
+spec:
+  containers:
+    - name: website-container
+      image: nginx
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: website-service
+spec:
+  selector:
+    app: website-app
+  ports:
+    - port: 80

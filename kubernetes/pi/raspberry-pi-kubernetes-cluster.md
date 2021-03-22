@@ -57,7 +57,7 @@ When the Pi comes on login with username - **`ubuntu`** and password - **`ubuntu
 
 1. **`sudo apt update`** - update the list of package repositories
 1. **`sudo dpkg --configure -a`** - get the package manager ready
-1. **`sudo apt upgrade --asssume-yes`** - upgrade the system packages
+1. **`sudo apt upgrade --assume-yes`** - upgrade the system packages
 1. **`ip a`** - record the IP address of this pi
 
 
