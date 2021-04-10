@@ -1,20 +1,49 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: website-pod
+  name: rabbitmq-pod
   labels:
-    app: website-app
+    app: rabbitmq-app
 spec:
   containers:
-    - name: website-container
-      image: nginx
+    - name: rabbitmq-container
+      image: rabbitmq:3-management
+      ports:
+      - containerPort: 15672
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: website-service
+  name: rabbitmq-service
 spec:
   selector:
-    app: website-app
+    app: rabbitmq-app
   ports:
-    - port: 80
+  - protocol: TCP
+    port: 15672
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: jenkins-pod
+  labels:
+    app: jenkins-app
+spec:
+  containers:
+    - name: jenkins-container
+      image: mlucken/jenkins-arm
+      ports:
+      - containerPort: 8080
+      securityContext:
+        privileged: true
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins-service
+spec:
+  selector:
+    app: jenkins-app
+  ports:
+  - protocol: TCP
+    port: 8080

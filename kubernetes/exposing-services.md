@@ -43,15 +43,27 @@ spec:
 Now you can use any one of these port-forward commands to expose the nginx webpage.
 
 ```
-kubectl port-forward pod/website-pod 7788:80
-kubectl port-forward service/website-service 7788:80
+kubectl port-forward pod/website-pod 7889:80
+kubectl port-forward service/website-service 7889:80
 ```
 
-Now go to this link [http://localhost:7788/] and you'll see the nginx welcome page.
+Now go to this link [http://localhost:7889/] and you'll see the nginx welcome page.
 
 ### When to use kubectl port-forward
 
 Only use this command during development or troubleshooting to look at the response given by a pod, deployment or service. As soon as you Ctrl-C the port-forward command the exposure vanishes.
+
+
+---
+
+# How to Use Ingress to Expose Services | Bare Metal Kubernetes
+
+Your bare metal kubernetes setup needs to expose services using the de-facto ingress pattern fronted by a load balancer. The basic steps to achieving this is to
+
+- deploy 2 or 3 cluster resident services
+- install the **nginx ingress controller**
+- install an external **nginx load balancer**
+- configure traffic flows from load balancer through the ingress controller to the services and back.
 
 
 ---
@@ -128,6 +140,113 @@ https://pi-r1d3:30348
 https://192.168.0.61:30348
 ```
 
+Now we are ready to install a load balancer.
+
+
+---
+
+
+## Why Install a Bare Metal Load Balancer 
+
+I have a home Raspberry Pi kubernetes cluster and I have installed the below load balancer setup. **Why?**
+
+Compared to my sturdy load balancer machine the cheap commodity raspberry pi's are more likely to
+
+- fail
+- run out of disk space
+- require upgrades or
+- require service/machine restarts
+- be too busy to talk
+
+So binding (sending) web and api requests directly to a cluster machine results in frustrating outages to clients of the cluster.
+
+### The Benefits of a Load Balancer
+
+**The cost of cloud load balancers is astronomic.** So using one load balancer coupled with a kubernetes ingress controller is now the de-facto pattern for exposing services.
+
+Let's mimic this within our bare metal kubernetes cluster.
+
+A load balancer in cost efficient bare metal home/office/garage settings can
+
+- mirror the de-facto **one load balancer** pattern
+- detect and avoid failed machines
+- perform health and readiness checks 
+- spread the load using congurable algorithms
+- perform content caching and SSL termination
+- be a test-bed before promoting to the cloud
+
+
+---
+
+
+## How to Install nginx onto Bare Metal
+
+If you decide to run a bare metal load balancer there is not better choice than nginx. The steps are
+
+- setup Ubuntu Server on a simple (but sturdy) machine
+- give it a hostname of **`pathway`**
+- **`sudo apt-get update`**
+- **`sudo apt-get install nginx`**
+- **`sudo systemctl restart nginx`**
+- put the IP address and **`gateway`** name in /etc/hosts
+
+Use **`htp://pathway`** to acquire the ubiquitous nginx welcome page.
+
+
+---
+
+
+## The Load Balancer Configuration
+
+Replace the nginx configuration file at **`/etc/nginx/nginx.conf`** with this one.
+
+```
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    worker_connections 768;
+}
+
+http {
+
+    upstream pathway {
+        server 192.168.0.61:32560;
+        server 192.168.0.59:32560;
+        server 192.168.0.62:32560;
+    }
+
+    # This server accepts all traffic to port 80 and passes it to the upstream.
+    # Notice that the upstream name and the proxy_pass need to match.
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://pathway;
+        }
+    }
+}
+```
+
+Now we will
+
+- remove the default link in **`/etc/nginx/sites-enabled`**
+- place our configuration file into **`/etc/nginx/nginx.conf`**
+- and restart nginx (to read the new config)
+
+```
+sudo rm /etc/nginx/sites-available/default # remove the default symbolic link
+sudo systemctl restart nginx               # read load balancer configuration
+```
+
+If an error occurs you can start trouble shooting with
+
+- **`sudo systemctl status nginx.service`**
+- **`journalctl -xe`**
+
 
 ---
 
@@ -139,3 +258,48 @@ Before trying to access your service make sure you have
 1. setup the **website-pod** and **website-service** above
 1. installed the nginx ingress controller and can access it
 
+
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    worker_connections 768;
+}
+
+http {
+
+    # The instruction is to accept all traffic coming into port 80 and pass
+    # it on to the servers defined in the upstream block. The upstream names
+    # must match the urls within the proxy_pass lines.
+
+    upstream rabbitmq {
+        server 192.168.0.61:32560;
+        server 192.168.0.59:32560;
+        server 192.168.0.62:32560;
+    }
+
+    server {
+        listen 80;
+        server_name rabbitmq;
+        location / {
+            proxy_pass http://rabbitmq;
+        }
+    }
+
+    upstream jenkins {
+        server 192.168.0.61:32560;
+        server 192.168.0.59:32560;
+        server 192.168.0.62:32560;
+    }
+
+    server {
+        listen 80;
+        server_name jenkins;
+        location / {
+            proxy_pass http://jenkins;
+        }
+    }
+}
