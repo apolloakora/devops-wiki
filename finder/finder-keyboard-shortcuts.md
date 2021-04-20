@@ -62,20 +62,7 @@ Grouping by size is really handy for understanding what is eating up your disk.
 
 ## Sorting Icons and Lists within Groups | Command Option Control <N>
 
-#### What is my biggest document? What is my biggest image? (In my Downloads folder).
-
-You can answer this question with
-
-- **`Command Option l`** - goto **Downloads**
-- **`Command 2`** - switch to list view
-- **`Command Control 2`** - group by file types
-- **`Command Option Control 6`** - sort by file size within the groups
-
-Holding down the 3 buttons and pressing a number is not as hard as it sounds. It enables you to sub sort within the groups you specified above using the **`Command Control`** keys.
-
-### Sorting within Groups
-
-So to sort within groups of files (in icons and lists)
+Holding down the 3 buttons and pressing a number is not as hard as it sounds. It enables you to sub sort within the groups you specified with the **`Command Control`** keys.
 
 1. **Alphabetically by Name** use **`Command Option Control 1`**
 1. **By File Type** use **`Command Option Control 2`**
