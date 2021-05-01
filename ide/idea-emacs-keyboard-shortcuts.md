@@ -24,10 +24,12 @@ These settings will work on Windows, Linux and MacOS as long as you set the Keym
 | Fold Up a Code Block    | **`Ctrl - (hyphen)`**           | |
 | Unfold a Code Block     | **`Ctrl = (equals)`**           | |
 | Duplicate Current Line  | **`Command d`**                 | |
-| Refactor Create Method  | **`Ctrl Option m`**             | select code block then enter method name and Enter|
-| Deleting (Project View) | **`fn Backspace`**              | Enter at the prompt to actually delete (or tap the touch bar) |
-| Text Upper / Lowercase  | **`Ctrl Shift U`**              | select first with **`Ctrl Space`** then **`Ctrl n`** |
-| Refactor Rename         | **`Shift F6`**                  | rename and **`Ctrl Option d`** to Do the Refactoring |
+| Refactor Create Method  | **`Ctrl Option m`**             | select code block then enter method name and Enter      |
+| Deleting (Project View) | **`fn Backspace`**              | Enter at prompt to actually delete (or tap touch bar)   |
+| Text Upper / Lowercase  | **`Ctrl Shift U`**              | select first with **`Ctrl Space`** then **`Ctrl n`**    |
+| Refactor Rename         | **`Shift F6`**                  | rename file, class or method then **`Ctrl Option d`**   |
+| Move File Class Method  | **`F6`**                        | Move the file, class or method then **`Ctrl Option d`** |
+| Copy File Class Method  | **`F5`**                        | Move the file, class or method then **`Ctrl Option d`** |
 | Complete Code Element   | **`Option / Enter`**            | **`Ctrl n (or p) Enter`** to navigate and select option |
 | Overwrite Code Element  | **`Option / Tab`**              | **`Ctrl n (or p) Enter`** to navigate and select option |
 | Find and Replace Text   | **`Ctrl Shift R`**              | |
@@ -88,13 +90,13 @@ Finding files, finding text, finding usage of a particular class, method or vari
 ---
 
 
-## Navigate to Tool Windows (incl Settings)
+## Switch between Tool Windows and Editor
 
 | Perspective                  | Mac Keyboard Shortcut            | And then ...                                |
 |:---------------------------- |:-------------------------------- |:------------------------------------------- |
-| Goto Projects Tool Window    | **`F12`**                        | use **`Shift F12`** to invoke editor fullscreen |
+| Goto Projects (or Terminal)  | **`F12`**                        | use **`Shift F12`** to invoke editor fullscreen |
 | Jump from Projects to Editor | **`Shift F12`** or **`Esc Esc`** | use **`F12`** to go back to the Projects tool window |
-| Goto Terminal                | **`Option F12`**                 | use **`Option F12`** again or **`Esc Esc`** to go back to the Editor |
+| Goto Terminal                | **`F12`** or **`Option F12`**    | use **`Option F12`** again or **`Esc Esc`** to go back to the Editor |
 | Open Settings Window         | **`Command , (Comma)`**          |   |
 | Project Hierarchy            | **`Option 1`**                   | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
 | Class Hierarchy              | **`Ctrl h`**                     | Ctrl-x k to close and return  |
@@ -114,7 +116,7 @@ There's something cool about switching - be it **switching lanes** or **switchin
 - **`Ctrl-n**` and **`Ctrl-p`** (or type the number) to move up and down
 - and then **`Enter`** to switch
 
-### Swithcing Keymaps
+### Switching Keymaps
 
 When pair-programming and your other half isn't an emacs fan you can quickly use the sequence
 

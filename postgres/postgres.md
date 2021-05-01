@@ -24,7 +24,6 @@ First we need to upgrade homebrew a little.
 # Now enter sudo password
 brew update
 brew install postgresql
-postgres --version
 psql --version
 psql --help
 ```
@@ -115,9 +114,8 @@ drop table country;
 INSERT INTO continent(id, continent_name, population) VALUES( 1, 'africa', 2000);
 INSERT INTO continent(id, continent_name, population) VALUES( 2, 'europe', 2000);
 INSERT INTO continent(id, continent_name, population) VALUES( 3, 'north america', 2000);
-INSERT INTO continent(id, continent_name, population) VALUES( 4, 'south america', 2000);
-INSERT INTO continent(id, continent_name, population) VALUES( 5, 'asia', 2000);
-INSERT INTO continent(id, continent_name, population) VALUES( 6, 'australia', 2000);
+INSERT INTO continent(id, continent_name, population) VALUES( 4, 'asia', 2000);
+INSERT INTO continent(id, continent_name, population) VALUES( 5, 'australia', 2000);
 
 INSERT INTO country(id, country_name, continent_id) VALUES( 5, 'france', 2);
 INSERT INTO country(id, country_name, continent_id, created_date) VALUES( 6, 'netherlands', 2, '1992-08-23' );
