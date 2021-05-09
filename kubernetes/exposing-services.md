@@ -60,21 +60,17 @@ Only use this command during development or troubleshooting to look at the respo
 
 Your bare metal kubernetes setup needs to expose services using the de-facto ingress pattern fronted by a load balancer. The basic steps to achieving this is to
 
-- deploy 2 or 3 cluster resident services
+- deploy 2 kubernetes cluster resident services
 - install the **nginx ingress controller**
+- configure the ingress controller to route traffic to the 2 services we setup
 - install an external **nginx load balancer**
-- configure traffic flows from load balancer through the ingress controller to the services and back.
+- configure traffic flows from load balancer through the ingress controller to the services and back
 
 
 ---
 
 
-## Exposing Services via an Ingress Controller
-
-If you are running a local (non-cloud) cluster and you want to expose your services professionally you need
- to use an Ingress Controller.
-
-## The nginx ingress controller
+## Install the nginx ingress controller
 
 Using the nginx ingress controller gives you a professional application layer (network layer 7) traffic routing service which can
 
@@ -84,10 +80,7 @@ Using the nginx ingress controller gives you a professional application layer (n
 - use readiness and liveness probes to decide whether a pod can receive traffic
 - decouple external clients from cluster implementation specifics
 
-
-## Install the nginx ingress controller
-
-Once the yaml below is applied a pod called **`ingress-nginx-controller-abcdef-12345`** should exist.
+Installing the ingress controller amounts to one simple kubectl apply of github resident yaml. After the apply a pod called **`ingress-nginx-controller-abcdef-12345`** should exist.
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
