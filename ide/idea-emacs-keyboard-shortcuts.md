@@ -217,7 +217,11 @@ If you want to just commit and then push a bunch of them later you
 
 ### How to Pull from a Branch (like Master)
 
-To pull from any remote branch (including master) you
+The quickest way to pull is to do
+
+- **`Ctrl-t Enter`**
+
+Another way to pull from any remote branch (including master) you
 
 - **`Ctrl Shift Backtick`** for the branches popup
 - **`Ctrl n`** and **`Ctrl p`** to navigate do the remote branch to pull from

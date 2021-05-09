@@ -129,7 +129,7 @@ Using the above we can go to any machine (control plane and workers) in the clus
 
 ### Bare Metal Raspberry Pi Cluster
 
-I'm using a **bare metal raspberry pi cluster** with machines named **`pi-r1d1`** and **`pi-r1d2`** and so on. The below url all give me the ingress controller **404 not found** page.
+I'm using a **bare metal raspberry pi cluster** with machines named **`pi-r1d1`** and **`pi-r1d2`** and so on. The below urls all give me the ingress controller **404 not found** page.
 
 ```
 http://pi-r1d1:32560
@@ -188,7 +188,7 @@ If you decide to run a bare metal load balancer there is not better choice than 
 - **`sudo apt-get update`**
 - **`sudo apt-get install nginx`**
 - **`sudo systemctl restart nginx`**
-- put the IP address and **`gateway`** name in /etc/hosts
+- put the IP address and **`pathway`** name in /etc/hosts
 
 Use **`htp://pathway`** to acquire the ubiquitous nginx welcome page.
 
@@ -259,7 +259,9 @@ Before trying to access your service make sure you have
 1. installed the nginx ingress controller and can access it
 
 
+I used this nginx configuration file to access a RabbitMQ Pod via **`http://rabbitmq`** and a Jenkins setup via **`http://jenkins`**
 
+```
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
@@ -303,3 +305,31 @@ http {
         }
     }
 }
+```
+
+## The `/etc/hosts` on Client Machines
+
+Note that on my local network this **`/etc/hosts`** file was used to route traffic to the nginx load balancer (on 192.168.0.63) which in turn routes the calls to the **nginx ingress controller** sitting in the kubernetes cluster (with worker machines ending in 59, 61 and 62) listening on port 32560 for http traffic (see command above to ascertain this port).
+
+```
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+192.168.0.60	pi-r1d1
+192.168.0.61	pi-r1d2
+192.168.0.59	pi-r1d3
+192.168.0.62	pi-r1d4
+
+## The Load Balancer Host
+192.168.0.63	orbit
+192.168.0.63	jenkins
+192.168.0.63	rabbitmq
+```
+
+Note the final two names enable simple http access via the load balancer to the kubernetes cluster.
