@@ -93,15 +93,14 @@ The best way to run **tfenv** and **terraform** is by linking it via the cloned 
 - **`brew uninstall terraform`**  # if on a mac with terraform installed
 - **`brew uninstall tfenv`**      # if on a mac with tfenv installed
 
-### Clone and link to new `terraform` and `tfenv`
+### Github Clone and link to new `terraform` and `tfenv`
 
-Now we clone tfenv and link it in. This method is better than changing the PATH variable and writing it into bash and/or zsh profiles. **Remember to change Assets with your folder path of choice.**
+tfenv will control the `terraform` and `tfenv` commands. All we need to do is clone tfenv and link it in. This method is better than changing the PATH variable and writing it into bash and/or zsh profiles.
 
-- **`cd Assets`**                                     # go to Assets folder
 - **`git clone https://github.com/tfutils/tfenv`**    # clone tfenv
-- **`ln -s ~/Assets/tfenv/bin/* /usr/local/bin`**     # link in the tfenv and terraform commands
+- **`ln -s tfenv/bin/* /usr/local/bin`**              # link in the tfenv and terraform commands
 - **`tfenv --version`**
-- **`tfenv install <VERSION>`**                       # install this specific version
+- **`tfenv install <VERSION>`**                       # install this specific terraform version
 - **`tfenv use <VERSION>`**                           # switch to using another version
 
 ### Now use tfenv to install and use the versions of terraform you desire

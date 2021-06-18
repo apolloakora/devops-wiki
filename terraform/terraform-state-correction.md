@@ -170,3 +170,46 @@ If you know you are the only one changing that state then you can unlock the sta
 - now copy the lock ID
 - **`terraform force-unlock <LOCK_ID>`**         # unlock the terraform state
 - **`terraform force-unlock <LOCK_ID> -force`**  # use -force to avoid the prompt
+
+
+---
+
+
+## terraform destroy | trying to delete bucket without `force_destroy` set to true
+
+If you try to delete a google bucket and get this error it is because the default setting puts force_destroy as true.
+
+**`Error trying to delete bucket BUCKET_NAME containing objects without `force_destroy` set to true`**
+
+To fix it you add the **`force_destroy`** flag then do a terraform apply and then a destroy using the following steps
+
+- add property **`force_destroy = true`** to **`google_storage_bucket`** resource
+- find out the terraform resource name of the google_storage)_bucket resource (from tf file)
+- **`terraform apply -target google_storage_bucket.<RESOURCE_NAME>`**
+- verify that the bucket will be updated in place and say yes
+- **`terraform destroy`**
+
+This time the terraform destroy command should remove the bucket.
+
+
+---
+
+
+## terraform destroy | failed to delete instance because deletion_protection is set to true
+
+Error: Error, failed to delete instance because deletion_protection is set to true. Set it to false to proceed with instance deletion
+
+If you try to delete a google instance and get this error it is because the default setting puts deletion_protection as true.
+
+**`Error, failed to delete instance because deletion_protection is set to true`**
+
+To fix it you add the **`deletion_protection`** flag then do a terraform apply and then a destroy using the following steps
+
+- add property **`deletion_protection = false`** to **`google_storage_bucket`** resource
+- find out the terraform resource name of the google_storage)_bucket resource (from tf file)
+- **`terraform apply -target google_sql_database_instance.<INSTANCE_NAME>`**
+- verify that the instance will be updated in place and say yes
+- **`terraform destroy`**
+
+This time the terraform destroy command should remove the database instance.
+
