@@ -1,6 +1,30 @@
 
 # Install Ansible on Ubuntu and Mac
 
+Ansible makes you productive when automating infrastructure provisioning and configuration management tasks on multiple target machines.
+
+
+## Install Ansible on Ubuntu
+
+On an Ubuntu machine run these commands to bring Ansible to the table.
+
+``` bash
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
+ansible --version
+```
+
+
+## Install Ansible on a Mac
+
+On the Mac (with Homebrew) simply install ansible with
+
+```
+brew install ansible
+ansible --version
+```
+
 
 ## Installing Ansible for Azure | Ubuntu
 

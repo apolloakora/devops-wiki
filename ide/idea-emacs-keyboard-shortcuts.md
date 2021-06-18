@@ -1,5 +1,5 @@
 
-# Emacs Keymap Keyboard Shortcuts for IntelliJ PyCharm and RubyMine
+# Emacs Keymap Keyboard Shortcuts for PyCharm IntelliJ and RubyMine
 
 These keyboard shortcuts are for the Emacs keymap in IntelliJ, PyCharm and RubyMine. They come out-of-the-box so you don't need to do any custom key bindings. It is sad that the keyboard shortcuts PDF from the IntelliJ IDE are incorrect when you opt for the Emacs keymap.
 
@@ -9,28 +9,32 @@ Thankfully the shortcuts below are all tested and verified to work with all the 
 
 These settings will work on Windows, Linux and MacOS as long as you set the Keymap to Emacs (**`Command ,`** or **`Ctrl ,`**).
 
-| Capability              | Keyboard Shortcut               | And then ...                                   |
-|:----------------------- |:------------------------------- |:---------------------------------------------- |
-| Wrap with Block Comment | **`Ctrl Shift /`**              | select the block again and **`Ctrl Shift /`** to uncomment |
-| Line by Line Comments   | **`Option ;`**                  | select the block again and **`Option ;`** to uncomment |
-| Auto-Indent Code Block  | **`Ctrl Option q`**             | |
-| Move Line Up            | **`Option Shift (Up)`**         | |
-| Move Line Down          | **`Option Shift (Down)`**       | |
-| Move Method Vars Left   | **`Ctrl Option Shift (Left)`**  | |
-| Move Method Vars Right  | **`Ctrl Option Shift (Right)`** | |
-| Run Tests or App        | **`Ctrl Shift F10`**            | |
-| Organize Imports        | **`Ctrl Option o`**             | |
-| Undo the last action    | **`Ctrl Shift - (hyphen)`**     | |
-| Fold Up a Code Block    | **`Ctrl - (hyphen)`**           | |
-| Unfold a Code Block     | **`Ctrl = (equals)`**           | |
-| Duplicate Current Line  | **`Command d`**                 | |
-| Refactor Create Method  | **`Ctrl Option m`**             | select code block then enter method name and Enter|
-| Deleting (Project View) | **`fn Backspace`**              | Enter at the prompt to actually delete (or tap the touch bar) |
-| Text Upper / Lowercase  | **`Ctrl Shift U`**              | select first with **`Ctrl Space`** then **`Ctrl n`** |
-| Refactor Rename         | **`Shift F6`**                  | rename and **`Ctrl Option d`** to Do the Refactoring |
-| Complete Code Element   | **`Option / Enter`**            | **`Ctrl n (or p) Enter`** to navigate and select option |
-| Overwrite Code Element  | **`Option / Tab`**              | **`Ctrl n (or p) Enter`** to navigate and select option |
-| Find and Replace Text   | **`Ctrl Shift R`**              | |
+| Capability                | Keyboard Shortcut                    | Explanations and Helpful Hints                                   |
+|:------------------------- |:------------------------------------ |:----------------------------------------------- |
+| Copy to Create New File   | **`Option C (copy) Ctrl y (paste)`** | Use Option 1 to get to Projects Window          |
+| Delete File Project Tab   | **`fn Backspace`**                   | Use **`Ctrl Shift Tab`** to get to Projects Tab |
+| Wrap Code Blocks with ... | **`Ctrl Option t`**                  | then select wrapper (try/catch, if, Comments, While etc  ) |
+| Wrap with Block Comment   | **`Ctrl Shift /`**                   | select the block again and **`Ctrl Shift /`** to uncomment |
+| Line by Line Comments     | **`Option ;`**                       | select the block again and **`Option ;`** to uncomment |
+| Auto-Indent Code Block    | **`Ctrl Option q`**                  | |
+| Move Line Up              | **`Option Shift (Up)`**              | |
+| Move Line Down            | **`Option Shift (Down)`**            | |
+| Move Method Vars Left     | **`Ctrl Option Shift (Left)`**       | |
+| Move Method Vars Right    | **`Ctrl Option Shift (Right)`**      | |
+| Run Tests or App          | **`Ctrl Shift F10`**                 | |
+| Organize Imports          | **`Ctrl Option o`**                  | |
+| Undo the last action      | **`Ctrl Shift - (hyphen)`**          | |
+| Fold Up a Code Block      | **`Ctrl - (hyphen)`**                | |
+| Unfold a Code Block       | **`Ctrl = (equals)`**                | |
+| Duplicate Current Line    | **`Command d`**                      | |
+| Refactor Create Method    | **`Ctrl Option m`**                  | select code block then enter method name and Enter      |
+| Text Upper / Lowercase    | **`Ctrl Shift U`**                   | select first with **`Ctrl Space`** then **`Ctrl n`**    |
+| Refactor Rename           | **`Shift F6`**                       | rename file, class or method then **`Ctrl Option d`**   |
+| Move File Class Method    | **`F6`**                             | Move the file, class or method then **`Ctrl Option d`** |
+| Copy File Class Method    | **`F5`**                             | Move the file, class or method then **`Ctrl Option d`** |
+| Complete Code Element     | **`Option / Enter`**                 | **`Ctrl n (or p) Enter`** to navigate and select option |
+| Overwrite Code Element    | **`Option / Tab`**                   | **`Ctrl n (or p) Enter`** to navigate and select option |
+| Find and Replace Text     | **`Ctrl Shift R`**                   | |
 
 
 ---
@@ -41,27 +45,28 @@ These settings will work on Windows, Linux and MacOS as long as you set the Keym
 
 | Read Explore Activity            | Keyboard Shortcut                 | And then ...                   |
 |:-------------------------------- |:---------------------------------- |:------------------------------ |
-| Jump to the Last Edit Location   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
-| Jump to Previous/Next Location   | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
-| Open Recent Locations Dropdown   | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
 | Find usages of a code element    | **`Ctrl Option g`** (in IntelliJ)  | **`Ctrl-n`** to move down, Enter to visit |
 | Navigate to element definition   | **`Ctrl Option g`** (in RubyMine)  | to go back press **`Ctrl Option Left Arrow`** |
 | Navigate to element definition   | **`Option . (period)`**            | to go back press **`Ctrl Option Left Arrow`** |
 | Find usages tab                  | **`Option Shift S`**               | use Ctrl-n to move down, Enter to jump to editor, Ctrl-x k to close |
-| Show File Details (Project View) | **`Option Shift |`**               | read file size and date/time created and viewed |
+| Jump to the first line (top)     | **`Option Shift <`**               |  |
+| Jump to the last line (bottom)   | **`Option Shift >`**               |  |
 | Goto line (go to line)           | **`Option g`**                     | type 14:8 to go to line 14 column 8 (or just 14) |
 | Goto the next method             | **`Ctrl Option e`**                |  |
 | Goto the previous method         | **`Ctrl Option a`**                |  |
+| Jump to the Last Edit Location   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
+| Jump to Previous/Next Location   | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
+| Open Recent Locations Dropdown   | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
 | View Class Elements Structure    | **`Ctrl F12`**                     | use Ctrl-n and p to move up and down and enter to visit |
 | View Class Method Documentation  | **`Ctrl q`**                       | read documentation and scroll with arrow keys |
-| Options (Project View)           | **`Ctrl Option Enter`**            | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
-| View Gem Dependency Diagram      | **`Ctrl Option u`** (RubyMine)     |  |
-| Jump to the first line (top)     | **`Option Shift <`**               |  |
-| Jump to the last line (bottom)   | **`Option Shift >`**               |  |
-| Find Method or Class            | **`Ctrl Shift Option N`**         | |
-| Find Text in any File           | **`Ctrl Shift F`**                | **`Ctrl n`** and **`Ctrl p`** to select and **`Enter`** to visit |
+| Find Method or Class             | **`Ctrl Shift Option N`**         | |
+| Find Text in any File            | **`Ctrl Shift F`**                | **`Ctrl n`** and **`Ctrl p`** to select and **`Enter`** to visit |
 | Goto any class in the editor    | **`Option Shift G`**              | |
 | Find any file, class or package | **`Shift Shift`**                 | |
+| Show File Details (Project View) | **`Option Shift |`**               | read file size and date/time created and viewed |
+| Options (Project View)           | **`Ctrl Option Enter`**            | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
+| Search file name part (Projects) | type letters then arrow keys       |  |
+| View Gem Dependency Diagram      | **`Ctrl Option u`** (RubyMine)     |  |
 
 
 ---
@@ -88,20 +93,82 @@ Finding files, finding text, finding usage of a particular class, method or vari
 ---
 
 
-## Navigate to Tool Windows (incl Settings)
+## Navigating the Editor Tabs
+
+| Capability             | Keyboard Shortcut                  | Worth noting that            |
+|:---------------------- |:---------------------------------- |:---------------------------- |
+| Kill Editor Tab        | **`Ctrl x k`**                     |  |
+| Kill All Editor Tabs   | **`Ctrl x c`**                     | **`Ctrl x b`** will list all tabs that were open |
+| Switch Editor Tabs (1) | **`Ctrl x p (n)`**                 | Use when there aren't many tabs |
+| Switch Editor Tabs (2) | **`Option Left(Right) Arrow`**     | Use to cycle through every tab  |
+| Switch Editor Tabs (3) | **`Ctrl-x b`** Ctrl-n Enter        | Use when many tabs and you know which one you want |
+| Goto last edited tab   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
+| Goto to prev/next tab  | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
+| Open Recent Locations  | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
+
+
+
+---
+
+
+## Switch between Tool Windows and Editor
+
+Whenever you are switching between tool windows and the editor
+
+- **`esc esc`** keeps the **tool tab in view** whilst returning focus to the editor
+- **`Option #`** minimizes the tool tab, widens the editor and returns focus to it
 
 | Perspective                  | Mac Keyboard Shortcut            | And then ...                                |
 |:---------------------------- |:-------------------------------- |:------------------------------------------- |
-| Goto Projects Tool Window    | **`F12`**                        | use **`Shift F12`** to invoke editor fullscreen |
-| Jump from Projects to Editor | **`Shift F12`** or **`Esc Esc`** | use **`F12`** to go back to the Projects tool window |
-| Goto Terminal                | **`Option F12`**                 | use **`Option F12`** again or **`Esc Esc`** to go back to the Editor |
-| Open Settings Window         | **`Command , (Comma)`**          |   |
 | Project Hierarchy            | **`Option 1`**                   | Ctrl-n to move, Enter to Open or select, esc esc to jump to editor, Ctrl-x k (or Option 1 again) to close  |
-| Class Hierarchy              | **`Ctrl h`**                     | Ctrl-x k to close and return  |
-| View @todo locations         | **`Option 6`**                   | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 6 again) to close  |
 | Console (Run) and Logs       | **`Option 4`**                   |   |
+| View @todo locations         | **`Option 6`**                   | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 6 again) to close  |
 | Class/Method Structure       | **`Option 7`**                   | Ctrl-n to move, Enter to Open or Select, esc esc to jump to editor, Ctrl-x k (or Option 7 again) to close  |
+| Database Services Tool Tab   | **`Option 8`**                   |   |
 | Git Version Control          | **`Option 9`**                   |   |
+| Goto Projects (or Terminal)  | **`F12`**                        | use **`Shift F12`** to invoke editor fullscreen |
+| Jump from Projects to Editor | **`Shift F12`** or **`Esc Esc`** | use **`F12`** to go back to the Projects tool window |
+| Goto Terminal                | **`F12`** or **`Option F12`**    | use **`Option F12`** again or **`Esc Esc`** to go back to the Editor |
+| Open Settings Window         | **`Command , (Comma)`**          |   |
+| Class Hierarchy              | **`Ctrl h`**                     | Ctrl-x k to close and return  |
+
+
+---
+
+
+## Database Explorer
+
+PyCharm has an excellent database interface which is simpler and more intuitive than the popular pgadmin4.
+Knowing the keyboard shortcuts for the database explorer within IntelliJ and PyCharm will vastly improve a developer's productivity. To try it use docker to run a postgres database locally.
+
+```
+docker run --detach --interactive --tty --rm --publish 5432:5432 \
+    --env POSTGRES_DB=hello_db       \
+    --env POSTGRES_USER=hello_usr    \
+    --env POSTGRES_PASSWORD=p455w0rd \
+    postgres:latest
+```
+
+When configuring the database plugin use hostname **`localhost`**, database name **`hello_db`**, username **`hello_usr`** and password **`p455w0rd`**. So to connect Pycharm to the database
+
+- remove any old data sources
+- (visit a .sql file and you will be prompted to setup a data source)
+- add a data source
+- select PostgreSQL as the data source
+- enter the connection name
+- enter the username, password and database name
+- enter the database hostname and port
+- test the connection (you may need to download a driver)
+
+You then get a buffer open through which you can write SQL commands with code completion for the database objects.
+The sql results are displayed in a pleasing and ergonomic manner.
+
+
+| Database Use Case                     | Keyboard Shortcut                 | Helpful Hints   |
+|:------------------------------------- |:--------------------------------- |:--------------- |
+| Goto Database Services Tab            | **`Option 8`**                    |   |
+| Run sql statement in file             | **`Ctrl Enter Enter`**            | If creating a database object check for it in the database window    |
+| Execute ALL sql statements in file    | **`Ctrl-x h Ctrl Enter Enter`**   | The **`Ctrl-x h`** selects all then **`Ctrl-Enter Enter`**  executes |
 
 
 ---
@@ -114,7 +181,7 @@ There's something cool about switching - be it **switching lanes** or **switchin
 - **`Ctrl-n**` and **`Ctrl-p`** (or type the number) to move up and down
 - and then **`Enter`** to switch
 
-### Swithcing Keymaps
+### Switching Keymaps
 
 When pair-programming and your other half isn't an emacs fan you can quickly use the sequence
 
@@ -150,7 +217,11 @@ If you want to just commit and then push a bunch of them later you
 
 ### How to Pull from a Branch (like Master)
 
-To pull from any remote branch (including master) you
+The quickest way to pull is to do
+
+- **`Ctrl-t Enter`**
+
+Another way to pull from any remote branch (including master) you
 
 - **`Ctrl Shift Backtick`** for the branches popup
 - **`Ctrl n`** and **`Ctrl p`** to navigate do the remote branch to pull from
@@ -216,34 +287,14 @@ Whilst in version control mode **`Option 9`** you can
 
 You can execute unit tests (in Cucumber, Behave, Minitest) and you can execute code using interpreters (for Ruby and Python) and much more.
 
-| Running Capabilities             | Keyboard Shortcut                      | And then ...                            |
-|:-------------------------------- |:-------------------------------------- |:--------------------------------------- |
-| Run a Rake task                  | **`Ctrl Ctrl`**                        | "rake build" or "rake install"          |
-| Run Recently ran again           | **`Ctrl Ctrl`**                        | **`Ctrl n`** or **`Ctrl p`** then Ent
-er |
-| Running a Class (Code or Test)   | **`Ctrl Shift F10`**                   | b4 - go to class with **`Option 1`**    |
+| Running Capabilities           | Keyboard Shortcut                | And then ...                            |
+|:------------------------------ |:-------------------------------- |:--------------------------------------- |
+| Run a Rake task                | **`Ctrl Ctrl`**                  | "rake build" or "rake install"          |
+| Run "recently ran" again       | **`Ctrl Ctrl`**                  | **`Ctrl n`** or **`Ctrl p`** then Enter |
+| Running a Class (Code or Test) | **`Ctrl Shift F10`**             | b4 - go to class with **`Option 1`**    |
 
 
 ---
-
-
-## Navigating the Editor Tabs
-
-| Capability             | Keyboard Shortcut                  | Worth noting that            |
-|:---------------------- |:---------------------------------- |:---------------------------- |
-| Kill Editor Tab        | **`Ctrl x k`**                     |  |
-| Kill All Editor Tabs   | **`Ctrl x c`**                     | **`Ctrl x b`** will list all tabs that were open |
-| Switch Editor Tabs (1) | **`Ctrl x p (n)`**                 | Use when there aren't many tabs |
-| Switch Editor Tabs (2) | **`Option Left(Right) Arrow`**     | Use to cycle through every tab  |
-| Switch Editor Tabs (3) | **`Ctrl-x b`** Ctrl-n Enter        | Use when many tabs and you know which one you want |
-| Goto last edited tab   | **`Ctrl Shift Backspace`**         | **`Ctrl Shift E`** or **`Ctrl Option Arrow`** to return |
-| Goto to prev/next tab  | **`Ctrl Option Left/Right Arrow`** | Visit recent locations with **`Ctrl Shift E`** |
-| Open Recent Locations  | **`Ctrl Shift E`**                 | **`Ctrl Option Left/Right Arrow`** to jump again |
-
-
-
----
-
 
 ## Working in the Terminal Window
 
