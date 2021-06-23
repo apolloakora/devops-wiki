@@ -10,12 +10,50 @@ helm3 install concoursee-dev-release concourse/concourse
 helm3 uninstall my-release
 ```
 
+---
 
-## Download the default concourse helm chart
+
+## Install Concourse using Helm
+
+The default helm chart with ID **`concourse/concourse`** can be found in this github repository.
 
 **`git clone https://github.com/concourse/concourse-chart`**
 
-You'll need this to pick out the sections that we want to override.
+Pay attention to the values.yml file which you will most likely override parts of. Create a config override file called **`concourse-helm-values.yml`** with contents like this.
+
+```
+concourse:
+  web:
+    postgres:
+      host: 10.50.0.3
+      port: 5432
+      sslmode: verify-ca
+      connectTimeout: 5m
+      database: rm
+
+postgresql:
+
+  enabled: false
+
+secrets:
+
+  create: true
+  postgresUser: rmuser
+  postgresPassword: password
+```
+
+Now install (and uninstall) concourse with these commands.
+
+```
+helm3 install ci-concourse -f concourse-helm-values.yml concourse/concourse
+helm3 uninstall ci-concourse
+kubectl get pods
+```
+
+You should have one web pod, two workers and a postgres database pod.
+
+
+---
 
 
 ## How to Connect to a Custom Google CloudSQL (PostgreSQL) Database
