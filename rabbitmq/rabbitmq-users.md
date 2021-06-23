@@ -1,7 +1,7 @@
 
 # How to Add RabbitMQ Users
 
-## Adding a User through Curl
+## Create a RabbitMQ User with Curl
 
 This curl command will add an administrator user with the given username and password assuming that the default guest:guest account is present.
 
@@ -13,7 +13,53 @@ However does it set the 3 dot start permissions?
 
 Also is the port 15672 or something else?
 
-## Adding a User through rabbitmqctl
+
+---
+
+
+## Create a RabbitMQ User with definitions.json
+
+First we need to create the password hash.
+
+### How to Create the RabbitMQ Password Hash
+
+If you need to change the default RabbitMQ password for local development you'll need to edit
+- the **`.env`** file **`RABBITMQ_PASSWORD`**
+- the **`definitions.json`** file in **`users.password_hash`**
+
+To create the password hash **[copy this python program](https://gist.github.com/anapsix/4c3e8a8685ce5a3f0d7599c9902fd0d5)** and run it feeding it the new password twice. The hash you need is in-between the apostrophes.
+
+**[The hash derivation mechanics are explained here](https://www.rabbitmq.com/passwords.html)**.
+
+### Put User details into definitions.json
+
+For the guest, guest password you would add this hash to the definitions.json
+
+```
+  "users": [
+    {
+      "name": "guest",
+      "password_hash": "cTAJdxBZCy5N4cVYPVh0TdRnU1CKTlxiH6mRSee/haEZU33G",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+```
+
+
+---
+
+
+## Create a RabbitMQ User with rabbitmqctl
 
 If rabbit has been setup say through a docker container you can use docker exec to execute these commands to setup a user.
 
