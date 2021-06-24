@@ -3,8 +3,16 @@
 
 First we install the packages needed for graphing.
 
+### On Ubuntu
+
 ```bash
 sudo apt-get --assume-yes install graphviz python-pydot python-pydot-ng python-pyparsing libcdt5 libcgraph6 libgvc6 libgvpr2 libpathplan4
+```
+
+### On Mac
+
+```
+brew install graphviz
 ```
 
 Now go to the terraform root folder and run this.

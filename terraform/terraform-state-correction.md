@@ -206,7 +206,7 @@ If you try to delete a google instance and get this error it is because the defa
 To fix it you add the **`deletion_protection`** flag then do a terraform apply and then a destroy using the following steps
 
 - add property **`deletion_protection = false`** to **`google_storage_bucket`** resource
-- find out the terraform resource name of the google_storage)_bucket resource (from tf file)
+- find out the terraform resource name of the google_storage_bucket resource (from tf file)
 - **`terraform apply -target google_sql_database_instance.<INSTANCE_NAME>`**
 - verify that the instance will be updated in place and say yes
 - **`terraform destroy`**
