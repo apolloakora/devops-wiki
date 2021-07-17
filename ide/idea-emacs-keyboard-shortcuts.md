@@ -9,7 +9,7 @@ Thankfully the shortcuts below are all tested and verified to work with all the 
 
 These settings will work on Windows, Linux and MacOS as long as you set the Keymap to Emacs (**`Command ,`** or **`Ctrl ,`**).
 
-| Capability                | Keyboard Shortcut                    | Explanations and Helpful Hints                                   |
+| Capability                | Keyboard Shortcut                    | Explanations and Helpful Hints                  |
 |:------------------------- |:------------------------------------ |:----------------------------------------------- |
 | Copy to Create New File   | **`Option C (copy) Ctrl y (paste)`** | Use Option 1 to get to Projects Window          |
 | Delete File Project Tab   | **`fn Backspace`**                   | Use **`Ctrl Shift Tab`** to get to Projects Tab |
@@ -247,6 +247,15 @@ To add an untracked file or folder use **`Option 9`** to go to the local changes
 - **`Ctrl Option a`** to add it
 - **`Ctrl k`** then enter a commit message
 - **`Ctrl Option k`** to Commit and **`Ctrl Option p`** to push
+
+### How to Revert an UnCommitted Change
+
+You can change your mind and easily revert a change using the version control window. The steps are
+
+- **`Option 9`** - to go to the VCS context
+- **`Ctrl n`** or **`Ctrl p`** - to go to the file in question
+- **`TAB`** to jump in then move to the line or block to revert
+- **`Option Shift RightArrow`** - to revert the change
 
 
 ### How to Create a Branch
